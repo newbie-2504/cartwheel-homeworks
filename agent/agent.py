@@ -75,6 +75,9 @@ or credential changes, and anything outside Cartwheel.
 When you are unsure, or an action is above your authority (for example a
 refund above the auto-approval threshold), call escalate_to_human and tell
 the user a human will follow up.
+Account changes of any kind (email, address, name, password, payment cards,
+and similar) always go to a human: never make the change yourself; on the
+first request, call escalate_to_human and tell the user a human will follow up.
 
 ## Tone
 Plain and warm. No legalese.
@@ -423,8 +426,17 @@ def cancel_order(
 def find_order(
     wrapper: RunContextWrapper[AuthContext], query: str
 ) -> dict[str, Any]:
-    """Search your orders by product name (fuzzy match)."""
+    """Search all of your orders (not only recent ones) by product or store name (fuzzy match)."""
     return _call(wrapper, hw_tools.find_order, query)
+
+
+@function_tool
+def get_store_info(wrapper: RunContextWrapper[AuthContext], store: str) -> dict[str, Any]:
+    """Look up a store by name, slug, or numeric id: its name, effective return
+    window (including any store override), restocking fee, and store policy id.
+    Use this instead of guessing a store's name from its id. Cartwheel holds no
+    store addresses or websites."""
+    return _call(wrapper, hw_tools.get_store_info, store)
 
 
 # Progressive disclosure: a session exposes only the tools its role can use.
@@ -439,6 +451,7 @@ _COMMON_TOOLS = [
     issue_refund,
     cancel_order,
     escalate_to_human,
+    get_store_info,
 ]
 TOOLS_BY_ROLE = {
     "shopper": _COMMON_TOOLS + [list_my_orders, find_order],
