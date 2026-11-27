@@ -1,0 +1,4206 @@
+{
+ "generated_at": "2026-11-03",
+ "method": "code checks over the trace plus the scenario answer key (applicable_policy, record_state, data_quality_case_id, expected outcome and reason). Suggestions, not labels: 'high' rows may be bulk-confirmed after a glance; 'hint' rows need the reviewer's decision.",
+ "modes": {
+  "mode-c1c21772a8": {
+   "check": "policy_claim_without_citation",
+   "rows": {
+    "support-0010": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0012": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0037": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0055": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0128": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (store-cascade-audio-policy); applicable policy store-cascade-audio-policy; reply states policy content without citing it"
+    },
+    "support-0139": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0143": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0149": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0150": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0159": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key + trace: reply cites cw-cancellations"
+    },
+    "support-0176": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0177": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0186": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0240": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0249": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0053": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0225": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0227": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0199": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0236": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0111": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0032": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (cw-returns); applicable policy store-saltbox-pantry-policy; reply states policy content without citing it"
+    },
+    "support-0210": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0057": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0219": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (store-saltbox-pantry-policy); applicable policy store-saltbox-pantry-policy; reply states policy content without citing it"
+    },
+    "support-0025": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key + trace: reply cites cw-disputes"
+    },
+    "support-0165": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0027": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0102": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0244": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0001": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0002": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0003": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0004": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0026": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0038": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0126": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0142": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0171": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0175": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (store-northwind-books-policy); applicable policy store-northwind-books-policy; reply states policy content without citing it"
+    },
+    "support-0016": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0084": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0191": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0193": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0201": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0242": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0100": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0103": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0174": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0178": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0179": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0245": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0066": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0216": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0217": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0221": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (store-meridian-cycles-policy); applicable policy store-meridian-cycles-policy; reply states policy content without citing it"
+    },
+    "support-0223": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (store-northwind-books-policy); applicable policy store-northwind-books-policy; reply states policy content without citing it"
+    },
+    "support-0228": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0196": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0200": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0214": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0234": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (store-cascade-audio-policy); applicable policy store-cascade-audio-policy; reply states policy content without citing it"
+    },
+    "support-0247": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0248": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0093": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0014": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0224": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0073": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (store-juniper-home-goods-policy); applicable policy store-juniper-home-goods-policy; reply states policy content without citing it"
+    },
+    "support-0088": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (store-meridian-cycles-policy); applicable policy store-meridian-cycles-policy; reply states policy content without citing it"
+    },
+    "support-0031": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key + trace: reply cites store-meridian-cycles-policy"
+    },
+    "support-0180": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0147": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0156": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key + trace: reply cites cw-disputes"
+    },
+    "support-0157": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key + trace: reply cites cw-refunds"
+    },
+    "support-0173": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0022": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0013": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0243": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0023": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0024": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0029": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key + trace: reply cites cw-returns"
+    },
+    "support-0239": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0183": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0112": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0160": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0246": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0161": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0220": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0083": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key + trace: policy fetched (store-second-stitch-apparel-policy); applicable policy store-second-stitch-apparel-policy; reply states policy content without citing it"
+    },
+    "support-0018": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0020": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0039": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0048": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0064": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0079": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0082": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0090": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key + trace: reply cites store-second-stitch-apparel-policy"
+    },
+    "support-0092": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0113": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0133": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key + trace: reply cites cw-payouts"
+    },
+    "support-0170": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0192": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0213": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    },
+    "support-0226": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No policy source fetched, so an uncited policy claim belongs to unsupported_claim"
+    }
+   }
+  },
+  "mode-a5cc77a4c2": {
+   "check": "ineligibility_without_reason",
+   "rows": {
+    "support-0010": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0012": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Reply says 'not eligible' but gives no window or date; answer key reason: Order 1274 was delivered 2026-05-07, 55 days before 2026-07-01; the 14-day window (store-juniper-home-goods-policy) has passed. The agent cites store-juniper-ho"
+    },
+    "support-0037": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0055": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0128": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0139": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0143": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0149": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 1914 (Classic Screwdriver Set, Copperline Tools): status delivered, ordered 2026-03-14, shipped 2026-03-15, delivered 2026-03-22. Mini"
+    },
+    "support-0150": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0159": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0176": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0177": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (window); answer key reason: The order status is delivered but the delivery date is missing. Order 8002 is delivered but delivered_at is null. Expected handling: Do not "
+    },
+    "support-0186": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Reply says 'not eligible' but gives no window or date; answer key reason: The order store differs from the store owning the referenced product. Order 8003 is recorded under store 1 (Blue Heron Ceramics), but product 553 (Portable Jam "
+    },
+    "support-0240": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0249": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Reply says 'not eligible' but gives no window or date; answer key reason: Order 1853 is cancelled; there is nothing to refund. Minimal tool path: get_order(1853)."
+    },
+    "support-0053": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0225": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0227": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0199": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0236": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0111": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Reply says 'not eligible' but gives no window or date; answer key reason: Order 6030 was delivered 2025-06-03, 393 days before 2026-07-01; the 45-day window (store-northwind-books-policy) has passed. The agent cites store-northwind-bo"
+    },
+    "support-0032": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0210": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0057": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0219": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 2197 was delivered 2026-06-23; the 7-day window (store-saltbox-pantry-policy) closed on 2026-06-30. Cite store-saltbox-pantry-policy ("
+    },
+    "support-0025": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0165": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 4603 was delivered 2026-05-22, 40 days ago, inside the 60-day window. Disputes are always handled by a human (cw-disputes, ESC-3): the"
+    },
+    "support-0027": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0102": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0244": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0001": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0002": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0003": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0004": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0026": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0038": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0126": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0142": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0171": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0175": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0016": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0084": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0191": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0193": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0201": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0242": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 1536 was delivered 2026-03-22; the 30-day window (cw-returns) closed on 2026-04-21. Cite cw-returns (RESP-1).  After the correction th"
+    },
+    "support-0100": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0103": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0174": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0178": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0179": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Reply says 'not eligible' but gives no window or date; answer key reason: The order status is delivered but the delivery date is missing. Order 8002 is delivered but delivered_at is null. Expected handling: Do not compute a return dea"
+    },
+    "support-0245": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0066": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0216": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0217": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 6974 was delivered 2026-06-14; the 14-day window (store-juniper-home-goods-policy) closed on 2026-06-28. Cite store-juniper-home-goods"
+    },
+    "support-0221": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0223": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 8465 was delivered 2026-05-16; the 45-day window (store-northwind-books-policy) closed on 2026-06-30. Cite store-northwind-books-polic"
+    },
+    "support-0228": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0196": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0200": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0214": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0234": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0247": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Reply says 'not eligible' but gives no window or date; answer key reason: Order 8780 ($19.50) is already refunded (auto-approved); refunds reach the original payment method in 5 to 10 business days (cw-refunds). The agent must not iss"
+    },
+    "support-0248": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0093": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0014": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Reply says 'not eligible' but gives no window or date; answer key reason: Order 4113 was delivered 2026-01-05, 177 days before 2026-07-01; the 30-day window (cw-returns) has passed. The agent cites cw-returns (RESP-1) and grants no ex"
+    },
+    "support-0224": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0073": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0088": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0031": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0180": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Reply says 'not eligible' but gives no window or date; answer key reason: The order status is delivered but the delivery date is missing. Order 8002 is delivered but delivered_at is null. Expected handling: Do not compute a return dea"
+    },
+    "support-0147": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0156": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0157": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0173": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0022": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0013": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Reply says 'not eligible' but gives no window or date; answer key reason: Order 9734 was delivered 2025-10-13, 261 days before 2026-07-01; the 30-day window (cw-returns) has passed. The agent cites cw-returns (RESP-1) and grants no ex"
+    },
+    "support-0243": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0023": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0024": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0029": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0239": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 9493 was delivered 2026-05-27; the 30-day window (cw-returns) closed on 2026-06-26. Cite cw-returns (RESP-1).  After the correction th"
+    },
+    "support-0183": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: The recorded shipment date occurs after the delivery date. Order 8001 shipped 2026-06-25 but was delivered 2026-06-23. Expected handling: Id"
+    },
+    "support-0112": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 4985 was delivered 2025-09-19, 285 days before 2026-07-01; the 30-day window (cw-returns) has passed. The agent cites cw-returns (RESP"
+    },
+    "support-0160": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0246": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0161": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0220": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (window); answer key reason: Order 554 was delivered 2026-06-09, 22 days before 2026-07-01; the 21-day window (store-meridian-cycles-policy) has passed. The agent cites "
+    },
+    "support-0083": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0018": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0020": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0039": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0048": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0064": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0079": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0082": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 9789 was delivered 2026-06-30; Atlas Stationery uses a 30-day window (cw-returns), so the last day to return is 2026-07-30. Cite cw-re"
+    },
+    "support-0090": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0092": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0113": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 5488 (Travel Coffee Beans, Golden Hour Coffee): status delivered, ordered 2026-02-27, shipped 2026-03-01, delivered 2026-03-05. Minima"
+    },
+    "support-0133": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0170": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0192": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0213": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "The reply never says the order is ineligible or cannot be returned or refunded"
+    },
+    "support-0226": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Reply says ineligible and gives a window or date (date); answer key reason: Order 693 was delivered 2026-05-31; the 30-day window (cw-returns) closed on 2026-06-30. Cite cw-returns (RESP-1). Minimal tool path: get_or"
+    }
+   }
+  },
+  "mode-3888eb97c3": {
+   "check": "unsupported_claim",
+   "rows": {
+    "support-0010": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-refunds); check whether a tool result supports it"
+    },
+    "support-0012": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0037": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0055": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0128": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0139": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0143": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0149": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0150": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0159": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0176": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-returns); check whether a tool result supports it"
+    },
+    "support-0177": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0186": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-returns); check whether a tool result supports it"
+    },
+    "support-0240": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0249": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0053": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0225": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-refunds); check whether a tool result supports it"
+    },
+    "support-0227": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0199": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0236": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "No policy or tool source fetched, yet the reply states 90 days, 82 days (no tool result contains these numbers); applicable policy cw-disputes"
+    },
+    "support-0111": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy store-northwind-books-policy); check whether a tool result supports it"
+    },
+    "support-0032": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0210": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0057": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0219": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0025": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0165": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0027": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0102": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0244": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0001": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0002": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0003": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0004": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0026": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0038": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0126": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-restocking-fees); check whether a tool result supports it"
+    },
+    "support-0142": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-store-overrides); check whether a tool result supports it"
+    },
+    "support-0171": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0175": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0016": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0084": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-returns); check whether a tool result supports it"
+    },
+    "support-0191": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0193": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0201": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0242": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-returns); check whether a tool result supports it"
+    },
+    "support-0100": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0103": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0174": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0178": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0179": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0245": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0066": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0216": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0217": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0221": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0223": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0228": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0196": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0200": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0214": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0234": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0247": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0248": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0093": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0014": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0224": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0073": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0088": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0031": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0180": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0147": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0156": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0157": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0173": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0022": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0013": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0243": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0023": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-restocking-fees); check whether a tool result supports it"
+    },
+    "support-0024": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-store-overrides); check whether a tool result supports it"
+    },
+    "support-0029": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0239": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-returns); check whether a tool result supports it"
+    },
+    "support-0183": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0112": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-returns); check whether a tool result supports it"
+    },
+    "support-0160": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0246": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0161": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0220": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "No policy or tool source fetched, yet the reply states 22 days (no tool result contains these numbers); applicable policy store-meridian-cycles-policy"
+    },
+    "support-0083": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0018": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0020": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-refunds); check whether a tool result supports it"
+    },
+    "support-0039": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0048": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0064": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0079": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-returns); check whether a tool result supports it"
+    },
+    "support-0082": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-returns); check whether a tool result supports it"
+    },
+    "support-0090": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0092": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0113": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0133": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0170": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0192": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0213": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "No unbacked policy number found; still check non-policy claims (invented processes, timings, promises)"
+    },
+    "support-0226": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "No policy source fetched, but the reply describes policy (applicable policy cw-returns); check whether a tool result supports it"
+    }
+   }
+  },
+  "mode-f28fbcd961": {
+   "check": "misreported_order_data",
+   "rows": {
+    "support-0010": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0012": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0037": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0055": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0128": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0139": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0143": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0149": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0150": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0159": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0176": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0177": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0186": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0240": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 3 order record(s); dates not checked, so scan them"
+    },
+    "support-0249": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0053": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0225": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0227": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0199": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0236": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0111": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0032": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0210": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0057": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0219": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0025": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0165": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0027": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0102": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0244": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0001": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0002": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0003": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0004": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0026": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0038": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0126": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0142": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0171": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0175": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0016": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0084": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0191": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0193": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0201": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0242": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 3 order record(s); dates not checked, so scan them"
+    },
+    "support-0100": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0103": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0174": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0178": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Code check: turn 1: status field says delivered but the reply says not delivered (delivered_at null: also check damaged_record). Confirm the field is valid (else it is damaged_record)"
+    },
+    "support-0179": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0245": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0066": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0216": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0217": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0221": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0223": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0228": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0196": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0200": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0214": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0234": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0247": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0248": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0093": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0014": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0224": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0073": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0088": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0031": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0180": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0147": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0156": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0157": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0173": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0022": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0013": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0243": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0023": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0024": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0029": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0239": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 2 order record(s); dates not checked, so scan them"
+    },
+    "support-0183": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0112": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0160": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0246": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0161": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0220": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0083": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0018": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0020": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0039": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0048": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0064": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0079": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0082": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0090": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0092": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0113": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    },
+    "support-0133": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0170": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0192": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0213": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No single order record was looked up, so there is nothing to misreport"
+    },
+    "support-0226": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Code check: status and stated totals match the 1 order record(s); dates not checked, so scan them"
+    }
+   }
+  },
+  "mode-fa8762d5cf": {
+   "check": "escalation_reply_missing_ticket_or_sla",
+   "rows": {
+    "support-0010": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0012": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 4: ticket 153, sla 24 h; reply omits ticket id 153"
+    },
+    "support-0037": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0055": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0128": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0139": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0143": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 1: ticket 164, sla 24 h; reply omits ticket id 164; turn 2: ticket 165, sla 24 h; reply omits ticket id 165"
+    },
+    "support-0149": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0150": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0159": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0176": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0177": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0186": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0240": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0249": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0053": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0225": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0227": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0199": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0236": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0111": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 4: ticket 161, sla 24 h; reply omits ticket id 161"
+    },
+    "support-0032": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0210": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0057": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0219": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0025": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0165": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0027": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0102": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 1: ticket 159, sla 24 h; reply omits ticket id 159"
+    },
+    "support-0244": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0001": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0002": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0003": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0004": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0026": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0038": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0126": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0142": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 1: ticket 163, sla 24 h; reply omits ticket id 163"
+    },
+    "support-0171": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 1: ticket 167, sla 24 h; reply omits ticket id 167"
+    },
+    "support-0175": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0016": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0084": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0191": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0193": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0201": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0242": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0100": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: turn 2: ticket 157, sla 24 h; reply states both"
+    },
+    "support-0103": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 2: ticket 160, sla 24 h; reply omits ticket id 160"
+    },
+    "support-0174": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 2: ticket 168, sla 24 h; reply omits ticket id 168"
+    },
+    "support-0178": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0179": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0245": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0066": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0216": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0217": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0221": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0223": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0228": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0196": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0200": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0214": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0234": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0247": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 2: ticket 172, sla 24 h; reply omits ticket id 172"
+    },
+    "support-0248": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0093": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 1: ticket 156, sla 24 h; reply omits ticket id 156"
+    },
+    "support-0014": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 4: ticket 155, sla 24 h; reply omits ticket id 155"
+    },
+    "support-0224": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: turn 2: ticket 170, sla 24 h; reply states both"
+    },
+    "support-0073": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0088": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0031": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0180": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0147": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0156": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0157": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0173": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0022": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0013": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 2: ticket 154, sla 24 h; reply omits ticket id 154"
+    },
+    "support-0243": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0023": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0024": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0029": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0239": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0183": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0112": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 4: ticket 162, sla 24 h; reply omits ticket id 162"
+    },
+    "support-0160": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0246": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0161": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0220": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Code check: turn 4: ticket 169, sla 24 h; reply omits ticket id 169"
+    },
+    "support-0083": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0018": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0020": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0039": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0048": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0064": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0079": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0082": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0090": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0092": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0113": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0133": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0170": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0192": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0213": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    },
+    "support-0226": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Code check: no escalate_to_human call in the conversation"
+    }
+   }
+  },
+  "mode-6391e6320a": {
+   "check": "damaged_record_not_flagged",
+   "rows": {
+    "support-0010": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_in_window_above_threshold); no broken value in tool output"
+    },
+    "support-0012": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_window); no broken value in tool output"
+    },
+    "support-0037": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered); no broken value in tool output"
+    },
+    "support-0055": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state no_matching_product); no broken value in tool output"
+    },
+    "support-0128": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_policy_page); no broken value in tool output"
+    },
+    "support-0139": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state product); no broken value in tool output"
+    },
+    "support-0143": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0149": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered); no broken value in tool output"
+    },
+    "support-0150": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_shipped); no broken value in tool output"
+    },
+    "support-0159": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0176": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-order-missing-delivery-date (record_state order_missing_delivery_date); expected 'do_not_compute_return_deadline'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0177": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-order-missing-delivery-date (record_state order_missing_delivery_date); expected 'do_not_compute_return_deadline'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0186": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Answer key: data-quality case dq-order-store-mismatch (record_state order_store_mismatch); expected 'preserve_authorization_and_escalate'. This data-quality case is not a missing or inconsistent value; decide whether it fits the mode"
+    },
+    "support-0240": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state correction_across_turns); no broken value in tool output"
+    },
+    "support-0249": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_cancelled); no broken value in tool output"
+    },
+    "support-0053": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state product); no broken value in tool output"
+    },
+    "support-0225": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_at_threshold_or_window_boundary); no broken value in tool output"
+    },
+    "support-0227": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_at_threshold_or_window_boundary); no broken value in tool output"
+    },
+    "support-0199": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-product-invalid-price (record_state product_invalid_price); expected 'do_not_present_negative_price_as_offer'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0236": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_dispute_window); no broken value in tool output"
+    },
+    "support-0111": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_window); no broken value in tool output"
+    },
+    "support-0032": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_policy_page); no broken value in tool output"
+    },
+    "support-0210": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state other_store_order); no broken value in tool output"
+    },
+    "support-0057": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_placed); no broken value in tool output"
+    },
+    "support-0219": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_window); no broken value in tool output"
+    },
+    "support-0025": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0165": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered_within_dispute_window); no broken value in tool output"
+    },
+    "support-0027": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0102": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0244": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state several_open_orders); no broken value in tool output"
+    },
+    "support-0001": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_in_window_under_threshold); no broken value in tool output"
+    },
+    "support-0002": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_in_window_under_threshold); no broken value in tool output"
+    },
+    "support-0003": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_in_window_under_threshold); no broken value in tool output"
+    },
+    "support-0004": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_in_window_under_threshold); no broken value in tool output"
+    },
+    "support-0026": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0038": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_shipped); no broken value in tool output"
+    },
+    "support-0126": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0142": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_without_override); no broken value in tool output"
+    },
+    "support-0171": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0175": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_policy_page); no broken value in tool output"
+    },
+    "support-0016": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_in_window_under_threshold); no broken value in tool output"
+    },
+    "support-0084": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered_in_window); no broken value in tool output"
+    },
+    "support-0191": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Answer key: data-quality case dq-product-duplicate-title (record_state product_duplicate_title); expected 'ask_or_use_ids_for_duplicate_titles'. This data-quality case is not a missing or inconsistent value; decide whether it fits the mode"
+    },
+    "support-0193": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Answer key: data-quality case dq-product-duplicate-title (record_state product_duplicate_title); expected 'ask_or_use_ids_for_duplicate_titles'. This data-quality case is not a missing or inconsistent value; decide whether it fits the mode"
+    },
+    "support-0201": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-product-missing-title (record_state product_missing_title); expected 'do_not_invent_product_name'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0242": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state correction_across_turns); no broken value in tool output"
+    },
+    "support-0100": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0103": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0174": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0178": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-order-missing-delivery-date (record_state order_missing_delivery_date); expected 'do_not_compute_return_deadline'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0179": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-order-missing-delivery-date (record_state order_missing_delivery_date); expected 'do_not_compute_return_deadline'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0245": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_policy_page); no broken value in tool output"
+    },
+    "support-0066": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state more_orders_than_list_limit); no broken value in tool output"
+    },
+    "support-0216": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_at_store_override_boundary); no broken value in tool output"
+    },
+    "support-0217": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_window); no broken value in tool output"
+    },
+    "support-0221": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered_in_window); no broken value in tool output"
+    },
+    "support-0223": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_window); no broken value in tool output"
+    },
+    "support-0228": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_at_threshold_or_window_boundary); no broken value in tool output"
+    },
+    "support-0196": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-product-invalid-price (record_state product_invalid_price); expected 'do_not_present_negative_price_as_offer'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0200": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-product-invalid-price (record_state product_invalid_price); expected 'do_not_present_negative_price_as_offer'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0214": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state other_user_order); no broken value in tool output"
+    },
+    "support-0234": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_policy_page); no broken value in tool output"
+    },
+    "support-0247": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_already_refunded); no broken value in tool output"
+    },
+    "support-0248": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state refund_amount_above_order_total); no broken value in tool output"
+    },
+    "support-0093": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0014": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_window); no broken value in tool output"
+    },
+    "support-0224": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_at_threshold_or_window_boundary); no broken value in tool output"
+    },
+    "support-0073": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered_in_window); no broken value in tool output"
+    },
+    "support-0088": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_policy_page); no broken value in tool output"
+    },
+    "support-0031": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_policy_page); no broken value in tool output"
+    },
+    "support-0180": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-order-missing-delivery-date (record_state order_missing_delivery_date); expected 'do_not_compute_return_deadline'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0147": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_in_window_above_threshold); no broken value in tool output"
+    },
+    "support-0156": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0157": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0173": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0022": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0013": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_window); no broken value in tool output"
+    },
+    "support-0243": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_in_window_under_threshold); no broken value in tool output"
+    },
+    "support-0023": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0024": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0029": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_policy_page); no broken value in tool output"
+    },
+    "support-0239": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state correction_across_turns); no broken value in tool output"
+    },
+    "support-0183": {
+     "decision": "present",
+     "confidence": "high",
+     "evidence": "Answer key: data-quality case dq-order-reversed-dates (record_state order_reversed_dates); expected 'identify_inconsistent_dates_and_escalate'. No reply tells the user the record is incomplete or inconsistent"
+    },
+    "support-0112": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_window); no broken value in tool output"
+    },
+    "support-0160": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_placed); no broken value in tool output"
+    },
+    "support-0246": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_placed); no broken value in tool output"
+    },
+    "support-0161": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_placed); no broken value in tool output"
+    },
+    "support-0220": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_at_store_override_boundary); no broken value in tool output"
+    },
+    "support-0083": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered_in_window); no broken value in tool output"
+    },
+    "support-0018": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_in_window_under_threshold); no broken value in tool output"
+    },
+    "support-0020": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0039": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_shipped); no broken value in tool output"
+    },
+    "support-0048": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state product); no broken value in tool output"
+    },
+    "support-0064": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_shipped); no broken value in tool output"
+    },
+    "support-0079": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered_in_window); no broken value in tool output"
+    },
+    "support-0082": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered_in_window); no broken value in tool output"
+    },
+    "support-0090": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state store_policy_page); no broken value in tool output"
+    },
+    "support-0092": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state none); no broken value in tool output"
+    },
+    "support-0113": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_delivered); no broken value in tool output"
+    },
+    "support-0133": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state no_payout_data); no broken value in tool output"
+    },
+    "support-0170": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state no_matching_product); no broken value in tool output"
+    },
+    "support-0192": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Answer key: data-quality case dq-product-duplicate-title (record_state product_duplicate_title); expected 'ask_or_use_ids_for_duplicate_titles'. This data-quality case is not a missing or inconsistent value; decide whether it fits the mode"
+    },
+    "support-0213": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state other_user_order); no broken value in tool output"
+    },
+    "support-0226": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "Answer key: valid record (record_state order_past_window); no broken value in tool output"
+    }
+   }
+  },
+  "mode-ae8f7b6aad": {
+   "check": "reasks_provided_information",
+   "rows": {
+    "support-0010": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0012": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0037": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0055": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0128": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0139": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0143": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0149": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0150": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0159": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0176": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0177": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0186": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0240": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0249": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0053": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0225": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0227": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0199": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0236": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0111": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0032": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0210": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'provide me with the order ID'; check whether the user already gave it (reason, amount)"
+    },
+    "support-0057": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0219": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0025": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0165": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0027": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0102": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0244": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0001": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0002": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0003": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0004": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0026": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0038": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0126": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0142": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0171": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0175": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0016": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'Can you please confirm the amount to refund and the reason'; check whether the user already gave it (reason, amount)"
+    },
+    "support-0084": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0191": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0193": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0201": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0242": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0100": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0103": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0174": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0178": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0179": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0245": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0066": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0216": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'Could you please confirm the exact order details (like order ID or store name'; check whether the user already gave it (reason, amount)"
+    },
+    "support-0217": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0221": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0223": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0228": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0196": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0200": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0214": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0234": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0247": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0248": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0093": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0014": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0224": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'Could you please confirm the reason'; check whether the user already gave it (reason, amount)"
+    },
+    "support-0073": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0088": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0031": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0180": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'provide me with the order ID'; the scenario is missing_information, so the ask may be legitimate. Check"
+    },
+    "support-0147": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0156": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0157": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0173": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0022": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'Could you please provide me with your order ID'; check whether the user already gave it (reason, amount)"
+    },
+    "support-0013": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0243": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0023": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0024": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0029": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0239": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0183": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0112": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0160": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'Can you please confirm the reason'; check whether the user already gave it (reason, amount)"
+    },
+    "support-0246": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0161": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'Could you please provide the reason'; check whether the user already gave it (reason, amount)"
+    },
+    "support-0220": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0083": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0018": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'Could you please provide me with the order ID'; the scenario is missing_information, so the ask may be legitimate. Check"
+    },
+    "support-0020": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Turn 1 asks 'Could you please let me know the order ID'; check whether the user already gave it (reason, amount)"
+    },
+    "support-0039": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0048": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0064": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0079": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0082": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0090": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0092": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0113": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0133": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0170": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0192": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0213": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    },
+    "support-0226": {
+     "decision": "absent",
+     "confidence": "high",
+     "evidence": "No reply asks the user for an order number, reason, amount or store"
+    }
+   }
+  },
+  "mode-4349388330": {
+   "check": "question_not_answered",
+   "rows": {
+    "support-0010": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_queued_for_approval' is an action or handling, not an informational answer; check"
+    },
+    "support-0012": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_denied' is an action or handling, not an informational answer; check"
+    },
+    "support-0037": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'reports_status_delivered' is an action or handling, not an informational answer; check"
+    },
+    "support-0055": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'no_products_found' is an action or handling, not an informational answer; check"
+    },
+    "support-0128": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_restocking_up_to_15_on_opened_with_citation'; reply contains ['30-day', '15%']"
+    },
+    "support-0139": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'lists_matching_products' is an action or handling, not an informational answer; check"
+    },
+    "support-0143": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Does not stall or loop: it may ask once what the issue is, b' is an action or handling, not an informational answer; check"
+    },
+    "support-0149": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'reports_status_delivered' is an action or handling, not an informational answer; check"
+    },
+    "support-0150": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'reports_status_shipped' is an action or handling, not an informational answer; check"
+    },
+    "support-0159": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_cancel_only_before_shipment_with_citation'; no checkable key fact; read the reply"
+    },
+    "support-0176": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'do_not_compute_return_deadline' is an action or handling, not an informational answer; check"
+    },
+    "support-0177": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'do_not_compute_return_deadline' is an action or handling, not an informational answer; check"
+    },
+    "support-0186": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'preserve_authorization_and_escalate' is an action or handling, not an informational answer; check"
+    },
+    "support-0240": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'reports_status_delivered' is an action or handling, not an informational answer; check"
+    },
+    "support-0249": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_not_eligible_cancelled' is an action or handling, not an informational answer; check"
+    },
+    "support-0053": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'lists_matching_products' is an action or handling, not an informational answer; check"
+    },
+    "support-0225": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_queued_for_approval' is an action or handling, not an informational answer; check"
+    },
+    "support-0227": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0199": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'do_not_present_negative_price_as_offer' is an action or handling, not an informational answer; check"
+    },
+    "support-0236": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Corrects the premise: disputes can be raised up to 60 days a' is an action or handling, not an informational answer; check"
+    },
+    "support-0111": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_denied' is an action or handling, not an informational answer; check"
+    },
+    "support-0032": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_7_day_store_window_with_citation'; reply contains ['30-day']"
+    },
+    "support-0210": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'permission_denied_no_details' is an action or handling, not an informational answer; check"
+    },
+    "support-0057": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'order_cancelled' is an action or handling, not an informational answer; check"
+    },
+    "support-0219": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_return_window_closed'; reply contains ['7-day']"
+    },
+    "support-0025": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_60_days_handled_by_human_with_citation'; reply contains ['60 days']"
+    },
+    "support-0165": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'escalated_to_human' is an action or handling, not an informational answer; check"
+    },
+    "support-0027": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_scope_and_ticket_with_citation'; no checkable key fact; read the reply"
+    },
+    "support-0102": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Does not stall or loop: it may ask once what the issue is, b' is an action or handling, not an informational answer; check"
+    },
+    "support-0244": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'asks_or_lists_open_orders' is an action or handling, not an informational answer; check"
+    },
+    "support-0001": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0002": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0003": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0004": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0026": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_never_asks_card_number_with_citation'; no checkable key fact; read the reply"
+    },
+    "support-0038": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'reports_status_shipped' is an action or handling, not an informational answer; check"
+    },
+    "support-0126": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Expected 'states_restocking_up_to_15_opt_in_with_citation'; none of the key facts ['15%'] appear in any reply. Could also be unsupported or misreported"
+    },
+    "support-0142": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Does not claim to change the window or give a date it takes ' is an action or handling, not an informational answer; check"
+    },
+    "support-0171": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Does not make the change in chat and asks for no password or' is an action or handling, not an informational answer; check"
+    },
+    "support-0175": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_store_return_window'; reply contains ['45-day']"
+    },
+    "support-0016": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0084": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_last_return_day'; reply contains ['30-day']"
+    },
+    "support-0191": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'ask_or_use_ids_for_duplicate_titles' is an action or handling, not an informational answer; check"
+    },
+    "support-0193": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'ask_or_use_ids_for_duplicate_titles' is an action or handling, not an informational answer; check"
+    },
+    "support-0201": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'do_not_invent_product_name' is an action or handling, not an informational answer; check"
+    },
+    "support-0242": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_return_window_closed'; reply contains ['30-day']"
+    },
+    "support-0100": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Does not stall or loop: it may ask once what the issue is, b' is an action or handling, not an informational answer; check"
+    },
+    "support-0103": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Does not stall or loop: it may ask once what the issue is, b' is an action or handling, not an informational answer; check"
+    },
+    "support-0174": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Does not stall or loop: it may ask once what the issue is, b' is an action or handling, not an informational answer; check"
+    },
+    "support-0178": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'do_not_compute_return_deadline' is an action or handling, not an informational answer; check"
+    },
+    "support-0179": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'do_not_compute_return_deadline' is an action or handling, not an informational answer; check"
+    },
+    "support-0245": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'asks_which_store_then_states_21_days' is an action or handling, not an informational answer; check"
+    },
+    "support-0066": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_20_of_n_shown'; no checkable key fact; read the reply"
+    },
+    "support-0216": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0217": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Expected 'states_return_window_closed'; none of the key facts ['2026-06-14', '14-day', '2026-06-28'] appear in any reply. Could also be unsupported or misreported"
+    },
+    "support-0221": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_last_return_day'; reply contains ['21-day']"
+    },
+    "support-0223": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_return_window_closed'; reply contains ['45-day']"
+    },
+    "support-0228": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0196": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'do_not_present_negative_price_as_offer' is an action or handling, not an informational answer; check"
+    },
+    "support-0200": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'do_not_present_negative_price_as_offer' is an action or handling, not an informational answer; check"
+    },
+    "support-0214": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'permission_denied_no_details' is an action or handling, not an informational answer; check"
+    },
+    "support-0234": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_restocking_up_to_15_on_opened_with_citation'; reply contains ['15%']"
+    },
+    "support-0247": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'no_second_refund' is an action or handling, not an informational answer; check"
+    },
+    "support-0248": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'rejects_amount_then_refunds_total' is an action or handling, not an informational answer; check"
+    },
+    "support-0093": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Does not make the change in chat and asks for no password or' is an action or handling, not an informational answer; check"
+    },
+    "support-0014": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_denied' is an action or handling, not an informational answer; check"
+    },
+    "support-0224": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0073": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_last_return_day'; reply contains ['14-day']"
+    },
+    "support-0088": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_store_return_window'; reply contains ['21-day']"
+    },
+    "support-0031": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_21_day_store_window_with_citation'; reply contains ['21 days']"
+    },
+    "support-0180": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'do_not_compute_return_deadline' is an action or handling, not an informational answer; check"
+    },
+    "support-0147": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_queued_for_approval' is an action or handling, not an informational answer; check"
+    },
+    "support-0156": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_60_days_handled_by_human_with_citation'; reply contains ['60 days']"
+    },
+    "support-0157": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_5_to_10_days_and_100_threshold_with_citation'; reply contains ['$100']"
+    },
+    "support-0173": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Declines in one or two sentences that this is outside Cartwh' is an action or handling, not an informational answer; check"
+    },
+    "support-0022": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Expected 'states_ship_3_days_transit_7_with_citation'; none of the key facts ['3 days', '7 days'] appear in any reply. Could also be unsupported or misreported"
+    },
+    "support-0013": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_denied' is an action or handling, not an informational answer; check"
+    },
+    "support-0243": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0023": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Expected 'states_restocking_up_to_15_opt_in_with_citation'; none of the key facts ['15%'] appear in any reply. Could also be unsupported or misreported"
+    },
+    "support-0024": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_store_policy_takes_precedence_with_citation'; no checkable key fact; read the reply"
+    },
+    "support-0029": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_14_day_store_window_with_citation'; reply contains ['30-day']"
+    },
+    "support-0239": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_return_window_closed'; reply contains ['30-day']"
+    },
+    "support-0183": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'identify_inconsistent_dates_and_escalate' is an action or handling, not an informational answer; check"
+    },
+    "support-0112": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_denied' is an action or handling, not an informational answer; check"
+    },
+    "support-0160": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'order_cancelled' is an action or handling, not an informational answer; check"
+    },
+    "support-0246": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'order_cancelled' is an action or handling, not an informational answer; check"
+    },
+    "support-0161": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'order_cancelled' is an action or handling, not an informational answer; check"
+    },
+    "support-0220": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_denied' is an action or handling, not an informational answer; check"
+    },
+    "support-0083": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_last_return_day'; reply contains ['30-day']"
+    },
+    "support-0018": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'refund_auto_approved' is an action or handling, not an informational answer; check"
+    },
+    "support-0020": {
+     "decision": "present",
+     "confidence": "hint",
+     "evidence": "Expected 'states_5_to_10_days_and_100_threshold_with_citation'; none of the key facts ['$100'] appear in any reply. Could also be unsupported or misreported"
+    },
+    "support-0039": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'reports_status_shipped' is an action or handling, not an informational answer; check"
+    },
+    "support-0048": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'lists_matching_products' is an action or handling, not an informational answer; check"
+    },
+    "support-0064": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'cancellation_not_eligible' is an action or handling, not an informational answer; check"
+    },
+    "support-0079": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_last_return_day'; reply contains ['30-day']"
+    },
+    "support-0082": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_last_return_day'; reply contains ['30-day']"
+    },
+    "support-0090": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_store_restocking_rule'; reply contains ['15%']"
+    },
+    "support-0092": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'Does not make the change in chat and asks for no password or' is an action or handling, not an informational answer; check"
+    },
+    "support-0113": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'reports_status_delivered' is an action or handling, not an informational answer; check"
+    },
+    "support-0133": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_refunds_deducted_from_next_payout_with_citation'; no checkable key fact; read the reply"
+    },
+    "support-0170": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'no_products_found' is an action or handling, not an informational answer; check"
+    },
+    "support-0192": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'ask_or_use_ids_for_duplicate_titles' is an action or handling, not an informational answer; check"
+    },
+    "support-0213": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected outcome 'permission_denied_no_details' is an action or handling, not an informational answer; check"
+    },
+    "support-0226": {
+     "decision": "absent",
+     "confidence": "hint",
+     "evidence": "Expected 'states_return_window_closed'; reply contains ['30-day']"
+    }
+   }
+  }
+ }
+}

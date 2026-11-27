@@ -1,1 +1,3361 @@
-{"annotations": []}
+{
+  "annotations": [
+    {
+      "id": "ann-65be49e2ba",
+      "conversation_id": "support-0010",
+      "session_id": "5f8d2c19676444adae760e09e9c87789",
+      "trace_id": "41bfdce5d6a52fa029f173d7216d075c",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I've initiated the refund for your order of $122.00.",
+      "start": 0,
+      "end": 52,
+      "note": "No return of the product is asked. Can be misused by the users",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T14:56:15+00:00",
+      "updated_at": "2026-10-28T14:56:15+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T14:56:15+00:00",
+          "note": "No return of the product is asked. Can be misused by the users"
+        }
+      ]
+    },
+    {
+      "id": "ann-ec42f055d6",
+      "conversation_id": "support-0010",
+      "session_id": "5f8d2c19676444adae760e09e9c87789",
+      "trace_id": "41bfdce5d6a52fa029f173d7216d075c",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "A support agent",
+      "start": 150,
+      "end": 165,
+      "note": "you are also a support agent. Should be a human agent will review. \n\nAlso give me the support case id, so tha i can follow. \n\nTell me the SLA for when the live agent will respond? where can i expect the communication to happen - will they send an email, phone?",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T14:58:01+00:00",
+      "updated_at": "2026-10-28T14:58:01+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T14:58:01+00:00",
+          "note": "you are also a support agent. Should be a human agent will review. \n\nAlso give me the support case id, so tha i can follow. \n\nTell me the SLA for when the live agent will respond? where can i expect the communication to happen - will they send an email, phone?"
+        }
+      ]
+    },
+    {
+      "id": "ann-14c5ed78b3",
+      "conversation_id": "support-0010",
+      "session_id": "5f8d2c19676444adae760e09e9c87789",
+      "trace_id": "f4563d4ee4e6fde3efef2316f50f0b2f",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I assure you that your case will be prioritized, but I can also escalate this matter to ensure a quicker resolution.",
+      "start": 187,
+      "end": 303,
+      "note": "completely made up fact? i dont think there is a ploicy that exist for it?",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T14:59:00+00:00",
+      "updated_at": "2026-10-28T14:59:00+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T14:59:00+00:00",
+          "note": "completely made up fact? i dont think there is a ploicy that exist for it?"
+        }
+      ]
+    },
+    {
+      "id": "ann-7920ff8a15",
+      "conversation_id": "support-0010",
+      "session_id": "5f8d2c19676444adae760e09e9c87789",
+      "trace_id": "41bfdce5d6a52fa029f173d7216d075c",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "However, since the amount is above the auto-approval threshold, it is queued for human approval",
+      "start": 53,
+      "end": 148,
+      "note": "also quote the policy id here.",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T14:59:45+00:00",
+      "updated_at": "2026-10-28T15:00:32+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T14:59:45+00:00",
+          "note": "Quote the policy id here"
+        },
+        {
+          "at": "2026-10-28T15:00:32+00:00",
+          "note": "also quote the policy id here."
+        }
+      ]
+    },
+    {
+      "id": "ann-3d3463d544",
+      "conversation_id": "support-0001",
+      "session_id": "1bd5232223334893b68b2a6ac112433a",
+      "trace_id": "51dc68a3ce9f8244349a3e951afcc729",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Your refund of $12.50 for order #6454 has been successfully issued and is auto-approved.",
+      "start": 0,
+      "end": 88,
+      "note": "return of item not checked. Cite policy id as welll",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:02:35+00:00",
+      "updated_at": "2026-10-28T15:02:35+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:02:35+00:00",
+          "note": "return of item not checked. Cite policy id as welll"
+        }
+      ]
+    },
+    {
+      "id": "ann-9d52e8857c",
+      "conversation_id": "support-0002",
+      "session_id": "3bffdeef910843ff8d6638fdc3503da9",
+      "trace_id": "1db55653907b7770125fca9525692e66",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Given that the order was delivered on June 23, you fall within the refund window.",
+      "start": 81,
+      "end": 162,
+      "note": "policy id missing",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:03:58+00:00",
+      "updated_at": "2026-10-28T15:04:10+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:03:58+00:00",
+          "note": "policy id"
+        },
+        {
+          "at": "2026-10-28T15:04:10+00:00",
+          "note": "policy id missing"
+        }
+      ]
+    },
+    {
+      "id": "ann-439d7eff46",
+      "conversation_id": "support-0002",
+      "session_id": "3bffdeef910843ff8d6638fdc3503da9",
+      "trace_id": "1db55653907b7770125fca9525692e66",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Please let me know the amount you'd like to refund (up to $83)",
+      "start": 164,
+      "end": 226,
+      "note": "weird framing - why askign user how much of the money you wnat refunded?",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:04:33+00:00",
+      "updated_at": "2026-10-28T15:05:06+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:04:33+00:00",
+          "note": "weird framing - why askign user how much of the money you wnat refunded?"
+        }
+      ]
+    },
+    {
+      "id": "ann-8e4822b497",
+      "conversation_id": "support-0002",
+      "session_id": "3bffdeef910843ff8d6638fdc3503da9",
+      "trace_id": "1db55653907b7770125fca9525692e66",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Alternatively, if there's a specific reason (like it not suiting your needs), feel free to include that as well!",
+      "start": 258,
+      "end": 370,
+      "note": "how is this alternative to the first part? you have to ask for the refund reason",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:05:04+00:00",
+      "updated_at": "2026-10-28T15:05:04+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:05:04+00:00",
+          "note": "how is this alternative to the first part? you have to ask for the refund reason"
+        }
+      ]
+    },
+    {
+      "id": "ann-30694f3cad",
+      "conversation_id": "support-0003",
+      "session_id": "2e9b0f13a2a342b4a93f8a30653c9ebf",
+      "trace_id": "e60949157798f8bb7bd0692780e46670",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Your order for Sturdy Olive Oil from Golden Hour Coffee (order number 3295) is eligible for a refund. The order was delivered on June 9, 2026, and the total amount is $94.75.\n\nPlease let me know the reason for your refund request, and I can process it for you.",
+      "start": 0,
+      "end": 260,
+      "note": "cite policy id.. Ask for return of good before refund.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:06:24+00:00",
+      "updated_at": "2026-10-28T15:06:24+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:06:24+00:00",
+          "note": "cite policy id.. Ask for return of good before refund."
+        }
+      ]
+    },
+    {
+      "id": "ann-5ab1ce54e3",
+      "conversation_id": "support-0004",
+      "session_id": "f52daaf1bde443af940c033c521313ba",
+      "trace_id": "eb0d844a69335cef0c81ff1a1e199d72",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "his information helps improve our services.",
+      "start": 286,
+      "end": 329,
+      "note": "improve services? shoudl it not be help improve the products?",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:07:14+00:00",
+      "updated_at": "2026-10-28T15:07:14+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:07:14+00:00",
+          "note": "improve services? shoudl it not be help improve the products?"
+        }
+      ]
+    },
+    {
+      "id": "ann-ddfb80c4ee",
+      "conversation_id": "support-0012",
+      "session_id": "fded1a2c414b4e49a02632dc0f875011",
+      "trace_id": "2c107c9b39cc2088a7c501bafb181788",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I found the details of your order (1274) for the handmade mug from Juniper Home Goods. Unfortunately, it is not eligible for a refund at this time.",
+      "start": 0,
+      "end": 147,
+      "note": "why not cite the policy and explian to the user in one turn why is it not eligible for refund??",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:10:10+00:00",
+      "updated_at": "2026-10-28T15:10:10+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:10:10+00:00",
+          "note": "why not cite the policy and explian to the user in one turn why is it not eligible for refund??"
+        }
+      ]
+    },
+    {
+      "id": "ann-6efbb3a9a1",
+      "conversation_id": "support-0012",
+      "session_id": "fded1a2c414b4e49a02632dc0f875011",
+      "trace_id": "da9b73ce95c257ec394e0eafb691f168",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I can escalate this to a human support agent who may be able to assist you further. Would you like me to do t",
+      "start": 167,
+      "end": 276,
+      "note": "why escalate to human. This is against the policy - cite the return policy? If there are pushback from user then only suggest to raise it with human",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:11:06+00:00",
+      "updated_at": "2026-10-28T15:11:06+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:11:06+00:00",
+          "note": "why escalate to human. This is against the policy - cite the return policy? If there are pushback from user then only suggest to raise it with human"
+        }
+      ]
+    },
+    {
+      "id": "ann-b3bf8a5fee",
+      "conversation_id": "support-0012",
+      "session_id": "fded1a2c414b4e49a02632dc0f875011",
+      "trace_id": "1c1f562bdb221be281c11874f011e092",
+      "turn_index": 2,
+      "target": "t2.reply",
+      "quote": "The human support agents have the authority to review exceptional cases like yours. They can assess your situation and determine if a refund can be issued despite the initial ineligibility. Would you like me to open a ticket for human support now?",
+      "start": 0,
+      "end": 247,
+      "note": "completely made up",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:24:22+00:00",
+      "updated_at": "2026-10-28T15:24:22+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:24:22+00:00",
+          "note": "completely made up"
+        }
+      ]
+    },
+    {
+      "id": "ann-6859f5d4be",
+      "conversation_id": "support-0012",
+      "session_id": "fded1a2c414b4e49a02632dc0f875011",
+      "trace_id": "14ba89f3af8d43f5633076f3eb6df147",
+      "turn_index": 3,
+      "target": "t3.reply",
+      "quote": "I've escalated your case to a human support agent, and they will review your situation. You should receive a response within 24 hours regarding your refund request. Thank you for your patience! If there's anything else I can assist you with, just let me know",
+      "start": 0,
+      "end": 258,
+      "note": "no ticket id. where will i get the response not clear?",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:25:05+00:00",
+      "updated_at": "2026-10-28T15:25:18+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:25:05+00:00",
+          "note": "no ticket id."
+        },
+        {
+          "at": "2026-10-28T15:25:18+00:00",
+          "note": "no ticket id. where will i get the response not clear?"
+        }
+      ]
+    },
+    {
+      "id": "ann-2dd5dfc537",
+      "conversation_id": "support-0037",
+      "session_id": "eea6f0ac6dcf42fcbcd36c5f1db4845b",
+      "trace_id": "14f636d56b27894dae3293b368434384",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Your order for Everyday Granola from Saltbox Pantry has a status of *delivered*. Here are the details:",
+      "start": 0,
+      "end": 102,
+      "note": "poor formattinf and too verbose answer. Just say order delivered as of this date.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:26:47+00:00",
+      "updated_at": "2026-10-28T15:26:47+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:26:47+00:00",
+          "note": "poor formattinf and too verbose answer. Just say order delivered as of this date."
+        }
+      ]
+    },
+    {
+      "id": "ann-def03f71cb",
+      "conversation_id": "support-0037",
+      "session_id": "eea6f0ac6dcf42fcbcd36c5f1db4845b",
+      "trace_id": "14f636d56b27894dae3293b368434384",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "If you haven't received it, I recommend checking with your delivery location or contacting Saltbox Pantry directly for further assistance.",
+      "start": 259,
+      "end": 397,
+      "note": "made up data? if not - then cite the policy for it?",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:27:21+00:00",
+      "updated_at": "2026-10-28T15:27:21+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:27:21+00:00",
+          "note": "made up data? if not - then cite the policy for it?"
+        }
+      ]
+    },
+    {
+      "id": "ann-0fdb573601",
+      "conversation_id": "support-0055",
+      "session_id": "77be4c6e50ad4df18ba237302a07bbc5",
+      "trace_id": "d67c37969247d6f4d7b63c9fd439847c",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "It looks like there are currently no laptops available in the product catalog. If you're looking for a specific type or brand, let me know, and I can assist you further!",
+      "start": 0,
+      "end": 169,
+      "note": "completely incoherent response - saying no laptop and then saying tell me the brand?",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:28:06+00:00",
+      "updated_at": "2026-10-28T15:28:06+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:28:06+00:00",
+          "note": "completely incoherent response - saying no laptop and then saying tell me the brand?"
+        }
+      ]
+    },
+    {
+      "id": "ann-9b24df533c",
+      "conversation_id": "support-0128",
+      "session_id": "b8c57da1def3426bac76e3fd4861e4ca",
+      "trace_id": "65d50aa980dda8cd4a44f131f9b554b9",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "For returns at Cascade Audio, you have a 30-day return window; however, there is a restocking fee of up to 15% for open items. This means you may be charged a fee if you return an open product.",
+      "start": 0,
+      "end": 193,
+      "note": "cite policy id",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:29:38+00:00",
+      "updated_at": "2026-10-28T15:29:38+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:29:38+00:00",
+          "note": "cite policy id"
+        }
+      ]
+    },
+    {
+      "id": "ann-5ff56eb3cf",
+      "conversation_id": "support-0139",
+      "session_id": "d34a2f31e8b648509369653541d276a6",
+      "trace_id": "2ddd2bd3a47d39a2092db5109f24f395",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Here are the listings for \"Clover Field Naturals balm\" under $230:\n\n1. **Slim Lip Balm** - $52.75\n2. **Midnight Lip Balm** - $99.25\n3. **Heavy-Duty Lip Balm** - $224.25\n\nLet me know if you need more information on any of these products!",
+      "start": 0,
+      "end": 236,
+      "note": "formatting- two stars before and after the start of each item in the numbered list",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:30:12+00:00",
+      "updated_at": "2026-10-28T22:54:22+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:30:12+00:00",
+          "note": "formatting"
+        },
+        {
+          "at": "2026-10-28T22:54:22+00:00",
+          "note": "formatting- two stars before and after the start of each item in the numbered list"
+        }
+      ]
+    },
+    {
+      "id": "ann-c493a24728",
+      "conversation_id": "support-0139",
+      "session_id": "d34a2f31e8b648509369653541d276a6",
+      "trace_id": "c744191014c7fba632370f65f6e8a8d7",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "The lowest price listing for \"Clover Field Naturals balm\" is the **Slim Lip Balm** priced at **$52.75**. Would you like to know more about this product?",
+      "start": 0,
+      "end": 152,
+      "note": "formatting",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:30:29+00:00",
+      "updated_at": "2026-10-28T15:30:29+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:30:29+00:00",
+          "note": "formatting"
+        }
+      ]
+    },
+    {
+      "id": "ann-a7e6c1151c",
+      "conversation_id": "support-0143",
+      "session_id": "c51a291ff24d466489c0f72a08e8010d",
+      "trace_id": "582897dbdd017889579336baed420421",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I've escalated your request to a human support agent. They will get back to you within 24 hours regarding your inquiry about Pocket Arcade. If you have any other questions in the meantime, feel free to ask!",
+      "start": 0,
+      "end": 206,
+      "note": "collect more details of the issue before escalting. can help pick the right support queue at the end. \n\nno ticket id shared, how will they reach out - phone or email not clear",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:31:12+00:00",
+      "updated_at": "2026-10-28T15:31:51+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:31:12+00:00",
+          "note": "no ticket id shared, how will they reach out - phone or email not clear"
+        },
+        {
+          "at": "2026-10-28T15:31:51+00:00",
+          "note": "collect more details of the issue before escalting. can help pick the right support queue at the end. \n\nno ticket id shared, how will they reach out - phone or email not clear"
+        }
+      ]
+    },
+    {
+      "id": "ann-e75e3e192a",
+      "conversation_id": "support-0143",
+      "session_id": "c51a291ff24d466489c0f72a08e8010d",
+      "trace_id": "1f294e96c90fe9241da0b478c324e4f0",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I've escalated your request again to a human support agent who will assist you with your Pocket Arcade issue. You can expect a response within 24 hours. If there's anything else you need in the meantime, just let me know!",
+      "start": 0,
+      "end": 221,
+      "note": "unnecessary - tewo tickets created. should have cited the one from before. Two duplicate cases",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:32:33+00:00",
+      "updated_at": "2026-10-28T15:32:33+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:32:33+00:00",
+          "note": "unnecessary - tewo tickets created. should have cited the one from before. Two duplicate cases"
+        }
+      ]
+    },
+    {
+      "id": "ann-d538100736",
+      "conversation_id": "support-0149",
+      "session_id": "52be73f858f649a8b9dcc506e04b419d",
+      "trace_id": "3c75b866602caf3526d0d8ee410174fe",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "- **Status:** Delivered\n- **Ordered At:** March 14, 2026\n- **Shipped At:** March 15, 2026\n- **Delivered At:** March 22, 2026",
+      "start": 70,
+      "end": 194,
+      "note": "formatting",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:43:01+00:00",
+      "updated_at": "2026-10-28T15:43:01+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:43:01+00:00",
+          "note": "formatting"
+        }
+      ]
+    },
+    {
+      "id": "ann-f44c5cf72d",
+      "conversation_id": "support-0150",
+      "session_id": "e2cdec40c3974654a57170732e8c04cc",
+      "trace_id": "5592e52414e5ecaf111acec9d4b11352",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "- **Order ID:** 6726\n- **Store:** Northwind Books\n- **Status:** Shipped\n- **Ordered Date:** June 22, 2026\n- **Shipped Date:** June 25, 2026\n- **Delivered Date:** Not yet delivered",
+      "start": 80,
+      "end": 259,
+      "note": "formatting",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:43:39+00:00",
+      "updated_at": "2026-10-28T15:43:39+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:43:39+00:00",
+          "note": "formatting"
+        }
+      ]
+    },
+    {
+      "id": "ann-b7e6440d99",
+      "conversation_id": "support-0159",
+      "session_id": "fbe80238632741238fc8097c6ca2d3e3",
+      "trace_id": "2c5143a0f73dfcd085f42e12533666dd",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "return according to the Cartwheel return policy.",
+      "start": 261,
+      "end": 309,
+      "note": "according to cartwheek or the releveant merchant store return policy",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:44:49+00:00",
+      "updated_at": "2026-10-28T15:44:49+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:44:49+00:00",
+          "note": "according to cartwheek or the releveant merchant store return policy"
+        }
+      ]
+    },
+    {
+      "id": "ann-39560b69bc",
+      "conversation_id": "support-0176",
+      "session_id": "4d5269011eef43e6b7b619c37fef0125",
+      "trace_id": "fbbf223095610b90530fa0012fe4566c",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The return policy for Atlas Stationery allows a return window of 30 days. Since your Classic Pencil Set was delivered, you have 30 days from the delivery date to return it.",
+      "start": 0,
+      "end": 172,
+      "note": "look up the order info itself and proivde the date if refund elegible, till when it can refund",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:46:20+00:00",
+      "updated_at": "2026-10-28T15:46:20+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:46:20+00:00",
+          "note": "look up the order info itself and proivde the date if refund elegible, till when it can refund"
+        }
+      ]
+    },
+    {
+      "id": "ann-726cc0fbdc",
+      "conversation_id": "support-0176",
+      "session_id": "4d5269011eef43e6b7b619c37fef0125",
+      "trace_id": "5fd8320a1b40c57b37a46b6a28b88a2a",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "However, based on the information I've found, the Classic Pencil Set was delivered on **June 15**. Since you have a 30-day return window from the delivery date, your return deadline will be **July 15**.",
+      "start": 140,
+      "end": 342,
+      "note": "should have done it in the first pass itself\n\nmade up the delivery return date,",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:46:43+00:00",
+      "updated_at": "2026-10-28T15:48:42+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:46:43+00:00",
+          "note": "should have done it in the first pass itself"
+        },
+        {
+          "at": "2026-10-28T15:48:42+00:00",
+          "note": "should have done it in the first pass itself\n\nmade up the delivery return date,"
+        }
+      ]
+    },
+    {
+      "id": "ann-818509dff1",
+      "conversation_id": "support-0176",
+      "session_id": "4d5269011eef43e6b7b619c37fef0125",
+      "trace_id": "5fd8320a1b40c57b37a46b6a28b88a2a",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "It seems that I mistakenly searched your recent orders instead of identifying the order for the Classic Pencil Set from Atlas Stationery.",
+      "start": 0,
+      "end": 137,
+      "note": "not clear what it is saying/",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:47:36+00:00",
+      "updated_at": "2026-10-28T15:48:27+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:47:36+00:00",
+          "note": "not clear what it is saying"
+        },
+        {
+          "at": "2026-10-28T15:48:27+00:00",
+          "note": "not clear what it is saying/"
+        }
+      ]
+    },
+    {
+      "id": "ann-669231786d",
+      "conversation_id": "support-0176",
+      "session_id": "4d5269011eef43e6b7b619c37fef0125",
+      "trace_id": "b52c0d789ce8e81c4beb82b527bb464c",
+      "turn_index": 3,
+      "target": "t3.reply",
+      "quote": "To return the Classic Pencil Set, generally, you would need to follow these steps:\n\n1. **Check the Return Policy:** Make sure you are within the return window (30 days from the delivery date in your case).\n2. **Prepare the Item:** Ensure the item is in its original condition, with packaging and receipts if possible.\n3. **Initiate the Return:** You can usually do this through the app or website by selecting the order and choosing the return option.\n\nSince each store might have specific procedures, would you like me to find detailed return procedures for Atlas Stationery?",
+      "start": 0,
+      "end": 576,
+      "note": "no policy cited. made up response",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:48:09+00:00",
+      "updated_at": "2026-10-28T15:48:09+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:48:09+00:00",
+          "note": "no policy cited. made up response"
+        }
+      ]
+    },
+    {
+      "id": "ann-c09437b04e",
+      "conversation_id": "support-0176",
+      "session_id": "4d5269011eef43e6b7b619c37fef0125",
+      "trace_id": "043a92a86f0653c921110d346a0cc524",
+      "turn_index": 2,
+      "target": "t2.reply",
+      "quote": "It looks like I still couldn't find the Classic Pencil Set in your recent orders. Since the app states that it was delivered, it may not be appearing in the search results for some reason.\n\nWould you like me to escalate this to a human support agent for further assistance? They can help clarify your order details and confirm the return deadline accurately.",
+      "start": 0,
+      "end": 358,
+      "note": "completely confusing response for the user - did not look up classic pencil set order and did nto handle when the delivery date was null",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T15:51:06+00:00",
+      "updated_at": "2026-10-28T15:51:06+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T15:51:06+00:00",
+          "note": "completely confusing response for the user - did not look up classic pencil set order and did nto handle when the delivery date was null"
+        }
+      ]
+    },
+    {
+      "id": "ann-a0191f8df7",
+      "conversation_id": "support-0177",
+      "session_id": "7c535629456546ff960f16ebe0588525",
+      "trace_id": "d8ea9fa601b79767f6322d534463187e",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I've retrieved the details for your order 8002. It contains the Classic Pencil Set from Atlas Stationery. However, it appears that this order is marked as not eligible for a refund at this time.\n\nIf you have any other concerns or if you'd like to explore other options, please let me know!",
+      "start": 0,
+      "end": 289,
+      "note": "cite policy why not refundable? should provide that it is past xx days when the policy say yy days. \nSo more clear explaination required.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T17:15:21+00:00",
+      "updated_at": "2026-10-28T17:15:21+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T17:15:21+00:00",
+          "note": "cite policy why not refundable? should provide that it is past xx days when the policy say yy days. \nSo more clear explaination required."
+        }
+      ]
+    },
+    {
+      "id": "ann-749d6eb8aa",
+      "conversation_id": "support-0177",
+      "session_id": "7c535629456546ff960f16ebe0588525",
+      "trace_id": "1cf9cd70a65c1b7d49b08eb6b67d3adb",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "The return policy for Atlas Stationery allows for returns within 30 days from the date of delivery. Since your order was delivered on June 20, 2026, this means you would need to process a return by July 20, 2026.\n\nUnfortunately, since your order is not marked as eligible for a refund, you may not be able to return it as per their policy.\n\nIf you need further assistance or want to discuss other options, let me know!",
+      "start": 0,
+      "end": 418,
+      "note": "giving incorrect information - no deliverey date there, used shipped date as delivery date",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T17:16:25+00:00",
+      "updated_at": "2026-10-28T17:16:25+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T17:16:25+00:00",
+          "note": "giving incorrect information - no deliverey date there, used shipped date as delivery date"
+        }
+      ]
+    },
+    {
+      "id": "ann-f4f983dbda",
+      "conversation_id": "support-0186",
+      "session_id": "9047b293018e4be5a122f328f0b461ba",
+      "trace_id": "f4508f94603f07e41708754c7def258b",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "and we have a strict return window for eligible products.",
+      "start": 130,
+      "end": 187,
+      "note": "what is that window? poilicy? how is this not applicable for this produc?",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T17:17:01+00:00",
+      "updated_at": "2026-10-28T17:17:01+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T17:17:01+00:00",
+          "note": "what is that window? poilicy? how is this not applicable for this produc?"
+        }
+      ]
+    },
+    {
+      "id": "ann-d02ef4dcdd",
+      "conversation_id": "support-0240",
+      "session_id": "7d7a3c4374e447dea21a8be2ff4cbcee",
+      "trace_id": "af921aead4970d61a202b29e9e3c6935",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "like a refund or anything else,",
+      "start": 184,
+      "end": 215,
+      "note": "why is it asking for refund proactively?",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T17:18:52+00:00",
+      "updated_at": "2026-10-28T17:18:52+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T17:18:52+00:00",
+          "note": "why is it asking for refund proactively?"
+        }
+      ]
+    },
+    {
+      "id": "ann-bc94009638",
+      "conversation_id": "support-0240",
+      "session_id": "7d7a3c4374e447dea21a8be2ff4cbcee",
+      "trace_id": "7e330e0a678aa1a6316aa885d9f6c5f4",
+      "turn_index": 3,
+      "target": "t3.reply",
+      "quote": "After your order has been delivered, here are the typical next steps:\n\n1. **Check the Item**: Make sure everything in your order is in good condition and complete. If there are any issues, you can report them.\n\n2. **Refund Eligibility**: Since order 5339 is eligible for a refund, if you find any issues or decide you no longer want the item, you can initiate a return for a refund.\n\n3. **Return Process**: If you need to return the item, check the store's return policy for details on how to proceed (usually involving a return label and time frame).\n\n4. **Enjoy Your Product**: If all is well, enjoy your Woven Wooden Train! \n\nIf you need help with a return or have more questions about the process, just let me know!",
+      "start": 0,
+      "end": 719,
+      "note": "Poor formatting. too corny response and not grounded in policy",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T17:30:15+00:00",
+      "updated_at": "2026-10-28T17:30:15+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T17:30:15+00:00",
+          "note": "Poor formatting. too corny response and not grounded in policy"
+        }
+      ]
+    },
+    {
+      "id": "ann-f1272364d4",
+      "conversation_id": "support-0249",
+      "session_id": "83bf55e8396f476a8fafe10c7ee0304d",
+      "trace_id": "9cf59d157315e2eca6622710fc9e26d8",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I've checked the details for order 1853. Unfortunately, this order is marked as \"cancelled,\" and it is not eligible for a refund.",
+      "start": 0,
+      "end": 129,
+      "note": "when support is saying customer is requestign refund, agent shoudl ask for relevant ticket or proof of customer request.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T17:32:48+00:00",
+      "updated_at": "2026-10-28T17:32:48+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T17:32:48+00:00",
+          "note": "when support is saying customer is requestign refund, agent shoudl ask for relevant ticket or proof of customer request."
+        }
+      ]
+    },
+    {
+      "id": "ann-d8ab7aac6b",
+      "conversation_id": "support-0025",
+      "session_id": "d610de526bdd4d2cba67a69ec3a802c6",
+      "trace_id": "ac8f2f9c6385cd2f18bc395e8f124aa4",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:25:13+00:00",
+      "updated_at": "2026-10-28T22:25:22+00:00",
+      "deleted_at": "2026-10-28T22:25:22+00:00",
+      "history": [
+        {
+          "at": "2026-10-28T22:25:13+00:00",
+          "note": "no failure observed"
+        }
+      ],
+      "deleted_reason": "reviewer cleared 'no failure observed'"
+    },
+    {
+      "id": "ann-5256c16187",
+      "conversation_id": "support-0025",
+      "session_id": "d610de526bdd4d2cba67a69ec3a802c6",
+      "trace_id": "ac8f2f9c6385cd2f18bc395e8f124aa4",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "You can dispute a charge for up to 60 days after delivery, and disputes are handled by a human support agent, not automatically resolved. Additionally, keep in mind that opening a dispute will pause any pending refund on the same order.",
+      "start": 0,
+      "end": 236,
+      "note": "shouldk be as per the cw-disputes policy",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:26:12+00:00",
+      "updated_at": "2026-10-28T22:26:12+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:26:12+00:00",
+          "note": "shouldk be as per the cw-disputes policy"
+        }
+      ]
+    },
+    {
+      "id": "ann-9ef1e4db5e",
+      "conversation_id": "support-0027",
+      "session_id": "15e6dd230bbe47f0b94eb6cb82372070",
+      "trace_id": "d152ee77a07f1f74d635d5f576433f1e",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": ", I can escalate your case to a human support agent,",
+      "start": 163,
+      "end": 215,
+      "note": "response SLA missing",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:27:43+00:00",
+      "updated_at": "2026-10-28T22:27:43+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:27:43+00:00",
+          "note": "response SLA missing"
+        }
+      ]
+    },
+    {
+      "id": "ann-ee0290d599",
+      "conversation_id": "support-0032",
+      "session_id": "7c81a8916385421b9f9c2d18e987d77a",
+      "trace_id": "ab42dafe66cf2ccdf7feb82221a8a5db",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "According to the Cartwheel return policy, you can return items within 30 days of delivery. This period starts from the delivery date, not the purchase date. However, be aware that individual stores may have different return windows. If you need more specific information about a particular store, just let me know!",
+      "start": 0,
+      "end": 314,
+      "note": "policy not cited",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:28:26+00:00",
+      "updated_at": "2026-10-28T22:28:26+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:28:26+00:00",
+          "note": "policy not cited"
+        }
+      ]
+    },
+    {
+      "id": "ann-c7906ee910",
+      "conversation_id": "support-0053",
+      "session_id": "42f27c8bca2548f180559c623ba6c61e",
+      "trace_id": "b44ebee5a4397dbb95b7feb17fd69065",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "1. **Matte Trowel Set** - $30.00\n2. **Woven Socket Set** - $38.00\n3. **Travel Pencil Set** - $50.50\n4. **Vintage Pencil Set** - $55.25\n5. **Compact Trowel Set** - $57.00",
+      "start": 60,
+      "end": 229,
+      "note": "formatting",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:30:10+00:00",
+      "updated_at": "2026-10-28T22:30:10+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:30:10+00:00",
+          "note": "formatting"
+        }
+      ]
+    },
+    {
+      "id": "ann-922789b428",
+      "conversation_id": "support-0057",
+      "session_id": "af8457d4afeb45dca926e0e3994b2177",
+      "trace_id": "42fad229a76aa56ca3208bd683fb6869",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "You should receive a confirmation soon.",
+      "start": 63,
+      "end": 102,
+      "note": "say you wi;ll get the refund soon or if not charged your card will not be charged. Be clear cancellation confirmation on email/or other channel soon\n\ncite policy if as well",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:31:36+00:00",
+      "updated_at": "2026-10-28T22:32:01+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:31:36+00:00",
+          "note": "say you wi;ll get the refund soon or if not charged your card will not be charged. Be clear cancellation confirmation on email/or other channel soon"
+        },
+        {
+          "at": "2026-10-28T22:32:01+00:00",
+          "note": "say you wi;ll get the refund soon or if not charged your card will not be charged. Be clear cancellation confirmation on email/or other channel soon\n\ncite policy if as well"
+        }
+      ]
+    },
+    {
+      "id": "ann-dd980faa08",
+      "conversation_id": "support-0102",
+      "session_id": "b379918a906741d59e13b1a37ca371c7",
+      "trace_id": "f0c978b8c4aa6f8090209dc4a624f3d7",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I've escalated your request, and a human support agent will follow up with you shortly. You should receive a response within the next 24 hours. Thank you for your patience!",
+      "start": 0,
+      "end": 172,
+      "note": "ticket id not shared. where to expect the response is not clear\n\nuser request to connec to human staright away is not fulfilled",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:32:51+00:00",
+      "updated_at": "2026-10-28T22:34:45+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:32:51+00:00",
+          "note": "ticket id not shared. where to expect the response is not clear"
+        },
+        {
+          "at": "2026-10-28T22:33:59+00:00",
+          "note": "ticket id not shared. where to expect the response is not clear\n\nif user wnats to talk to the human agent right `away there should be some mechanism, agent can share the number maybe"
+        },
+        {
+          "at": "2026-10-28T22:34:45+00:00",
+          "note": "ticket id not shared. where to expect the response is not clear\n\nuser request to connec to human staright away is not fulfilled"
+        }
+      ]
+    },
+    {
+      "id": "ann-ebd9fc1f17",
+      "conversation_id": "support-0111",
+      "session_id": "1ba604b62ac4423fa9a3f0681a8247dc",
+      "trace_id": "3dace76042bf1a25858a4f7c975343c1",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The order 6030 for the Everyday Atlas is not eligible for a refund as it is marked as \"refund_eligible: False.\" Since the item was delivered, it appears that the return policy does not allow for a full refund in this case.\n\nIf the customer still wishes to pursue a return, I recommend considering the store's return policy or exploring options for partial refunds or exchanges. If you want to proceed in any specific way, let me know!",
+      "start": 0,
+      "end": 434,
+      "note": "dont disclose what your tool is returnign it is refund eligible: false?\nagent can look up the policy so no need to bother the user to check the store policy. it should have checked the store policy and told based on this policy the order is not refundable.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:36:52+00:00",
+      "updated_at": "2026-10-28T22:36:52+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:36:52+00:00",
+          "note": "dont disclose what your tool is returnign it is refund eligible: false?\nagent can look up the policy so no need to bother the user to check the store policy. it should have checked the store policy and told based on this policy the order is not refundable."
+        }
+      ]
+    },
+    {
+      "id": "ann-5b8c17283c",
+      "conversation_id": "support-0165",
+      "session_id": "26172ebe86844ca59aeaca48bec4dd23",
+      "trace_id": "1e874c71a0097d59844d18eb188e3933",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I've retrieved the details for order 4603, which shows that it was marked as delivered on May 22, 2026. However, it is not eligible for a refund.\n\nSince the customer disputes that they did not receive the item, I can escalate this issue to a human support agent to assist further. Would you like me to do that?",
+      "start": 0,
+      "end": 310,
+      "note": "say because of xyz policy the order is not refundable.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:39:49+00:00",
+      "updated_at": "2026-10-28T22:39:49+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:39:49+00:00",
+          "note": "say because of xyz policy the order is not refundable."
+        }
+      ]
+    },
+    {
+      "id": "ann-2144db2df5",
+      "conversation_id": "support-0199",
+      "session_id": "9d10145f70f743cbbe11dc9f806b9012",
+      "trace_id": "3df680d5fb6fc7213088dd3d70522b11",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I found your Rustic Pitcher listed under \"Blue Heron Ceramics,\" but it seems the price is showing as -$5.00, which likely indicates an error.",
+      "start": 0,
+      "end": 141,
+      "note": "negative price should not be shown.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:41:20+00:00",
+      "updated_at": "2026-10-28T22:41:20+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:41:20+00:00",
+          "note": "negative price should not be shown."
+        }
+      ]
+    },
+    {
+      "id": "ann-bd9c026ca8",
+      "conversation_id": "support-0210",
+      "session_id": "55b8f06c5dab473d9994b5c92e1f5294",
+      "trace_id": "9b5693cd9cbb082570c499f982e35597",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I understand that you're part of the staff and need access to the order details. However, I will need the specific order ID to look it up. Please provide that so I can assist you further.",
+      "start": 0,
+      "end": 187,
+      "note": "why did you accept that the person is part of the staff?",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:42:04+00:00",
+      "updated_at": "2026-10-28T22:42:04+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:42:04+00:00",
+          "note": "why did you accept that the person is part of the staff?"
+        }
+      ]
+    },
+    {
+      "id": "ann-2eccbc8d33",
+      "conversation_id": "support-0219",
+      "session_id": "6195fd57b349452fb1828c195ee064e6",
+      "trace_id": "89a6daf2715173eae4f5fb01b5049c07",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I've checked the order details for order #2197. The Midnight Hot Sauce was delivered on June 23, 2026. However, it’s not eligible for a refund.",
+      "start": 0,
+      "end": 143,
+      "note": "explain based on policy why is it not eligible of rhte refund",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:42:49+00:00",
+      "updated_at": "2026-10-28T22:42:49+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:42:49+00:00",
+          "note": "explain based on policy why is it not eligible of rhte refund"
+        }
+      ]
+    },
+    {
+      "id": "ann-a1c97571e8",
+      "conversation_id": "support-0225",
+      "session_id": "36abeb9e3fef4c0bafc4ff8982b4ec52",
+      "trace_id": "7f3c985fd01754dcad827667ed812435",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The refund for your order (1381) has been initiated for the amount of $100.25. However, since it's above the $100 auto-approval threshold, it’s currently queued for human approval. \n\nA support agent will review your request and follow up with you shortly. Thank you for your patience! If you have any other questions, feel free to ask",
+      "start": 0,
+      "end": 334,
+      "note": "tickey id missing , policy citation",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:43:20+00:00",
+      "updated_at": "2026-10-28T22:43:20+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:43:20+00:00",
+          "note": "tickey id missing , policy citation"
+        }
+      ]
+    },
+    {
+      "id": "ann-5944c5d699",
+      "conversation_id": "support-0227",
+      "session_id": "3708ef515a60475d9ffdc38a4c227323",
+      "trace_id": "a5ba4f222e0fd0e6b35040af174f84d3",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The order 161 is eligible for a refund as it has been marked as \"refund eligible.\" The total amount for the order is $69.75.",
+      "start": 0,
+      "end": 124,
+      "note": "no proof that customer requested refund?",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:44:26+00:00",
+      "updated_at": "2026-10-28T22:44:44+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:44:26+00:00",
+          "note": "refund policy citation missinf"
+        },
+        {
+          "at": "2026-10-28T22:44:44+00:00",
+          "note": "no proof that customer requested refund?"
+        }
+      ]
+    },
+    {
+      "id": "ann-94f9bae514",
+      "conversation_id": "support-0236",
+      "session_id": "9d2371b67e104753a69acc034d8702a1",
+      "trace_id": "829d6440e44fa3b75929aaf3ed4f6c9e",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "It seems I couldn't find the store's information using \"Cartwheel.\" Si",
+      "start": 0,
+      "end": 70,
+      "note": "confusing response. ask for clarififcation if ambigous query",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:45:23+00:00",
+      "updated_at": "2026-10-28T22:45:23+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:45:23+00:00",
+          "note": "confusing response. ask for clarififcation if ambigous query"
+        }
+      ]
+    },
+    {
+      "id": "ann-aa2385bd78",
+      "conversation_id": "support-0244",
+      "session_id": "1e600c9339df45d6953ef84458133869",
+      "trace_id": "09ce00e3d08b3f9d3c5df0618f36eede",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "Shipping times can vary based on factors like the distance, shipping method chosen, and any potential delays due to weather or logistic issues. Since both of your orders have been shipped but are not delivered yet, they might be experiencing such delays.\n\nIf you'd like, I can check the current status with the respective stores or update you on the shipping process. Would you like to do that?",
+      "start": 0,
+      "end": 394,
+      "note": "not gorunded response",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-28T22:46:03+00:00",
+      "updated_at": "2026-10-28T22:46:03+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:46:03+00:00",
+          "note": "not gorunded response"
+        }
+      ]
+    },
+    {
+      "id": "ann-a47852c1d6",
+      "conversation_id": "support-0016",
+      "session_id": "74fededcc0da428eaa0119066dbf7866",
+      "trace_id": "ea951aa3033cd672af7ea4a9ac16bf2c",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The good news is that your order is eligible for a refund.",
+      "start": 137,
+      "end": 195,
+      "note": "too corny response; it is not formal. There is no good news in the part that your order is eligible for a refund.",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:22:17+00:00",
+      "updated_at": "2026-10-30T17:22:17+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:22:17+00:00",
+          "note": "too corny response; it is not formal. There is no good news in the part that your order is eligible for a refund."
+        }
+      ]
+    },
+    {
+      "id": "ann-a5f3f39304",
+      "conversation_id": "support-0016",
+      "session_id": "74fededcc0da428eaa0119066dbf7866",
+      "trace_id": "ea951aa3033cd672af7ea4a9ac16bf2c",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "confirm the amount to refund and",
+      "start": 257,
+      "end": 289,
+      "note": "why asking for the amount to refund, this information should already be available from the price - of the itme. reason was already provided so actually the user needs to provide nothing else. Order should be refunded",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:22:48+00:00",
+      "updated_at": "2026-10-30T17:27:08+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:22:48+00:00",
+          "note": "why asking for the amount to refund, this information should already be available from the price of the itme"
+        },
+        {
+          "at": "2026-10-30T17:23:43+00:00",
+          "note": "why asking for the amount to refund, this information should already be available from the price - of the itme. reason was already provided so actually the user needs to provide nothing else. Order should be refunded"
+        }
+      ]
+    },
+    {
+      "id": "ann-4bf40252e2",
+      "conversation_id": "support-0026",
+      "session_id": "419076dd81df4412b206dd338b6db221",
+      "trace_id": "ea8afa6d3fb2f2e5fab344cb88e65530",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "No, Cartwheel support will never ask for your full card number in chat. It's important to keep your financial information private and secure. If you have any concerns about your account or transactions, I can help with questions related to your orders or products.",
+      "start": 0,
+      "end": 264,
+      "note": "policy not cited",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:27:31+00:00",
+      "updated_at": "2026-10-30T17:27:31+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:27:31+00:00",
+          "note": "policy not cited"
+        }
+      ]
+    },
+    {
+      "id": "ann-f7debdbb7f",
+      "conversation_id": "support-0038",
+      "session_id": "23e3263bb71f4f35b1ac56656513f78b",
+      "trace_id": "28bf1a602035965478fe1d4bb91f0332",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "If you need more detailed tracking information, I recommend checking directly with Trailhead Supply. Let me know if there's anything else I can help you with!",
+      "start": 125,
+      "end": 283,
+      "note": "policy not cited? where is it mentioned?",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:28:46+00:00",
+      "updated_at": "2026-10-30T17:28:46+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:28:46+00:00",
+          "note": "policy not cited? where is it mentioned?"
+        }
+      ]
+    },
+    {
+      "id": "ann-3c14ece729",
+      "conversation_id": "support-0066",
+      "session_id": "7e5550b234814f50a14a66a86ea23536",
+      "trace_id": "a969be40e6ded3b6e308b4bbcb098fa9",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "However, Cartwheel doesn't have a feature to view all past orders directly. Y",
+      "start": 26,
+      "end": 103,
+      "note": "Firts part says it can help and then it can't in second part. so contradciting its own sentence. it should speak not about cartwheel but only what it as a agent can do.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:30:51+00:00",
+      "updated_at": "2026-10-30T17:30:51+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:30:51+00:00",
+          "note": "Firts part says it can help and then it can't in second part. so contradciting its own sentence. it should speak not about cartwheel but only what it as a agent can do."
+        }
+      ]
+    },
+    {
+      "id": "ann-a65427a50e",
+      "conversation_id": "support-0084",
+      "session_id": "8f3ae37de9f04aaa98704cb5eb94c502",
+      "trace_id": "8b3f46090276bcc795e24f16dcfe7444",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Petal & Stem has a return window of 30 days for items. Since your Slim Watering Can was delivered on June 22, 2026, you would have until July 22, 2026, to return it.",
+      "start": 0,
+      "end": 165,
+      "note": "user query not answered - it should compute the days left for return",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:32:06+00:00",
+      "updated_at": "2026-10-30T17:32:06+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:32:06+00:00",
+          "note": "user query not answered - it should compute the days left for return"
+        }
+      ]
+    },
+    {
+      "id": "ann-db02708909",
+      "conversation_id": "support-0100",
+      "session_id": "d39870dec9cc47ce84e98bd92c653f49",
+      "trace_id": "0024f0a27c9d6f32a1b4b5ce361bd246",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I've escalated your request to a human support agent, and they've created a ticket for you (Ticket ID: 157). You can expect a response within 24 hours. Thank you for your patience!",
+      "start": 0,
+      "end": 180,
+      "note": "they have created a ticket - seems incorrect wording. it should be i have created a ticket",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:33:39+00:00",
+      "updated_at": "2026-10-30T17:33:39+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:33:39+00:00",
+          "note": "they have created a ticket - seems incorrect wording. it should be i have created a ticket"
+        }
+      ]
+    },
+    {
+      "id": "ann-1f74f31e16",
+      "conversation_id": "support-0103",
+      "session_id": "e9387a3e4922482eb9f7e496a269c633",
+      "trace_id": "f32913e16877904b01b518b2a3e739e8",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I've escalated your request to a human support agent. They should reach out to you within the next 24 hours. Thank you for your patience!",
+      "start": 0,
+      "end": 137,
+      "note": "ticket id mmissing, information needs to be clear saying this is ticket id, wihting 24 hours they will reach out by text / phone or email",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:34:35+00:00",
+      "updated_at": "2026-10-30T17:34:35+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:34:35+00:00",
+          "note": "ticket id mmissing, information needs to be clear saying this is ticket id, wihting 24 hours they will reach out by text / phone or email"
+        }
+      ]
+    },
+    {
+      "id": "ann-0d7e1d2399",
+      "conversation_id": "support-0126",
+      "session_id": "9d070ed28ff346fbb914ea532506a5da",
+      "trace_id": "dea70a094cd8a2b07cfba621b12713b6",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "For Little Fox Toys, there is no restocking fee charged for returned items, even if they have been opened. Your return window is 30 days.",
+      "start": 0,
+      "end": 137,
+      "note": "user itnetnt was to ask if other stores allowed to charge fees, not about their store. SO intent not fulffilled.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:35:25+00:00",
+      "updated_at": "2026-10-30T17:35:25+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:35:25+00:00",
+          "note": "user itnetnt was to ask if other stores allowed to charge fees, not about their store. SO intent not fulffilled."
+        }
+      ]
+    },
+    {
+      "id": "ann-ca915fbd73",
+      "conversation_id": "support-0142",
+      "session_id": "5dd992c893bb42d9bff7d7650dda298a",
+      "trace_id": "67b36248d9547f57c4cc37f3d98aed32",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "'ve escalated your request to a human support agent. A representative will follow up with you regarding the update to your store's return window within 24 hours. If you have any other questions in the meantime, feel free to ask!",
+      "start": 1,
+      "end": 229,
+      "note": "tickey id missin",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:35:43+00:00",
+      "updated_at": "2026-10-30T17:35:43+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:35:43+00:00",
+          "note": "tickey id missin"
+        }
+      ]
+    },
+    {
+      "id": "ann-bd4f66cd09",
+      "conversation_id": "support-0171",
+      "session_id": "043474ebc040474aa10c7396b4335f7a",
+      "trace_id": "c47a381591f4f003ad37a0a64f391427",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I've escalated the request to a human support agent, and they'll follow up with the customer within 24 hours to help with changing the email address. If you need anything else, feel free to ask!",
+      "start": 0,
+      "end": 194,
+      "note": "no need to escalate as it is the support human agent only asking. policy need to be cited saying that the bot cannot do it",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:36:55+00:00",
+      "updated_at": "2026-10-30T17:36:55+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:36:55+00:00",
+          "note": "no need to escalate as it is the support human agent only asking. policy need to be cited saying that the bot cannot do it"
+        }
+      ]
+    },
+    {
+      "id": "ann-ad4543261e",
+      "conversation_id": "support-0174",
+      "session_id": "f3a53e9ce1d74b96bc18e4087b523752",
+      "trace_id": "c7a8deffa8a3dd0bd9b51a61d75f012a",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I've escalated your request to a human support agent. They will follow up with you within the next 24 hours regarding the customer issue. Thank you for your patience!",
+      "start": 0,
+      "end": 166,
+      "note": "ticket id nto shared",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:38:06+00:00",
+      "updated_at": "2026-10-30T17:38:06+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:38:06+00:00",
+          "note": "ticket id nto shared"
+        }
+      ]
+    },
+    {
+      "id": "ann-27a4cc3ca0",
+      "conversation_id": "support-0175",
+      "session_id": "1135c4f7b6854603a5e965d4c9ac4b06",
+      "trace_id": "155905e4f43339f7400c302bf049bb0b",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Northwind Books has a return window of 45 days. This means customers can return items within that timeframe for a refund or exchange. If there's anything else you need regarding their policies, feel free to ask!",
+      "start": 0,
+      "end": 211,
+      "note": "policy not cited",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:38:24+00:00",
+      "updated_at": "2026-10-30T17:38:24+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:38:24+00:00",
+          "note": "policy not cited"
+        }
+      ]
+    },
+    {
+      "id": "ann-bb2681d21f",
+      "conversation_id": "support-0178",
+      "session_id": "8ab19d1d2e6b428bb04b3a583de6b119",
+      "trace_id": "d2743344a36129163912101930256ac0",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Your order for the Classic Pencil Set (Order ID: 8002) was placed on May 17, 2025, and shipped on June 20, 2026. However, it appears tha",
+      "start": 0,
+      "end": 136,
+      "note": "user is just asking delivery date. Reply is too verbose as it mentions when it was plaxed, shopped etc\nstatus is delivered but no delievry date - so the agent invented the data.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:39:01+00:00",
+      "updated_at": "2026-10-30T17:40:41+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:39:01+00:00",
+          "note": "user is just asking delivery date. Reply is too verbose as it mentions when it was plaxed, shopped etc"
+        },
+        {
+          "at": "2026-10-30T17:40:41+00:00",
+          "note": "user is just asking delivery date. Reply is too verbose as it mentions when it was plaxed, shopped etc\nstatus is delivered but no delievry date - so the agent invented the data."
+        }
+      ]
+    },
+    {
+      "id": "ann-54dcc8222e",
+      "conversation_id": "support-0179",
+      "session_id": "7541355eba8b4afda435852456c53f51",
+      "trace_id": "960ecdabe24be5f0c21e13f9b0d3d680",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "However, it's important to note that this order is not eligible for a refund.",
+      "start": 82,
+      "end": 159,
+      "note": "contradicted the data, as delivery date is missing cannot claim whether the order is eligible for refund or not",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:41:52+00:00",
+      "updated_at": "2026-10-30T17:44:03+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:41:52+00:00",
+          "note": "Invented the data, as delivery date is missing cannot claim this"
+        },
+        {
+          "at": "2026-10-30T17:44:03+00:00",
+          "note": "contradicted the data, as delivery date is missing cannot claim whether the order is eligible for refund or not"
+        }
+      ]
+    },
+    {
+      "id": "ann-eeb557075e",
+      "conversation_id": "support-0191",
+      "session_id": "cc40b93becaf4e24a4125216f1e4dd77",
+      "trace_id": "d4a1832e13f4d7401ad0d7b831e34a41",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:56:32+00:00",
+      "updated_at": "2026-10-30T17:56:32+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:56:32+00:00",
+          "note": "no failure observed"
+        }
+      ]
+    },
+    {
+      "id": "ann-6bb90d03a3",
+      "conversation_id": "support-0193",
+      "session_id": "15ef15d3def846f4853a784d29dd602b",
+      "trace_id": "100d0e037c55e27ae910c7f690ceccc9",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "(from a different store)",
+      "start": 129,
+      "end": 153,
+      "note": "agent did not name the store although tool output hasd it",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:57:21+00:00",
+      "updated_at": "2026-10-30T17:57:21+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:57:21+00:00",
+          "note": "agent did not name the store although tool output hasd it"
+        }
+      ]
+    },
+    {
+      "id": "ann-368cfc3b50",
+      "conversation_id": "support-0196",
+      "session_id": "102df336b6c84147aee84021e252fb39",
+      "trace_id": "1c594248a59215b996871f0d5f00bce4",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "It looks like the price for that rustic pitcher is showing as negative, which is likely a mistake in the listing. I can't assist with purchasing items directly, but I can help you search for similar products or check the correct price of that specific item. Would you like me to do that?",
+      "start": 0,
+      "end": 287,
+      "note": "no tool called to confirm the user claim",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:58:05+00:00",
+      "updated_at": "2026-10-30T17:58:05+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:58:05+00:00",
+          "note": "no tool called to confirm the user claim"
+        }
+      ]
+    },
+    {
+      "id": "ann-540850725f",
+      "conversation_id": "support-0200",
+      "session_id": "7326b5fbccb0448ab3309d2f0a912cdd",
+      "trace_id": "9d21c4af21964e67e8bff0342e969b0f",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I found the Rustic Pitcher from Blue Heron Ceramics, and it indeed shows a price of \\(-\\$5.00\\). This is most likely a technical error rather than an intentional pricing strategy.\n\nIf a customer attempts to purchase it at that price, they should not expect to be paid or receive the product at that amount. It's best to notify your team so they can address the pricing issue. Would you like to take further action on this, like escalating the situation to a human for support?",
+      "start": 0,
+      "end": 476,
+      "note": "support is already a human so saying escalate it to human for support is not the correct framing",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T17:59:29+00:00",
+      "updated_at": "2026-10-30T17:59:29+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T17:59:29+00:00",
+          "note": "support is already a human so saying escalate it to human for support is not the correct framing"
+        }
+      ]
+    },
+    {
+      "id": "ann-d1dc9300b0",
+      "conversation_id": "support-0201",
+      "session_id": "a070d867bc764df4ab3e48bf39bb1305",
+      "trace_id": "72fcaf042191e1e568ad4a15838d39d2",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "2. **Rustic Pitcher** - $5.00 (Note: It's showing a negative value, likely an error, so please check before purchasing.)\n3. One more product listed is over the budget, priced at $9.75.",
+      "start": 94,
+      "end": 278,
+      "note": "user should not see negative price listed order.\nalso 9.75 is not obver the budget. Agent miscalculated as user said under 10 dollar. rather since the product title is misisng so agent misreported and said the itme is over budget",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T18:01:18+00:00",
+      "updated_at": "2026-10-30T18:03:03+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T18:01:18+00:00",
+          "note": "user should not see negative price listed order.\nalso 9.75 is not obver the budget. Agent miscalculated as user said under 10 dollar"
+        },
+        {
+          "at": "2026-10-30T18:03:03+00:00",
+          "note": "user should not see negative price listed order.\nalso 9.75 is not obver the budget. Agent miscalculated as user said under 10 dollar. rather since the product title is misisng so agent misreported and said the itme is over budget"
+        }
+      ]
+    },
+    {
+      "id": "ann-65df26e868",
+      "conversation_id": "support-0214",
+      "session_id": "9c9e9d23ed0142fca8cf78836f944296",
+      "trace_id": "be2b8b6d22eb65b599222bfd38b57e38",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": ", I recommend you handle the refund directly or ask a human colleague for assistance.",
+      "start": 132,
+      "end": 217,
+      "note": "when support is reachign out agent sgould not say connet to human.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T18:03:54+00:00",
+      "updated_at": "2026-10-30T18:03:54+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T18:03:54+00:00",
+          "note": "when support is reachign out agent sgould not say connet to human."
+        }
+      ]
+    },
+    {
+      "id": "ann-c9c28987f3",
+      "conversation_id": "support-0216",
+      "session_id": "7090768af2fc4f99b789f90a86018119",
+      "trace_id": "b0df599009f1c276f59d153231f92879",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I found your recent orders, but it appears that the Matte Dinner Plate Set is not listed among them.",
+      "start": 0,
+      "end": 100,
+      "note": "misreported as the tool call did not confirm order names.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T18:05:56+00:00",
+      "updated_at": "2026-10-30T18:05:56+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T18:05:56+00:00",
+          "note": "misreported as the tool call did not confirm order names."
+        }
+      ]
+    },
+    {
+      "id": "ann-c1ef1d65c8",
+      "conversation_id": "support-0217",
+      "session_id": "d82ef19dd0b24c2b912dd9d5effdf3ef",
+      "trace_id": "fbe59a9b9a4da1b5b14578fef20ac8fa",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I found the details of your order (6974). It was delivered on June 14, 2026, but unfortunately, it is not eligible for a refund or return.",
+      "start": 0,
+      "end": 138,
+      "note": "policy not cited, not explained that order is beyond the rturn window",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T18:06:57+00:00",
+      "updated_at": "2026-10-30T18:06:57+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T18:06:57+00:00",
+          "note": "policy not cited, not explained that order is beyond the rturn window"
+        }
+      ]
+    },
+    {
+      "id": "ann-44eaecf5ef",
+      "conversation_id": "support-0221",
+      "session_id": "42265ab4a13a4716bb9751b7daed823c",
+      "trace_id": "e7e2c40775687c57b2c88fdcffcb269b",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The return window for Meridian Cycles is 21 days from the date the order was delivered. Since the order was delivered on June 11, 2026, the customer has until **July 2, 2026** to initiate a return.",
+      "start": 0,
+      "end": 197,
+      "note": "policy not cited",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T18:07:29+00:00",
+      "updated_at": "2026-10-30T18:07:29+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T18:07:29+00:00",
+          "note": "policy not cited"
+        }
+      ]
+    },
+    {
+      "id": "ann-9eec40a19b",
+      "conversation_id": "support-0223",
+      "session_id": "48e92b637159442da6a8eb57b1697075",
+      "trace_id": "40afde4ebc107fc089783e4d1e108a96",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The return deadline for order 8465 from Northwind Books is 45 days from the date it was delivered. Since the order was delivered on May 16, 2026, the customer can return the item until July 1, 2026.\n\nPlease note, however, that this order is not eligible for a refund. If the customer has further questions about their return options, let me know!",
+      "start": 0,
+      "end": 346,
+      "note": "policy not cited",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T18:08:24+00:00",
+      "updated_at": "2026-10-30T18:08:24+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T18:08:24+00:00",
+          "note": "policy not cited"
+        }
+      ]
+    },
+    {
+      "id": "ann-04446fc6ab",
+      "conversation_id": "support-0228",
+      "session_id": "b1e3ee54d61e4fe39ae13f208d197167",
+      "trace_id": "9bcbf0db01f25cb6ffedd50bb9206cac",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "To proceed, I can issue a refund for the full amount. Please confirm that you would like to continue with the refund, and you can also specify the reason you'd like me to include in the refund request.",
+      "start": 111,
+      "end": 312,
+      "note": "reason already there in the first turn",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T18:09:07+00:00",
+      "updated_at": "2026-10-30T18:09:07+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T18:09:07+00:00",
+          "note": "reason already there in the first turn"
+        }
+      ]
+    },
+    {
+      "id": "ann-b5098de0ff",
+      "conversation_id": "support-0234",
+      "session_id": "5fedf4ba02754c5e884143ddfcca194c",
+      "trace_id": "bcf8ac65996f61bd31a0d030aafda310",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Cascade Audio has a return window of 30 days from delivery, but they do charge a restocking fee of up to 15% on opened items. So, it isn't true that they don't charge for returning opened headphones.",
+      "start": 0,
+      "end": 199,
+      "note": "policy not cited",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-30T18:09:30+00:00",
+      "updated_at": "2026-10-30T18:09:30+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-30T18:09:30+00:00",
+          "note": "policy not cited"
+        }
+      ]
+    },
+    {
+      "id": "ann-a49908212f",
+      "conversation_id": "support-0242",
+      "session_id": "7cb557efc6094a4eb7e15584c5509bba",
+      "trace_id": "316db596e5b32e1c65d77938b1802fdc",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The order 9884 from Blue Heron Ceramics was delivered on April 1, 2026. Given the 30-day return window, the last date for returning this item would be May 1, 2026.",
+      "start": 0,
+      "end": 163,
+      "note": "user did not get the answer first and the reply is too verbose. Based on today's date, agent can tell whether last return date has passed or not",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T14:30:30+00:00",
+      "updated_at": "2026-10-31T14:30:30+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:30:30+00:00",
+          "note": "user did not get the answer first and the reply is too verbose. Based on today's date, agent can tell whether last return date has passed or not"
+        }
+      ]
+    },
+    {
+      "id": "ann-3b51e90f9d",
+      "conversation_id": "support-0245",
+      "session_id": "12329e30466e46a2914edd38cc7e72d8",
+      "trace_id": "e1a87bb38d3528b1ddf7ddc991471217",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T14:31:26+00:00",
+      "updated_at": "2026-10-31T14:31:26+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:31:26+00:00",
+          "note": "no failure observed"
+        }
+      ]
+    },
+    {
+      "id": "ann-acef781321",
+      "conversation_id": "support-0247",
+      "session_id": "571cbf2a21014d06954258d4ab526884",
+      "trace_id": "54e69941280063780a6290e2f7c1a378",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Your order 8780 for the Rustic Daypack has a status of \"refunded,\" which means it has been processed for a refund. However, it is marked as \"not eligible\" for a refund further.",
+      "start": 0,
+      "end": 176,
+      "note": "user is getting incoherent confusing response. if the order is already refunded, then agent does not need to mention that is marked as in elgible for refind Rather cite policy and say what is the processign time based on it",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T14:32:37+00:00",
+      "updated_at": "2026-10-31T14:33:03+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:32:37+00:00",
+          "note": "user is getting incoherent confusing response. if the order is already refunded, then agent does not need to mention that is marked as in elgible for refind"
+        },
+        {
+          "at": "2026-10-31T14:33:03+00:00",
+          "note": "user is getting incoherent confusing response. if the order is already refunded, then agent does not need to mention that is marked as in elgible for refind Rather cite policy and say what is the processign time based on it"
+        }
+      ]
+    },
+    {
+      "id": "ann-f0ff4bad54",
+      "conversation_id": "support-0248",
+      "session_id": "27ba5f34483a4f68be387f260c1fe5ca",
+      "trace_id": "56bbc8653bfb986c77fba7ceb660c5ed",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "as it has been delivered and meets the criteria for a return",
+      "start": 41,
+      "end": 101,
+      "note": "too verbose. It is not relevant informationa s customer asked to process a refund, if refund is elible, just ask for a reason",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T14:34:13+00:00",
+      "updated_at": "2026-10-31T14:34:13+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:34:13+00:00",
+          "note": "too verbose. It is not relevant informationa s customer asked to process a refund, if refund is elible, just ask for a reason"
+        }
+      ]
+    },
+    {
+      "id": "ann-67c0a2294e",
+      "conversation_id": "support-0093",
+      "session_id": "89090735b44e49129a6e1df33e69dbcb",
+      "trace_id": "21545fc6b3e2ffdc129bf5e4a1e87e69",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I've escalated your request to a human support agent.",
+      "start": 0,
+      "end": 53,
+      "note": "[accepted suggestion: next_steps_missing_after_action] Depth search signal: escalate_to_human returned ticket_id 156; reply omits it. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-a61cf9f798",
+      "created_at": "2026-10-31T14:53:50+00:00",
+      "updated_at": "2026-10-31T14:53:50+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:53:50+00:00",
+          "note": "[accepted suggestion: next_steps_missing_after_action] Depth search signal: escalate_to_human returned ticket_id 156; reply omits it. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-2988edb1eb",
+      "conversation_id": "support-0014",
+      "session_id": "bfc2cf0407a94a44ba37289d89d9e203",
+      "trace_id": "b117a32a351cf1c9d5638eba19ad75b4",
+      "turn_index": 3,
+      "target": "t3.reply",
+      "quote": "I've escalated your request to a human support agent, and they will review your case.",
+      "start": 0,
+      "end": 85,
+      "note": "[accepted suggestion: next_steps_missing_after_action] Depth search signal: escalate_to_human returned ticket_id 155; reply omits it. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-f085530194",
+      "created_at": "2026-10-31T14:53:57+00:00",
+      "updated_at": "2026-10-31T14:53:57+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:53:57+00:00",
+          "note": "[accepted suggestion: next_steps_missing_after_action] Depth search signal: escalate_to_human returned ticket_id 155; reply omits it. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-c36e5e311a",
+      "conversation_id": "support-0073",
+      "session_id": "ee8310bd46994256874787b6053b6f97",
+      "trace_id": "fb9ab5b08dc249d1dbfb481726452242",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Juniper Home Goods has a return window of 14 days.",
+      "start": 0,
+      "end": 50,
+      "note": "[accepted suggestion: policy_claim_without_citation] Depth search signal: get_store_info returned policy_id store-juniper-home-goods-policy; reply does not cite it. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-3735817897",
+      "created_at": "2026-10-31T14:54:30+00:00",
+      "updated_at": "2026-10-31T14:54:30+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:54:30+00:00",
+          "note": "[accepted suggestion: policy_claim_without_citation] Depth search signal: get_store_info returned policy_id store-juniper-home-goods-policy; reply does not cite it. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-53b83ce6b5",
+      "conversation_id": "support-0088",
+      "session_id": "02449fa8d4fc4a7aab0b77ede70b15da",
+      "trace_id": "7ae2ad4e8595cf6dc116c3c5134562de",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Meridian Cycles has a return window of 21 days.",
+      "start": 0,
+      "end": 47,
+      "note": "[accepted suggestion: policy_claim_without_citation] Depth search signal: get_store_info returned policy_id store-meridian-cycles-policy; reply does not cite it. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-61866e0782",
+      "created_at": "2026-10-31T14:54:36+00:00",
+      "updated_at": "2026-10-31T14:54:36+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:54:36+00:00",
+          "note": "[accepted suggestion: policy_claim_without_citation] Depth search signal: get_store_info returned policy_id store-meridian-cycles-policy; reply does not cite it. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-80460665f2",
+      "conversation_id": "support-0180",
+      "session_id": "600eaa1fcf2149358554283cf168495b",
+      "trace_id": "dd26fb773973af23085d4ba3bd5bae21",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "The order ID 8002 appears to have been marked as \"delivered\" but shows a delivery status of `None`, indicating it may not have been received by the customer yet.",
+      "start": 0,
+      "end": 161,
+      "note": "[accepted suggestion: damaged_record_not_flagged] Depth search signal: order 8002: status delivered, delivered_at null; reply does not mention the gap. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-7572b5a77f",
+      "created_at": "2026-10-31T14:55:15+00:00",
+      "updated_at": "2026-10-31T14:55:15+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:55:15+00:00",
+          "note": "[accepted suggestion: damaged_record_not_flagged] Depth search signal: order 8002: status delivered, delivered_at null; reply does not mention the gap. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-7c7d959960",
+      "conversation_id": "support-0147",
+      "session_id": "def2b16395b44af29ca8aad5a4af55dd",
+      "trace_id": "0a30ce33614a4943c9711aa2baaaaaed",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "If you'd like, I can escalate this case to a human support agent who can provide more detailed assistance and expedite the process.",
+      "start": 156,
+      "end": 287,
+      "note": "[accepted suggestion: support_caller_treated_as_customer] Depth search signal: support caller; reply uses customer framing: 'human support agent'. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-3cb022588c",
+      "created_at": "2026-10-31T14:56:07+00:00",
+      "updated_at": "2026-10-31T14:56:07+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:56:07+00:00",
+          "note": "[accepted suggestion: support_caller_treated_as_customer] Depth search signal: support caller; reply uses customer framing: 'human support agent'. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-a11db00237",
+      "conversation_id": "support-0156",
+      "session_id": "fad0dc0d526f4b1e807e5b2d3bfcf993",
+      "trace_id": "e89c4b9b6948cd2546defb5e2cc7e121",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Disputes are handled by a human support agent and are not resolved automatically.",
+      "start": 130,
+      "end": 211,
+      "note": "[accepted suggestion: support_caller_treated_as_customer] Depth search signal: support caller; reply uses customer framing: 'human support agent'. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-a67a8d2911",
+      "created_at": "2026-10-31T14:56:54+00:00",
+      "updated_at": "2026-10-31T14:56:54+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:56:54+00:00",
+          "note": "[accepted suggestion: support_caller_treated_as_customer] Depth search signal: support caller; reply uses customer framing: 'human support agent'. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-b7eb4362aa",
+      "conversation_id": "support-0023",
+      "session_id": "aa051d7d9f93494eac74fcec2fd3987c",
+      "trace_id": "d0844f954abf37bb52027f926b012228",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I understand your frustration about having to pay a fee for returning opened items.",
+      "start": 0,
+      "end": 83,
+      "note": "[accepted suggestion: unsupported_claim] Depth search signal: reply states a policy-style fact; 0 tool calls in that turn. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-6949753444",
+      "created_at": "2026-10-31T14:59:03+00:00",
+      "updated_at": "2026-10-31T14:59:03+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:59:03+00:00",
+          "note": "[accepted suggestion: unsupported_claim] Depth search signal: reply states a policy-style fact; 0 tool calls in that turn. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-5165df00c5",
+      "conversation_id": "support-0024",
+      "session_id": "f04aec4664c74337a504ba131e58687e",
+      "trace_id": "8e866929adcfe19a8d1839f91b226ac5",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Each store sets its own policies regarding returns, including the time frame for returns and any restocking fees that may apply.",
+      "start": 58,
+      "end": 186,
+      "note": "[accepted suggestion: unsupported_claim] Depth search signal: reply states a policy-style fact; 0 tool calls in that turn. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-3bdaa05e09",
+      "created_at": "2026-10-31T14:59:37+00:00",
+      "updated_at": "2026-10-31T14:59:37+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:59:37+00:00",
+          "note": "[accepted suggestion: unsupported_claim] Depth search signal: reply states a policy-style fact; 0 tool calls in that turn. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-897ee3f162",
+      "conversation_id": "support-0183",
+      "session_id": "beb398aed0a846abb85a60982320d3b3",
+      "trace_id": "a3398b80fcaff4b333b32ec30057b00a",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Unfortunately, it is not eligible for a refund or return.",
+      "start": 43,
+      "end": 100,
+      "note": "[accepted suggestion: ineligibility_without_reason] Depth search signal: reply says not eligible; the sentence gives no reason. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-52de6c2d19",
+      "created_at": "2026-10-31T15:00:58+00:00",
+      "updated_at": "2026-10-31T15:00:58+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:00:58+00:00",
+          "note": "[accepted suggestion: ineligibility_without_reason] Depth search signal: reply says not eligible; the sentence gives no reason. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-49d3fd2977",
+      "conversation_id": "support-0220",
+      "session_id": "21d8c714cc11473da82f3ccb046dd03c",
+      "trace_id": "4a543c2867ba60bdc94c9e11087cadff",
+      "turn_index": 3,
+      "target": "t3.reply",
+      "quote": "I've escalated your issue to a human support agent, and they will follow up with you typically within 24 hours.",
+      "start": 0,
+      "end": 111,
+      "note": "[accepted suggestion: next_steps_missing_after_action] Depth search signal: escalate_to_human returned ticket_id 169; reply omits it. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-6918969789",
+      "created_at": "2026-10-31T15:04:59+00:00",
+      "updated_at": "2026-10-31T15:04:59+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:04:59+00:00",
+          "note": "[accepted suggestion: next_steps_missing_after_action] Depth search signal: escalate_to_human returned ticket_id 169; reply omits it. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-cfc70ec1d3",
+      "conversation_id": "support-0083",
+      "session_id": "45dc6b4bc103494c906115888e1b592c",
+      "trace_id": "c684b63f33b29a931c3a01e398d1059e",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Since their return policy allows for a return window of 30 days, you have until July 2, 2026, to initiate the return.",
+      "start": 95,
+      "end": 212,
+      "note": "[accepted suggestion: policy_claim_without_citation] Depth search signal: get_store_info returned policy_id store-second-stitch-apparel-policy; reply does not cite it. A retrieval hint, not a label.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "accepted_suggestion",
+      "author": "human",
+      "suggestion_id": "sug-69a1f7b4fa",
+      "created_at": "2026-10-31T15:05:07+00:00",
+      "updated_at": "2026-10-31T15:05:07+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:05:07+00:00",
+          "note": "[accepted suggestion: policy_claim_without_citation] Depth search signal: get_store_info returned policy_id store-second-stitch-apparel-policy; reply does not cite it. A retrieval hint, not a label."
+        }
+      ]
+    },
+    {
+      "id": "ann-54e1096c0e",
+      "conversation_id": "support-0224",
+      "session_id": "9a3b1c336d014cba8c8c4415b04220a9",
+      "trace_id": "9f12a949cb781daaaec265cbabe99123",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I've opened a ticket for your refund request, and a support agent will follow up with you within 24 hours. Ticket ID: 170.",
+      "start": 0,
+      "end": 122,
+      "note": "passes for Target mode",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:23:12+00:00",
+      "updated_at": "2026-10-31T15:23:12+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:23:12+00:00",
+          "note": "passes for Target mode"
+        }
+      ]
+    },
+    {
+      "id": "ann-ab49e247f9",
+      "conversation_id": "support-0224",
+      "session_id": "9a3b1c336d014cba8c8c4415b04220a9",
+      "trace_id": "7b4740527ba3732460ab59dc99b1f2b1",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Could you please confirm the reason one more time? Is it simply because it doesn't suit you?",
+      "start": 163,
+      "end": 255,
+      "note": "reason has already been stated in the first query",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:23:31+00:00",
+      "updated_at": "2026-10-31T15:23:34+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:23:31+00:00",
+          "note": "reason has already been stated in the first query"
+        }
+      ]
+    },
+    {
+      "id": "ann-7a721f93e9",
+      "conversation_id": "support-0031",
+      "session_id": "406fc79a55e34df9961dd76a85bf98e4",
+      "trace_id": "f2695a5929d0231d9a401c333dedaaf0",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:23:53+00:00",
+      "updated_at": "2026-10-31T15:23:53+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:23:53+00:00",
+          "note": "no failure observed"
+        }
+      ]
+    },
+    {
+      "id": "ann-dcc4a3d470",
+      "conversation_id": "support-0157",
+      "session_id": "3199e7fcc7384016bf69340de2fe3665",
+      "trace_id": "58b09ce7cd155cebecdb521c68d3c12f",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:24:42+00:00",
+      "updated_at": "2026-10-31T15:24:42+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:24:42+00:00",
+          "note": "no failure observed"
+        }
+      ]
+    },
+    {
+      "id": "ann-2713879d2d",
+      "conversation_id": "support-0173",
+      "session_id": "4ace89e6c47643cd85a5502749c67c0a",
+      "trace_id": "2c09d55b55ef83c4f5fbfa2ca0dc359e",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:25:31+00:00",
+      "updated_at": "2026-10-31T15:25:31+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:25:31+00:00",
+          "note": "no failure observed"
+        }
+      ]
+    },
+    {
+      "id": "ann-049318cb2e",
+      "conversation_id": "support-0022",
+      "session_id": "1c12cd642953415886ab67e2a0b54532",
+      "trace_id": "a0415b12e2cfb431da1ac339d0751513",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I can help with that! The delivery time for an order on Cartwheel can vary based on the store and shipping method. Typically, it might range from a few days to over a week. \n\nTo give you a more accurate estimate and check if your specific order will arrive before your sister's birthday party, I can look up the details of your order. Could you please provide me with your order ID? That way, I can see its status and expected delivery date!",
+      "start": 0,
+      "end": 441,
+      "note": "did not tell me the policy provided timelines.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:27:00+00:00",
+      "updated_at": "2026-10-31T15:27:00+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:27:00+00:00",
+          "note": "did not tell me the policy provided timelines."
+        }
+      ]
+    },
+    {
+      "id": "ann-089d2d611f",
+      "conversation_id": "support-0022",
+      "session_id": "1c12cd642953415886ab67e2a0b54532",
+      "trace_id": "a0415b12e2cfb431da1ac339d0751513",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Could you please provide me with your order ID? That way, I can see its status and expected delivery date!",
+      "start": 335,
+      "end": 441,
+      "note": "not a close negative - as ahgent should have looked up usign the keywors mugs and matched against the users latest orders. If multiple showed up then could have asked for confirmation. So it does reasks provided inforamtion",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:29:35+00:00",
+      "updated_at": "2026-10-31T15:29:35+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:29:35+00:00",
+          "note": "not a close negative - as ahgent should have looked up usign the keywors mugs and matched against the users latest orders. If multiple showed up then could have asked for confirmation. So it does reasks provided inforamtion"
+        }
+      ]
+    },
+    {
+      "id": "ann-7492583a34",
+      "conversation_id": "support-0013",
+      "session_id": "c4fc524067a3464284270dc8450e7d13",
+      "trace_id": "6313c0240eca3f9591228b71200bbc1b",
+      "turn_index": 2,
+      "target": "t2.reply",
+      "quote": "You don't need to reach out to anyone directly; a support agent will contact you regarding your request. They’ll be addressing the return and refund for your order #9734 specifically. Keep an eye on your email or account for their message within the next 24 hours. If you have any other questions or need further assistance, feel free to ask!",
+      "start": 0,
+      "end": 342,
+      "note": "yes passed the close negative for the mode as it did not double escalate.",
+      "first_failure": false,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:31:27+00:00",
+      "updated_at": "2026-10-31T15:31:27+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:31:27+00:00",
+          "note": "yes passed the close negative for the mode as it did not double escalate."
+        }
+      ]
+    },
+    {
+      "id": "ann-80d00958d7",
+      "conversation_id": "support-0013",
+      "session_id": "c4fc524067a3464284270dc8450e7d13",
+      "trace_id": "405fbaca48a59b0ce478a14b356c68eb",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I've successfully escalated your request to a human support agent. They will review your situation and follow up with you within 24 hours. Thank you for your patience, and I hope they can assist you with your return!",
+      "start": 0,
+      "end": 216,
+      "note": "tickey id nto shared",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:31:40+00:00",
+      "updated_at": "2026-10-31T15:31:42+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:31:40+00:00",
+          "note": "tickey id nto shared"
+        }
+      ]
+    },
+    {
+      "id": "ann-3fe08f8f51",
+      "conversation_id": "support-0029",
+      "session_id": "5c758de3faff49bf8e12e60d0d36d045",
+      "trace_id": "18b531f04f6a47355cf44b11eddba0d3",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "You have 30 days to return items bought on Cartwheel, starting from the delivery date rather than the purchase date. It's important to ensure that the items are in the condition described by the store's listing. \n\nIf you need more specifics or have any other questions, feel free to ask!",
+      "start": 0,
+      "end": 287,
+      "note": "Passes close negatovbe for the unsupporyed claim. \nHowever in this case failiure is thta it did not call out the correct thing as stores can have their own return policy as well.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:33:20+00:00",
+      "updated_at": "2026-10-31T15:33:20+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:33:20+00:00",
+          "note": "Passes close negatovbe for the unsupporyed claim. \nHowever in this case failiure is thta it did not call out the correct thing as stores can have their own return policy as well."
+        }
+      ]
+    },
+    {
+      "id": "ann-52b5eb3548",
+      "conversation_id": "support-0161",
+      "session_id": "793617b9d4f144859052db7bc91a324a",
+      "trace_id": "cb5d7afc652f1cad10d1f3fcba1dcb93",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:34:46+00:00",
+      "updated_at": "2026-10-31T15:34:46+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:34:46+00:00",
+          "note": "no failure observed"
+        }
+      ]
+    },
+    {
+      "id": "ann-6bb79d55ea",
+      "conversation_id": "support-0243",
+      "session_id": "0cdf69732cb84886b8a610d4657888fb",
+      "trace_id": "99bb315b0701a1e3e56c97ddca395025",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "Your refund for the Portable Pruning Shears has been successfully processed for $63.50. It will be credited back to your original payment method within 5 to 10 business days.\n\nIf you need any further assistance, feel free to ask!",
+      "start": 0,
+      "end": 229,
+      "note": "passes the close negative for the mode",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:36:12+00:00",
+      "updated_at": "2026-10-31T15:36:12+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:36:12+00:00",
+          "note": "passes the close negative for the mode"
+        }
+      ]
+    },
+    {
+      "id": "ann-9fc79aca6e",
+      "conversation_id": "support-0112",
+      "session_id": "df4ac543827f4aa7bf6942cb0f4257e5",
+      "trace_id": "dde2c04a40a776241298524d47cdea85",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The details for Order 4985 indicate that the order is not eligible for a refund because it has been marked as non-refundable. Since the customer claims the product doesn't suit them, I cannot process this request.\n\nIf you need to provide further assistance to the customer, let me know how you'd like to proceed or if you'd like to escalate this case to a human support agent",
+      "start": 0,
+      "end": 375,
+      "note": "It is not a close negative for the mode as the reason  for denying the refund is not correct - should be that product is outside retrunt windoe and cite the policy",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:39:24+00:00",
+      "updated_at": "2026-10-31T15:39:24+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:39:24+00:00",
+          "note": "It is not a close negative for the mode as the reason  for denying the refund is not correct - should be that product is outside retrunt windoe and cite the policy"
+        }
+      ]
+    },
+    {
+      "id": "ann-6cb97a3939",
+      "conversation_id": "support-0160",
+      "session_id": "4bd5cbde99fa437fa09fba826f13b42c",
+      "trace_id": "7b921ffcb6aed3ea762f220032dded4b",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "The order number 1532 is still in the \"placed\" status, which means it hasn't shipped yet and is eligible for cancellation. I can proceed with canceling the order. \n\nCan you please confirm the reason for the cancellation?",
+      "start": 0,
+      "end": 220,
+      "note": "Placed\" was reported correctly. The real issue is not explaining that the order can still be cancelled, so it isn't a misreport",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:43:35+00:00",
+      "updated_at": "2026-10-31T15:43:35+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:43:35+00:00",
+          "note": "Placed\" was reported correctly. The real issue is not explaining that the order can still be cancelled, so it isn't a misreport"
+        }
+      ]
+    },
+    {
+      "id": "ann-41d936c511",
+      "conversation_id": "support-0246",
+      "session_id": "b0482a4892a8481186c07d8cc5886521",
+      "trace_id": "36addedec81fcb9dd107217e7a9a6022",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "Order number 2554 is currently in the \"placed\" status, meaning it hasn't shipped yet and can be canceled.",
+      "start": 0,
+      "end": 105,
+      "note": "Placed\" was reported correctly. The real issue is not explaining that the order can still be cancelled, so it isn't a misreport",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:43:47+00:00",
+      "updated_at": "2026-10-31T15:43:47+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:43:47+00:00",
+          "note": "Placed\" was reported correctly. The real issue is not explaining that the order can still be cancelled, so it isn't a misreport"
+        }
+      ]
+    },
+    {
+      "id": "ann-5e210fc3e7",
+      "conversation_id": "support-0239",
+      "session_id": "db88a4bf3d394fb3ad4eee6e3e43737a",
+      "trace_id": "c9c214ceaa95358eb1ac159988ec21d0",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "However, please note that this order is not eligible for a refund. If you need any further assistance or have questions about this, feel free to ask!",
+      "start": 182,
+      "end": 331,
+      "note": "The reason appears earlier in the reply; only the citation is missing.",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:44:06+00:00",
+      "updated_at": "2026-10-31T15:44:06+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:44:06+00:00",
+          "note": "The reason appears earlier in the reply; only the citation is missing."
+        }
+      ]
+    },
+    {
+      "id": "ann-973cb32f8d",
+      "conversation_id": "support-0018",
+      "session_id": "0f8029d3769643e0b7300f23d90d4221",
+      "trace_id": "fca820c8ab663dea4f03e713c69f520f",
+      "turn_index": 1,
+      "target": "t1.reply",
+      "quote": "I found your order for the Travel Face Serum from Fern & Fog Skincare. The order ID is 8398, and it is indeed eligible for a refund.",
+      "start": 0,
+      "end": 132,
+      "note": "yes - reason was provided in the first part, no need to ask again",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:45:32+00:00",
+      "updated_at": "2026-10-31T15:45:32+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:45:32+00:00",
+          "note": "yes - reason was provided in the first part, no need to ask again"
+        }
+      ]
+    },
+    {
+      "id": "ann-069730be16",
+      "conversation_id": "support-0020",
+      "session_id": "d99716ef01c6491b8eacbba55b61a215",
+      "trace_id": "1566269f7e3b7703f8b55b90c7fd973c",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "can help you with that! First, let's clarify a couple of things regarding refunds. Generally, the time it takes for a refund to show up on your card can depend on your bank, but it usually takes a few business days after the refund is processed.\n\nAs for larger refunds, yes, they typically require additional approval. If the refund amount is over a certain threshold, it may be queued for manual review.",
+      "start": 2,
+      "end": 406,
+      "note": "yes - policy not cited, not looked up policy and based the respinde on that",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:46:21+00:00",
+      "updated_at": "2026-10-31T15:46:21+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:46:21+00:00",
+          "note": "yes - policy not cited, not looked up policy and based the respinde on that"
+        }
+      ]
+    },
+    {
+      "id": "ann-316419a4d1",
+      "conversation_id": "support-0039",
+      "session_id": "e4fb8d6cb5554a8dab24382662733fdf",
+      "trace_id": "99f74e7fde85e1f13e88b16d934acdd1",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Your order 7714 for the Sturdy Trekking Poles has been shipped. It was shipped on June 30, 2026, but it has not yet been delivered.",
+      "start": 0,
+      "end": 131,
+      "note": "user can be told alaso how much time it takes for the order to deliver based on the shipping policu",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:47:14+00:00",
+      "updated_at": "2026-10-31T15:47:14+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:47:14+00:00",
+          "note": "user can be told alaso how much time it takes for the order to deliver based on the shipping policu"
+        }
+      ]
+    },
+    {
+      "id": "ann-9e5e7d3a70",
+      "conversation_id": "support-0048",
+      "session_id": "55ccf1343f224c368b4e5692d1f20d70",
+      "trace_id": "c3e783be67087c44a134a65eb4e47f7b",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:47:32+00:00",
+      "updated_at": "2026-10-31T15:47:32+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:47:32+00:00",
+          "note": "no failure observed"
+        }
+      ]
+    },
+    {
+      "id": "ann-d039054fdf",
+      "conversation_id": "support-0064",
+      "session_id": "ed55478beb094924bb5c071bd1411e9e",
+      "trace_id": "781cb3b4fcc597f44b5266e7957b4fcd",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "It looks like your order for the Rustic Marble Run from Little Fox Toys was placed on June 27, 2026, and it has already been shipped. Since the order status is \"shipped,\" it cannot be canceled at this time.",
+      "start": 0,
+      "end": 206,
+      "note": "yes - policy not ciyted",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:47:56+00:00",
+      "updated_at": "2026-10-31T15:47:56+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:47:56+00:00",
+          "note": "yes - policy not ciyted"
+        }
+      ]
+    },
+    {
+      "id": "ann-43a3c470e1",
+      "conversation_id": "support-0079",
+      "session_id": "3828bdb648364cab8bb8031c0ebbcc4f",
+      "trace_id": "db6ba6f77ebf3e1d5e40096da797c811",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "une, let's assume the purchase date was June 1st.",
+      "start": 132,
+      "end": 181,
+      "note": "why do you need to assume? agent has tools to seee when the order was delivered",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:48:49+00:00",
+      "updated_at": "2026-10-31T15:48:49+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:48:49+00:00",
+          "note": "why do you need to assume? agent has tools to seee when the order was delivered"
+        }
+      ]
+    },
+    {
+      "id": "ann-10e4d12711",
+      "conversation_id": "support-0082",
+      "session_id": "cc171fe05f0f46f5a015ec2e73d49547",
+      "trace_id": "2f77daf38627102d7d4bf3586a9649ad",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "ince you are eligible for a return and considering typical return policies, you usually have around 30 days from the delivery date t",
+      "start": 70,
+      "end": 202,
+      "note": "yes - did not look up the policy for the particular store from which the roder was",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:49:41+00:00",
+      "updated_at": "2026-10-31T15:49:41+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:49:41+00:00",
+          "note": "yes - did not look up the policy for the particular store from which the roder was"
+        }
+      ]
+    },
+    {
+      "id": "ann-994b664e26",
+      "conversation_id": "support-0090",
+      "session_id": "f64fc22daf25485789173cd598a34e66",
+      "trace_id": "159de03e6105b0d92d0df57862bfff8b",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "Additionally, you have a 30-day return window. If you need more specific details or assistance with the return process, just let me know!",
+      "start": 116,
+      "end": 253,
+      "note": "additional information - user asked only for the restocking fees",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:50:17+00:00",
+      "updated_at": "2026-10-31T15:50:17+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:50:17+00:00",
+          "note": "additional information - user asked only for the restocking fees"
+        }
+      ]
+    },
+    {
+      "id": "ann-4b15b35d22",
+      "conversation_id": "support-0092",
+      "session_id": "f23a7d2cecef4b9494ac9f5cb102b21b",
+      "trace_id": "fabedc8b748d1240c5b873e137f9f68e",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I'm unable to update your email address directly. However, I can open a ticket for a support agent to assist you with this change. Would you like me to do that?",
+      "start": 0,
+      "end": 160,
+      "note": "no human escalation hee?",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:50:44+00:00",
+      "updated_at": "2026-10-31T15:50:44+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:50:44+00:00",
+          "note": "no human escalation hee?"
+        }
+      ]
+    },
+    {
+      "id": "ann-40ff7bace8",
+      "conversation_id": "support-0113",
+      "session_id": "01779ac39863481681c8161474e69cc9",
+      "trace_id": "002666307edb99789c5499d725e50775",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": ". Unfortunately, this order is not eligible for a refund.",
+      "start": 134,
+      "end": 191,
+      "note": "no reason given for the refund. Agent has access to policy look up based on that he should respoind",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:51:43+00:00",
+      "updated_at": "2026-10-31T15:51:43+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:51:43+00:00",
+          "note": "no reason given for the refund. Agent has access to policy look up based on that he should respoind"
+        }
+      ]
+    },
+    {
+      "id": "ann-b73ab1633a",
+      "conversation_id": "support-0133",
+      "session_id": "e1226fee23ca4c308881ba2f4d6ea4e8",
+      "trace_id": "e0c8fd1db6d6707c0f40880e7598629c",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:52:17+00:00",
+      "updated_at": "2026-10-31T15:52:27+00:00",
+      "deleted_at": "2026-10-31T15:52:27+00:00",
+      "history": [
+        {
+          "at": "2026-10-31T15:52:17+00:00",
+          "note": "no failure observed"
+        }
+      ],
+      "deleted_reason": "reviewer cleared 'no failure observed'"
+    },
+    {
+      "id": "ann-d3d6a2c147",
+      "conversation_id": "support-0133",
+      "session_id": "e1226fee23ca4c308881ba2f4d6ea4e8",
+      "trace_id": "e0c8fd1db6d6707c0f40880e7598629c",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:52:32+00:00",
+      "updated_at": "2026-10-31T15:52:32+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:52:32+00:00",
+          "note": "no failure observed"
+        }
+      ]
+    },
+    {
+      "id": "ann-ea1073666f",
+      "conversation_id": "support-0170",
+      "session_id": "9035747fcbac40cdb5b124e9d59c6cf5",
+      "trace_id": "f9edb1a9972e05b15a8caae13cd754ce",
+      "turn_index": null,
+      "target": null,
+      "quote": "",
+      "start": null,
+      "end": null,
+      "note": "no failure observed",
+      "first_failure": false,
+      "no_failure": true,
+      "source": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:52:56+00:00",
+      "updated_at": "2026-10-31T15:52:56+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:52:56+00:00",
+          "note": "no failure observed"
+        }
+      ]
+    },
+    {
+      "id": "ann-073a5851b8",
+      "conversation_id": "support-0192",
+      "session_id": "e09ded0765d14d9a9af5f372ad9512d3",
+      "trace_id": "d723275aa779a0ecc78ac0f2d6056202",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "1. **$9.00**\n2. **$134.75**\n3. **$149.50**\n4. **$254.75**\n5. **$281.00**",
+      "start": 57,
+      "end": 129,
+      "note": "give product name here as well",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:53:13+00:00",
+      "updated_at": "2026-10-31T15:53:13+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:53:13+00:00",
+          "note": "give product name here as well"
+        }
+      ]
+    },
+    {
+      "id": "ann-7412f818a4",
+      "conversation_id": "support-0213",
+      "session_id": "52273693d58843d4a613a349197b9c03",
+      "trace_id": "eedad24c5d3333fb8e8962bf8cdca825",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "I can look up the specifics of your order, but I'll need the order ID to do that. If you have it handy, please provide it so I can assist you further!",
+      "start": 0,
+      "end": 150,
+      "note": "incorrect - it can look up recent orders, prodcut by store anme as well",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:53:41+00:00",
+      "updated_at": "2026-10-31T15:53:41+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:53:41+00:00",
+          "note": "incorrect - it can look up recent orders, prodcut by store anme as well"
+        }
+      ]
+    },
+    {
+      "id": "ann-af0c7c31da",
+      "conversation_id": "support-0226",
+      "session_id": "64adbe47b7224dfdb5343299af893d3c",
+      "trace_id": "73529171fab36d8bec8a7f435c0f5736",
+      "turn_index": 0,
+      "target": "t0.reply",
+      "quote": "However, it appears that this item is not eligible for a refund, which typically means it may not be returnable based on store policy.",
+      "start": 75,
+      "end": 209,
+      "note": "why guessing - can look up store return policy and advise based on that",
+      "first_failure": true,
+      "no_failure": false,
+      "source": "human",
+      "author": "human",
+      "suggestion_id": null,
+      "created_at": "2026-10-31T15:54:13+00:00",
+      "updated_at": "2026-10-31T15:54:13+00:00",
+      "deleted_at": null,
+      "history": [
+        {
+          "at": "2026-10-31T15:54:13+00:00",
+          "note": "why guessing - can look up store return policy and advise based on that"
+        }
+      ]
+    }
+  ]
+}

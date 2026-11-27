@@ -60,6 +60,19 @@ outside the caller's role. Authorization is not a prompt.
 
 The threshold is `refund_auto_approve_threshold_usd` in `facts.yaml` ($100).
 
+### Refund requests
+
+- **REF-1.** Issue a refund only when the user has asked for one in this conversation.
+- **REF-2.** Before refunding a shopper's order, a return must be started. No tool starts a
+  return and orders carry no return status yet, so REF-2 also requires a new tool (start a
+  return) and a return status on the order record. Until those exist, REF-2 cannot be checked
+  from a trace.
+- **REF-3.** When the caller is support staff, the refund `reason` must reference the
+  customer's request, such as a ticket identifier or an email reference. Without one, the agent
+  asks for it and does not refund.
+
+*REF-1 to REF-3 were added during Homework 4 error analysis (30 October 2026).*
+
 ## 4. Tools
 
 Successful results contain `ok: true` and the result fields. Expected failures contain `ok: false`, an `error` code, and a human-readable `reason`. Unexpected execution failures raise exceptions.
@@ -100,6 +113,14 @@ The following cases always go to a human:
   order record.
 - **ESC-4.** Any case where the agent is unsure whether policy allows an action.
 
+When the agent escalates:
+
+- **ESC-5.** After `escalate_to_human` succeeds, the reply gives the user the `ticket_id` and
+  the expected response time from `sla_hours`. The `summary` argument states the issue, the
+  order involved, and what the user asked for.
+
+*ESC-5 was added during Homework 4 error analysis (30 October 2026).*
+
 ## 6. Other response requirements
 
 Requirements that do not fit in the sections above, including tone and style guidelines.
@@ -109,3 +130,6 @@ Requirements that do not fit in the sections above, including tone and style gui
 - **RESP-3.** State when required information is missing or inconsistent, rather than inventing a value.
 - **RESP-4.** Explain refusals and escalations without revealing inaccessible order or user information.
 - **RESP-5.** Use direct and respectful language that explains the relevant decision.
+- **RESP-6.** The chat client renders Markdown. Answer simple questions in plain sentences; use
+  lists or headings only when the answer has several steps or items. *(Added during Homework 4
+  error analysis, 30 October 2026.)*

@@ -1,1 +1,1797 @@
-{"modes": []}
+{
+  "modes": [
+    {
+      "id": "mode-c1c21772a8",
+      "name": "policy_claim_without_citation",
+      "status": "accepted",
+      "proposed_by": "agent",
+      "created_at": "2026-10-28T22:57:02+00:00",
+      "updated_at": "2026-11-27T11:24:47+00:00",
+      "definition": "The reply states a policy fact (return window, fee, refund threshold, dispute window, refund timing, eligibility rule) without naming the policy id it comes from.",
+      "boundary": "Present only when a policy was fetched in the conversation (get_policy, get_store_info with a policy_id, or search_help_center results) and the reply states a fact from it without its policy id. If no policy source was fetched at all, the claim is unsupported_claim, not this mode.",
+      "nearest_mode": "unsupported_claim",
+      "requirement_source": "RESP-1",
+      "evaluator_type": "code_check",
+      "positive_conversation_ids": [
+        "support-0029",
+        "support-0032",
+        "support-0073",
+        "support-0083",
+        "support-0088",
+        "support-0128",
+        "support-0175",
+        "support-0219",
+        "support-0221",
+        "support-0223",
+        "support-0234"
+      ],
+      "close_negative_conversation_ids": [
+        "support-0031",
+        "support-0157",
+        "support-0159"
+      ],
+      "source_annotation_ids": [
+        "ann-7920ff8a15",
+        "ann-3d3463d544",
+        "ann-9d52e8857c",
+        "ann-30694f3cad",
+        "ann-9b24df533c",
+        "ann-ee0290d599",
+        "ann-5256c16187",
+        "ann-a1c97571e8",
+        "ann-669231786d"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:57:02+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "policy_claim_without_citation",
+            "definition": "The reply states a policy fact (return window, fee, refund threshold, dispute window, refund timing, eligibility rule) without naming the policy id it comes from.",
+            "boundary": "Draft: the fact is stated but uncited. If no reason is given at all, it is ineligibility_without_reason.",
+            "nearest_mode": "ineligibility_without_reason",
+            "requirement_source": "RESP-1",
+            "evaluator_type": "code_check",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-7920ff8a15",
+              "ann-3d3463d544",
+              "ann-9d52e8857c",
+              "ann-30694f3cad",
+              "ann-9b24df533c",
+              "ann-ee0290d599",
+              "ann-5256c16187",
+              "ann-a1c97571e8",
+              "ann-669231786d"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-30T17:16:01+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-11-03T20:18:34+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Draft: the fact is stated but uncited. If no reason is given at all, it is ineligibility_without_reason.",
+          "value": "Present only when a policy was fetched in the conversation (get_policy, get_store_info with a policy_id, or search_help_center results) and the reply states a fact from it without its policy id. If no policy source was fetched at all, the claim is unsupported_claim, not this mode."
+        },
+        {
+          "at": "2026-11-03T20:18:34+00:00",
+          "by": "human",
+          "field": "nearest_mode",
+          "previous": "ineligibility_without_reason",
+          "value": "unsupported_claim"
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0020",
+            "support-0029",
+            "support-0032",
+            "support-0073",
+            "support-0083",
+            "support-0088",
+            "support-0128",
+            "support-0175",
+            "support-0176",
+            "support-0219",
+            "support-0221",
+            "support-0223",
+            "support-0234"
+          ]
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "close_negative_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0031",
+            "support-0157",
+            "support-0159"
+          ]
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [
+            "support-0020",
+            "support-0029",
+            "support-0032",
+            "support-0073",
+            "support-0083",
+            "support-0088",
+            "support-0128",
+            "support-0175",
+            "support-0176",
+            "support-0219",
+            "support-0221",
+            "support-0223",
+            "support-0234"
+          ],
+          "value": [
+            "support-0029",
+            "support-0032",
+            "support-0073",
+            "support-0083",
+            "support-0088",
+            "support-0128",
+            "support-0175",
+            "support-0219",
+            "support-0221",
+            "support-0223",
+            "support-0234"
+          ]
+        }
+      ],
+      "created_from": [
+        "41bfdce5d6a52fa029f173d7216d075c",
+        "51dc68a3ce9f8244349a3e951afcc729",
+        "1db55653907b7770125fca9525692e66",
+        "e60949157798f8bb7bd0692780e46670",
+        "65d50aa980dda8cd4a44f131f9b554b9",
+        "ab42dafe66cf2ccdf7feb82221a8a5db",
+        "ac8f2f9c6385cd2f18bc395e8f124aa4",
+        "7f3c985fd01754dcad827667ed812435",
+        "b52c0d789ce8e81c4beb82b527bb464c"
+      ]
+    },
+    {
+      "id": "mode-a5cc77a4c2",
+      "name": "ineligibility_without_reason",
+      "status": "accepted",
+      "proposed_by": "agent",
+      "created_at": "2026-10-28T22:57:02+00:00",
+      "updated_at": "2026-11-27T11:41:52+00:00",
+      "definition": "The reply says an order cannot be refunded or returned without stating why: which window applies and which dates put the order outside it.",
+      "boundary": "Present when the reply says the order cannot be refunded or returned without stating both the window that applies and the dates that put the order outside it. Restating the record flag ('marked as not eligible', 'non-refundable') is not a reason. A reason given without a policy id is policy_claim_without_citation when the policy was fetched, otherwise unsupported_claim. A reason that contradicts the tool results is unsupported_claim.",
+      "nearest_mode": "policy_claim_without_citation",
+      "requirement_source": "RESP-5",
+      "evaluator_type": "llm_judge",
+      "positive_conversation_ids": [
+        "support-0012",
+        "support-0013",
+        "support-0014",
+        "support-0111",
+        "support-0112",
+        "support-0113",
+        "support-0149",
+        "support-0165",
+        "support-0177",
+        "support-0179",
+        "support-0180",
+        "support-0183",
+        "support-0186",
+        "support-0217",
+        "support-0219",
+        "support-0220",
+        "support-0223",
+        "support-0226",
+        "support-0247",
+        "support-0249"
+      ],
+      "close_negative_conversation_ids": [
+        "support-0239",
+        "support-0082",
+        "support-0242"
+      ],
+      "source_annotation_ids": [
+        "ann-ddfb80c4ee",
+        "ann-a0191f8df7",
+        "ann-f4f983dbda",
+        "ann-2eccbc8d33",
+        "ann-5b8c17283c",
+        "ann-ebd9fc1f17"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:57:02+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "ineligibility_without_reason",
+            "definition": "The reply says an order cannot be refunded or returned without stating why: which window applies and which dates put the order outside it.",
+            "boundary": "Draft: no reason given. A reason given without a policy id is policy_claim_without_citation.",
+            "nearest_mode": "policy_claim_without_citation",
+            "requirement_source": "RESP-5",
+            "evaluator_type": "llm_judge",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-ddfb80c4ee",
+              "ann-a0191f8df7",
+              "ann-f4f983dbda",
+              "ann-2eccbc8d33",
+              "ann-5b8c17283c",
+              "ann-ebd9fc1f17"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-30T17:16:02+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Draft: no reason given. A reason given without a policy id is policy_claim_without_citation.",
+          "value": "Present when the reply says the order cannot be refunded or returned and gives no reason: no window and no dates. Restating the record flag ('marked as not eligible', 'non-refundable') is not a reason. A reason given without a policy id is policy_claim_without_citation when the policy was fetched, otherwise unsupported_claim. A reason that contradicts the tool results is unsupported_claim or misreported_order_data."
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0012",
+            "support-0013",
+            "support-0014",
+            "support-0111",
+            "support-0112",
+            "support-0113",
+            "support-0165",
+            "support-0176",
+            "support-0177",
+            "support-0179",
+            "support-0183",
+            "support-0186",
+            "support-0217",
+            "support-0219",
+            "support-0223",
+            "support-0226",
+            "support-0247",
+            "support-0249"
+          ]
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "close_negative_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0239",
+            "support-0082",
+            "support-0220"
+          ]
+        },
+        {
+          "at": "2026-11-27T11:13:38+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Present when the reply says the order cannot be refunded or returned and gives no reason: no window and no dates. Restating the record flag ('marked as not eligible', 'non-refundable') is not a reason. A reason given without a policy id is policy_claim_without_citation when the policy was fetched, otherwise unsupported_claim. A reason that contradicts the tool results is unsupported_claim or misreported_order_data.",
+          "value": "Present when the reply says the order cannot be refunded or returned without stating both the window that applies and the dates that put the order outside it. Restating the record flag ('marked as not eligible', 'non-refundable') is not a reason. A reason given without a policy id is policy_claim_without_citation when the policy was fetched, otherwise unsupported_claim. A reason that contradicts the tool results is unsupported_claim or misreported_order_data."
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Present when the reply says the order cannot be refunded or returned without stating both the window that applies and the dates that put the order outside it. Restating the record flag ('marked as not eligible', 'non-refundable') is not a reason. A reason given without a policy id is policy_claim_without_citation when the policy was fetched, otherwise unsupported_claim. A reason that contradicts the tool results is unsupported_claim or misreported_order_data.",
+          "value": "Present when the reply says the order cannot be refunded or returned without stating both the window that applies and the dates that put the order outside it. Restating the record flag ('marked as not eligible', 'non-refundable') is not a reason. A reason given without a policy id is policy_claim_without_citation when the policy was fetched, otherwise unsupported_claim. A reason that contradicts the tool results is unsupported_claim."
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [
+            "support-0012",
+            "support-0013",
+            "support-0014",
+            "support-0111",
+            "support-0112",
+            "support-0113",
+            "support-0165",
+            "support-0176",
+            "support-0177",
+            "support-0179",
+            "support-0183",
+            "support-0186",
+            "support-0217",
+            "support-0219",
+            "support-0223",
+            "support-0226",
+            "support-0247",
+            "support-0249"
+          ],
+          "value": [
+            "support-0012",
+            "support-0013",
+            "support-0014",
+            "support-0111",
+            "support-0112",
+            "support-0113",
+            "support-0149",
+            "support-0165",
+            "support-0177",
+            "support-0179",
+            "support-0180",
+            "support-0183",
+            "support-0186",
+            "support-0217",
+            "support-0219",
+            "support-0223",
+            "support-0226",
+            "support-0247",
+            "support-0249"
+          ]
+        },
+        {
+          "at": "2026-11-27T11:41:52+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [
+            "support-0012",
+            "support-0013",
+            "support-0014",
+            "support-0111",
+            "support-0112",
+            "support-0113",
+            "support-0149",
+            "support-0165",
+            "support-0177",
+            "support-0179",
+            "support-0180",
+            "support-0183",
+            "support-0186",
+            "support-0217",
+            "support-0219",
+            "support-0223",
+            "support-0226",
+            "support-0247",
+            "support-0249"
+          ],
+          "value": [
+            "support-0012",
+            "support-0013",
+            "support-0014",
+            "support-0111",
+            "support-0112",
+            "support-0113",
+            "support-0149",
+            "support-0165",
+            "support-0177",
+            "support-0179",
+            "support-0180",
+            "support-0183",
+            "support-0186",
+            "support-0217",
+            "support-0219",
+            "support-0220",
+            "support-0223",
+            "support-0226",
+            "support-0247",
+            "support-0249"
+          ]
+        },
+        {
+          "at": "2026-11-27T11:41:52+00:00",
+          "by": "human",
+          "field": "close_negative_conversation_ids",
+          "previous": [
+            "support-0239",
+            "support-0082",
+            "support-0220"
+          ],
+          "value": [
+            "support-0239",
+            "support-0082",
+            "support-0242"
+          ]
+        }
+      ],
+      "created_from": [
+        "2c107c9b39cc2088a7c501bafb181788",
+        "d8ea9fa601b79767f6322d534463187e",
+        "f4508f94603f07e41708754c7def258b",
+        "89a6daf2715173eae4f5fb01b5049c07",
+        "1e874c71a0097d59844d18eb188e3933",
+        "3dace76042bf1a25858a4f7c975343c1"
+      ]
+    },
+    {
+      "id": "mode-3888eb97c3",
+      "name": "unsupported_claim",
+      "status": "accepted",
+      "proposed_by": "agent",
+      "created_at": "2026-10-28T22:57:02+00:00",
+      "updated_at": "2026-11-27T11:24:47+00:00",
+      "definition": "The reply states a fact, rule, process or promise that no tool result or fetched policy in the conversation supports.",
+      "boundary": "Present when no tool result or fetched policy in the conversation supports the stated fact, rule, process or promise. If the supporting policy was fetched but its id is not cited, use policy_claim_without_citation instead. This includes a value that contradicts a valid order record. If the record itself is broken and the reply does not flag it, use damaged_record_not_flagged.",
+      "nearest_mode": "damaged_record_not_flagged",
+      "requirement_source": "RESP-3",
+      "evaluator_type": "llm_judge",
+      "positive_conversation_ids": [
+        "support-0010",
+        "support-0012",
+        "support-0014",
+        "support-0020",
+        "support-0022",
+        "support-0023",
+        "support-0024",
+        "support-0026",
+        "support-0027",
+        "support-0038",
+        "support-0039",
+        "support-0057",
+        "support-0064",
+        "support-0066",
+        "support-0079",
+        "support-0082",
+        "support-0092",
+        "support-0111",
+        "support-0112",
+        "support-0126",
+        "support-0142",
+        "support-0143",
+        "support-0160",
+        "support-0165",
+        "support-0174",
+        "support-0176",
+        "support-0178",
+        "support-0186",
+        "support-0216",
+        "support-0217",
+        "support-0220",
+        "support-0225",
+        "support-0226",
+        "support-0236",
+        "support-0239",
+        "support-0244"
+      ],
+      "close_negative_conversation_ids": [
+        "support-0234",
+        "support-0088",
+        "support-0133"
+      ],
+      "source_annotation_ids": [
+        "ann-14c5ed78b3",
+        "ann-b3bf8a5fee",
+        "ann-def03f71cb",
+        "ann-669231786d",
+        "ann-bc94009638",
+        "ann-aa2385bd78"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:57:02+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "unsupported_claim",
+            "definition": "The reply states a fact, rule, process or promise that no tool result or fetched policy in the conversation supports.",
+            "boundary": "Draft: general claims with no source. Wrong values about a specific order record are misreported_order_data.",
+            "nearest_mode": "misreported_order_data",
+            "requirement_source": "RESP-3",
+            "evaluator_type": "llm_judge",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-14c5ed78b3",
+              "ann-b3bf8a5fee",
+              "ann-def03f71cb",
+              "ann-669231786d",
+              "ann-bc94009638",
+              "ann-aa2385bd78"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-30T17:16:03+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-11-03T20:18:34+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Draft: general claims with no source. Wrong values about a specific order record are misreported_order_data.",
+          "value": "Present when no tool result or fetched policy in the conversation supports the stated fact, rule, process or promise. If the supporting policy was fetched but its id is not cited, use policy_claim_without_citation instead. A value that contradicts a valid record is misreported_order_data."
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0010",
+            "support-0012",
+            "support-0014",
+            "support-0020",
+            "support-0022",
+            "support-0023",
+            "support-0024",
+            "support-0026",
+            "support-0027",
+            "support-0038",
+            "support-0039",
+            "support-0057",
+            "support-0064",
+            "support-0066",
+            "support-0079",
+            "support-0082",
+            "support-0092",
+            "support-0111",
+            "support-0112",
+            "support-0126",
+            "support-0142",
+            "support-0143",
+            "support-0160",
+            "support-0165",
+            "support-0174",
+            "support-0176",
+            "support-0186",
+            "support-0216",
+            "support-0217",
+            "support-0220",
+            "support-0225",
+            "support-0226",
+            "support-0236",
+            "support-0239",
+            "support-0244"
+          ]
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "close_negative_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0234",
+            "support-0088",
+            "support-0133"
+          ]
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Present when no tool result or fetched policy in the conversation supports the stated fact, rule, process or promise. If the supporting policy was fetched but its id is not cited, use policy_claim_without_citation instead. A value that contradicts a valid record is misreported_order_data.",
+          "value": "Present when no tool result or fetched policy in the conversation supports the stated fact, rule, process or promise. If the supporting policy was fetched but its id is not cited, use policy_claim_without_citation instead. This includes a value that contradicts a valid order record. If the record itself is broken and the reply does not flag it, use damaged_record_not_flagged."
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "nearest_mode",
+          "previous": "misreported_order_data",
+          "value": "damaged_record_not_flagged"
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [
+            "support-0010",
+            "support-0012",
+            "support-0014",
+            "support-0020",
+            "support-0022",
+            "support-0023",
+            "support-0024",
+            "support-0026",
+            "support-0027",
+            "support-0038",
+            "support-0039",
+            "support-0057",
+            "support-0064",
+            "support-0066",
+            "support-0079",
+            "support-0082",
+            "support-0092",
+            "support-0111",
+            "support-0112",
+            "support-0126",
+            "support-0142",
+            "support-0143",
+            "support-0160",
+            "support-0165",
+            "support-0174",
+            "support-0176",
+            "support-0186",
+            "support-0216",
+            "support-0217",
+            "support-0220",
+            "support-0225",
+            "support-0226",
+            "support-0236",
+            "support-0239",
+            "support-0244"
+          ],
+          "value": [
+            "support-0010",
+            "support-0012",
+            "support-0014",
+            "support-0020",
+            "support-0022",
+            "support-0023",
+            "support-0024",
+            "support-0026",
+            "support-0027",
+            "support-0038",
+            "support-0039",
+            "support-0057",
+            "support-0064",
+            "support-0066",
+            "support-0079",
+            "support-0082",
+            "support-0092",
+            "support-0111",
+            "support-0112",
+            "support-0126",
+            "support-0142",
+            "support-0143",
+            "support-0160",
+            "support-0165",
+            "support-0174",
+            "support-0176",
+            "support-0178",
+            "support-0186",
+            "support-0216",
+            "support-0217",
+            "support-0220",
+            "support-0225",
+            "support-0226",
+            "support-0236",
+            "support-0239",
+            "support-0244"
+          ]
+        }
+      ],
+      "created_from": [
+        "f4563d4ee4e6fde3efef2316f50f0b2f",
+        "1c1f562bdb221be281c11874f011e092",
+        "14f636d56b27894dae3293b368434384",
+        "b52c0d789ce8e81c4beb82b527bb464c",
+        "7e330e0a678aa1a6316aa885d9f6c5f4",
+        "09ce00e3d08b3f9d3c5df0618f36eede"
+      ]
+    },
+    {
+      "id": "mode-f28fbcd961",
+      "name": "misreported_order_data",
+      "status": "rejected",
+      "proposed_by": "agent",
+      "created_at": "2026-10-28T22:57:02+00:00",
+      "updated_at": "2026-11-27T11:29:44+00:00",
+      "definition": "The reply states an order date, amount or status that contradicts a valid field in the order record.",
+      "boundary": "The field the reply relies on is present and valid, and the reply contradicts it. If the field is missing or inconsistent and the reply does not flag it, use damaged_record_not_flagged. A conversation can carry both when both failures happen. Rejected 27 Nov: after the 3 Nov split only support-0178 remains positive, below the 3 required; its contradicted status is now unsupported_claim.",
+      "nearest_mode": "unsupported_claim",
+      "requirement_source": "RESP-3",
+      "evaluator_type": "code_check",
+      "positive_conversation_ids": [
+        "support-0178"
+      ],
+      "close_negative_conversation_ids": [
+        "support-0160",
+        "support-0246",
+        "support-0039"
+      ],
+      "source_annotation_ids": [
+        "ann-726cc0fbdc",
+        "ann-749d6eb8aa",
+        "ann-c09437b04e"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:57:02+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "misreported_order_data",
+            "definition": "The reply states an order date, amount or status that does not match the order record, including substituting another field when one is missing.",
+            "boundary": "Draft: a specific record value is wrong. Claims with no record behind them are unsupported_claim.",
+            "nearest_mode": "unsupported_claim",
+            "requirement_source": "RESP-3",
+            "evaluator_type": "code_check",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-726cc0fbdc",
+              "ann-749d6eb8aa",
+              "ann-c09437b04e"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-30T17:16:03+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-11-03T20:25:21+00:00",
+          "by": "human",
+          "field": "definition",
+          "previous": "The reply states an order date, amount or status that does not match the order record, including substituting another field when one is missing.",
+          "value": "The reply states an order date, amount or status that contradicts a valid field in the order record."
+        },
+        {
+          "at": "2026-11-03T20:25:21+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Draft: a specific record value is wrong. Claims with no record behind them are unsupported_claim.",
+          "value": "The field the reply relies on is present and valid, and the reply contradicts it. If the field is missing or inconsistent and the reply does not flag it, use damaged_record_not_flagged. A conversation can carry both when both failures happen."
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0178",
+            "support-0179",
+            "support-0180",
+            "support-0216"
+          ]
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "close_negative_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0160",
+            "support-0246",
+            "support-0039"
+          ]
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "The field the reply relies on is present and valid, and the reply contradicts it. If the field is missing or inconsistent and the reply does not flag it, use damaged_record_not_flagged. A conversation can carry both when both failures happen.",
+          "value": "The field the reply relies on is present and valid, and the reply contradicts it. If the field is missing or inconsistent and the reply does not flag it, use damaged_record_not_flagged. A conversation can carry both when both failures happen. Rejected 27 Nov: after the 3 Nov split only support-0178 remains positive, below the 3 required; its contradicted status is now unsupported_claim."
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "accepted",
+          "value": "rejected"
+        },
+        {
+          "at": "2026-11-27T11:29:44+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [
+            "support-0178",
+            "support-0179",
+            "support-0180",
+            "support-0216"
+          ],
+          "value": [
+            "support-0178"
+          ]
+        }
+      ],
+      "created_from": [
+        "5fd8320a1b40c57b37a46b6a28b88a2a",
+        "1cf9cd70a65c1b7d49b08eb6b67d3adb",
+        "043a92a86f0653c921110d346a0cc524"
+      ]
+    },
+    {
+      "id": "mode-fa8762d5cf",
+      "name": "escalation_reply_missing_ticket_or_sla",
+      "status": "accepted",
+      "proposed_by": "agent",
+      "created_at": "2026-10-28T22:57:02+00:00",
+      "updated_at": "2026-11-04T07:30:38+00:00",
+      "definition": "After escalate_to_human succeeds, the reply omits the ticket_id or the response time from sla_hours.",
+      "boundary": "Fails when the reply after a successful escalation leaves out the ticket id or the sla_hours response time. A stated response time or channel that differs from the tool result is unsupported_claim. No escalation in the conversation means absent.",
+      "nearest_mode": "unsupported_claim",
+      "requirement_source": "ESC-5 (SPEC revision, 30 Oct)",
+      "evaluator_type": "code_check",
+      "positive_conversation_ids": [
+        "support-0012",
+        "support-0013",
+        "support-0014",
+        "support-0093",
+        "support-0102",
+        "support-0103",
+        "support-0111",
+        "support-0112",
+        "support-0142",
+        "support-0143",
+        "support-0171",
+        "support-0174",
+        "support-0220",
+        "support-0247"
+      ],
+      "close_negative_conversation_ids": [
+        "support-0100",
+        "support-0224",
+        "support-0010"
+      ],
+      "source_annotation_ids": [
+        "ann-6859f5d4be",
+        "ann-a7e6c1151c",
+        "ann-dd980faa08",
+        "ann-a1c97571e8",
+        "ann-9ef1e4db5e",
+        "ann-ec42f055d6",
+        "ann-922789b428"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:57:02+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "next_steps_missing_after_action",
+            "definition": "After escalating or completing an action, the reply omits what happens next: a ticket or reference id, the response time, the channel, or the charge outcome.",
+            "boundary": "Draft: what the user is told after an action. Whether the action itself was needed is unneeded_or_duplicate_escalation.",
+            "nearest_mode": "unneeded_or_duplicate_escalation",
+            "requirement_source": "spec revision needed: SPEC.md does not require a ticket id, response time or channel",
+            "evaluator_type": "llm_judge",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-6859f5d4be",
+              "ann-a7e6c1151c",
+              "ann-dd980faa08",
+              "ann-a1c97571e8",
+              "ann-9ef1e4db5e",
+              "ann-ec42f055d6",
+              "ann-922789b428"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-30T15:22:02+00:00",
+          "by": "agent",
+          "field": "requirement_source",
+          "previous": "spec revision needed: SPEC.md does not require a ticket id, response time or channel",
+          "value": "ESC-5 (SPEC revision, 30 Oct)"
+        },
+        {
+          "at": "2026-10-30T17:16:04+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-10-31T16:40:04+00:00",
+          "by": "human",
+          "field": "name",
+          "previous": "next_steps_missing_after_action",
+          "value": "escalation_reply_missing_ticket_or_sla"
+        },
+        {
+          "at": "2026-11-03T19:57:15+00:00",
+          "by": "human",
+          "field": "definition",
+          "previous": "After escalating or completing an action, the reply omits what happens next: a ticket or reference id, the response time, the channel, or the charge outcome.",
+          "value": "After escalate_to_human succeeds, the reply omits the ticket_id or the response time from sla_hours."
+        },
+        {
+          "at": "2026-11-03T19:57:15+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Draft: what the user is told after an action. Whether the action itself was needed is unneeded_or_duplicate_escalation.",
+          "value": "Fails when the reply after a successful escalation leaves out the ticket id or the sla_hours response time. A stated response time or channel that differs from the tool result is unsupported_claim. No escalation in the conversation means absent."
+        },
+        {
+          "at": "2026-11-03T19:57:15+00:00",
+          "by": "human",
+          "field": "nearest_mode",
+          "previous": "unneeded_or_duplicate_escalation",
+          "value": "unsupported_claim"
+        },
+        {
+          "at": "2026-11-03T19:57:15+00:00",
+          "by": "human",
+          "field": "evaluator_type",
+          "previous": "llm_judge",
+          "value": "code_check"
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0012",
+            "support-0013",
+            "support-0014",
+            "support-0093",
+            "support-0102",
+            "support-0103",
+            "support-0111",
+            "support-0112",
+            "support-0142",
+            "support-0143",
+            "support-0171",
+            "support-0174",
+            "support-0220",
+            "support-0247"
+          ]
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "close_negative_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0100",
+            "support-0224",
+            "support-0010"
+          ]
+        }
+      ],
+      "created_from": [
+        "14ba89f3af8d43f5633076f3eb6df147",
+        "582897dbdd017889579336baed420421",
+        "f0c978b8c4aa6f8090209dc4a624f3d7",
+        "7f3c985fd01754dcad827667ed812435",
+        "d152ee77a07f1f74d635d5f576433f1e",
+        "41bfdce5d6a52fa029f173d7216d075c",
+        "42fad229a76aa56ca3208bd683fb6869"
+      ]
+    },
+    {
+      "id": "mode-7abeafc562",
+      "name": "unneeded_or_duplicate_escalation",
+      "status": "rejected",
+      "proposed_by": "agent",
+      "created_at": "2026-10-28T22:57:02+00:00",
+      "updated_at": "2026-10-31T16:40:55+00:00",
+      "definition": "The agent escalates, or offers to, when policy or the order record already resolves the case, or opens a second ticket for the same issue.",
+      "boundary": "Draft: needs more examples (depth search).",
+      "nearest_mode": "next_steps_missing_after_action",
+      "requirement_source": "ESC-3, ESC-4 (boundary unclear)",
+      "evaluator_type": "code_check",
+      "positive_conversation_ids": [],
+      "close_negative_conversation_ids": [],
+      "source_annotation_ids": [
+        "ann-6efbb3a9a1",
+        "ann-e75e3e192a"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:57:02+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "unneeded_or_duplicate_escalation",
+            "definition": "The agent escalates, or offers to, when policy or the order record already resolves the case, or opens a second ticket for the same issue.",
+            "boundary": "Draft: needs more examples (depth search).",
+            "nearest_mode": "next_steps_missing_after_action",
+            "requirement_source": "ESC-3, ESC-4 (boundary unclear)",
+            "evaluator_type": "code_check",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-6efbb3a9a1",
+              "ann-e75e3e192a"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-30T17:16:06+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-10-31T16:40:55+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "accepted",
+          "value": "rejected"
+        }
+      ],
+      "created_from": [
+        "da9b73ce95c257ec394e0eafb691f168",
+        "1f294e96c90fe9241da0b478c324e4f0"
+      ]
+    },
+    {
+      "id": "mode-0e94484f02",
+      "name": "refund_without_request_or_return_check",
+      "status": "rejected",
+      "proposed_by": "agent",
+      "created_at": "2026-10-28T22:57:02+00:00",
+      "updated_at": "2026-10-31T16:40:43+00:00",
+      "definition": "The agent issues or offers a refund without the item's return being initiated (shopper), or without evidence that the customer asked for it (support caller).",
+      "boundary": "Draft: SPEC.md requires neither check, so this is a spec gap to decide before it can be a failure mode.",
+      "nearest_mode": "",
+      "requirement_source": "REF-1 and REF-3 (SPEC revision, 30 Oct); REF-2 needs a return tool first",
+      "evaluator_type": "code_check",
+      "positive_conversation_ids": [],
+      "close_negative_conversation_ids": [],
+      "source_annotation_ids": [
+        "ann-65be49e2ba",
+        "ann-3d3463d544",
+        "ann-30694f3cad",
+        "ann-f1272364d4",
+        "ann-5944c5d699"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:57:02+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "refund_without_request_or_return_check",
+            "definition": "The agent issues or offers a refund without the item's return being initiated (shopper), or without evidence that the customer asked for it (support caller).",
+            "boundary": "Draft: SPEC.md requires neither check, so this is a spec gap to decide before it can be a failure mode.",
+            "nearest_mode": "",
+            "requirement_source": "spec revision needed: no return or request check exists in SPEC.md",
+            "evaluator_type": "code_check",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-65be49e2ba",
+              "ann-3d3463d544",
+              "ann-30694f3cad",
+              "ann-f1272364d4",
+              "ann-5944c5d699"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-30T15:22:02+00:00",
+          "by": "agent",
+          "field": "requirement_source",
+          "previous": "spec revision needed: no return or request check exists in SPEC.md",
+          "value": "REF-1 and REF-3 (SPEC revision, 30 Oct); REF-2 needs a return tool first"
+        },
+        {
+          "at": "2026-10-30T17:16:07+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-10-31T16:40:43+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "accepted",
+          "value": "rejected"
+        }
+      ],
+      "created_from": [
+        "41bfdce5d6a52fa029f173d7216d075c",
+        "51dc68a3ce9f8244349a3e951afcc729",
+        "e60949157798f8bb7bd0692780e46670",
+        "9cf59d157315e2eca6622710fc9e26d8",
+        "a5ba4f222e0fd0e6b35040af174f84d3"
+      ]
+    },
+    {
+      "id": "mode-5f84415be9",
+      "name": "over_formatted_or_verbose_reply",
+      "status": "rejected",
+      "proposed_by": "agent",
+      "created_at": "2026-10-28T22:57:02+00:00",
+      "updated_at": "2026-10-31T16:40:17+00:00",
+      "definition": "The reply uses list, heading or bold markdown, or several paragraphs, where one or two plain sentences would answer.",
+      "boundary": "Draft: open question — does the user's chat window render markdown? If it does, '**' is not visible to the user.",
+      "nearest_mode": "confusing_or_contradictory_reply",
+      "requirement_source": "RESP-6 (SPEC revision, 30 Oct)",
+      "evaluator_type": "code_check",
+      "positive_conversation_ids": [],
+      "close_negative_conversation_ids": [],
+      "source_annotation_ids": [
+        "ann-2dd5dfc537",
+        "ann-5ff56eb3cf",
+        "ann-c493a24728",
+        "ann-d538100736",
+        "ann-f44c5cf72d",
+        "ann-c7906ee910",
+        "ann-bc94009638"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:57:02+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "over_formatted_or_verbose_reply",
+            "definition": "The reply uses list, heading or bold markdown, or several paragraphs, where one or two plain sentences would answer.",
+            "boundary": "Draft: open question — does the user's chat window render markdown? If it does, '**' is not visible to the user.",
+            "nearest_mode": "confusing_or_contradictory_reply",
+            "requirement_source": "RESP-5 (direct language); may need a spec revision on format",
+            "evaluator_type": "code_check",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-2dd5dfc537",
+              "ann-5ff56eb3cf",
+              "ann-c493a24728",
+              "ann-d538100736",
+              "ann-f44c5cf72d",
+              "ann-c7906ee910",
+              "ann-bc94009638"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-30T15:22:02+00:00",
+          "by": "agent",
+          "field": "requirement_source",
+          "previous": "RESP-5 (direct language); may need a spec revision on format",
+          "value": "RESP-6 (SPEC revision, 30 Oct)"
+        },
+        {
+          "at": "2026-10-30T17:16:08+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-10-31T16:40:17+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "accepted",
+          "value": "rejected"
+        }
+      ],
+      "created_from": [
+        "14f636d56b27894dae3293b368434384",
+        "2ddd2bd3a47d39a2092db5109f24f395",
+        "c744191014c7fba632370f65f6e8a8d7",
+        "3c75b866602caf3526d0d8ee410174fe",
+        "5592e52414e5ecaf111acec9d4b11352",
+        "b44ebee5a4397dbb95b7feb17fd69065",
+        "7e330e0a678aa1a6316aa885d9f6c5f4"
+      ]
+    },
+    {
+      "id": "mode-c4886c90d7",
+      "name": "contradicts_earlier_statement",
+      "status": "rejected",
+      "proposed_by": "agent",
+      "created_at": "2026-10-28T22:57:02+00:00",
+      "updated_at": "2026-10-31T16:40:51+00:00",
+      "definition": "The reply contradicts something the agent itself stated earlier: in a previous turn of the same conversation, or earlier in the same reply.",
+      "boundary": "Draft. A new false claim with no conflicting earlier statement is unsupported_claim. Open for Vishan: does an explicit self-correction (\"earlier I said X; that was wrong\") pass? Does reversing a correct answer after wrong user pushback count?",
+      "nearest_mode": "unsupported_claim",
+      "requirement_source": "To decide: RESP-5, or a SPEC revision (new requirement: do not contradict earlier turns)",
+      "evaluator_type": "llm_judge",
+      "positive_conversation_ids": [],
+      "close_negative_conversation_ids": [],
+      "source_annotation_ids": [
+        "ann-0fdb573601"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-28T22:57:02+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "confusing_or_contradictory_reply",
+            "definition": "The reply contradicts itself, misframes what the user asked, or cannot be understood without re-reading.",
+            "boundary": "Draft: the content is unclear. Clear content in a heavy format is over_formatted_or_verbose_reply.",
+            "nearest_mode": "over_formatted_or_verbose_reply",
+            "requirement_source": "RESP-5",
+            "evaluator_type": "llm_judge",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-0fdb573601",
+              "ann-818509dff1",
+              "ann-c09437b04e",
+              "ann-94f9bae514",
+              "ann-8e4822b497",
+              "ann-439d7eff46"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-30T15:20:51+00:00",
+          "by": "agent",
+          "field": "name",
+          "previous": "confusing_or_contradictory_reply",
+          "value": "contradicts_earlier_statement"
+        },
+        {
+          "at": "2026-10-30T15:20:51+00:00",
+          "by": "agent",
+          "field": "definition",
+          "previous": "The reply contradicts itself, misframes what the user asked, or cannot be understood without re-reading.",
+          "value": "The reply contradicts something the user or the agent said earlier in the same conversation, or a statement the agent made earlier in the same reply."
+        },
+        {
+          "at": "2026-10-30T15:20:51+00:00",
+          "by": "agent",
+          "field": "boundary",
+          "previous": "Draft: the content is unclear. Clear content in a heavy format is over_formatted_or_verbose_reply.",
+          "value": "Draft. A new false claim with no conflicting earlier statement is unsupported_claim. Open for Vishan: does an explicit self-correction (\"earlier I said X; that was wrong\") pass? Does reversing a correct answer after wrong user pushback count?"
+        },
+        {
+          "at": "2026-10-30T15:20:51+00:00",
+          "by": "agent",
+          "field": "nearest_mode",
+          "previous": "over_formatted_or_verbose_reply",
+          "value": "unsupported_claim"
+        },
+        {
+          "at": "2026-10-30T15:20:51+00:00",
+          "by": "agent",
+          "field": "requirement_source",
+          "previous": "RESP-5",
+          "value": "To decide: RESP-5, or a SPEC revision (new requirement: do not contradict earlier turns)"
+        },
+        {
+          "at": "2026-10-30T15:20:51+00:00",
+          "by": "agent",
+          "field": "source_annotation_ids",
+          "previous": [
+            "ann-0fdb573601",
+            "ann-818509dff1",
+            "ann-c09437b04e",
+            "ann-94f9bae514",
+            "ann-8e4822b497",
+            "ann-439d7eff46"
+          ],
+          "value": [
+            "ann-0fdb573601"
+          ]
+        },
+        {
+          "at": "2026-10-30T15:21:03+00:00",
+          "by": "agent",
+          "field": "definition",
+          "previous": "The reply contradicts something the user or the agent said earlier in the same conversation, or a statement the agent made earlier in the same reply.",
+          "value": "The reply contradicts something the agent itself stated earlier: in a previous turn of the same conversation, or earlier in the same reply."
+        },
+        {
+          "at": "2026-10-30T17:16:09+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-10-31T16:40:51+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "accepted",
+          "value": "rejected"
+        }
+      ],
+      "created_from": [
+        "d67c37969247d6f4d7b63c9fd439847c"
+      ]
+    },
+    {
+      "id": "mode-6391e6320a",
+      "name": "damaged_record_not_flagged",
+      "status": "accepted",
+      "proposed_by": "agent",
+      "created_at": "2026-10-31T14:41:24+00:00",
+      "updated_at": "2026-11-27T11:24:47+00:00",
+      "definition": "The reply repeats, reasons from, or substitutes another field for an order or product record that is missing a required value or is internally inconsistent (for example a null delivery date on a delivered order, a negative price, or a ship date long after the order date), without telling the user the record is incomplete or inconsistent.",
+      "boundary": "The record itself is broken and the reply does not flag it. If the reply contradicts a valid field, that is unsupported_claim; a conversation can carry both when both happen. A reply that flags the missing or inconsistent value passes.",
+      "nearest_mode": "unsupported_claim",
+      "requirement_source": "RESP-3",
+      "evaluator_type": "code_check",
+      "positive_conversation_ids": [
+        "support-0176",
+        "support-0177",
+        "support-0178",
+        "support-0179",
+        "support-0180",
+        "support-0183",
+        "support-0186",
+        "support-0191",
+        "support-0193",
+        "support-0196",
+        "support-0199",
+        "support-0200",
+        "support-0201"
+      ],
+      "close_negative_conversation_ids": [
+        "support-0192",
+        "support-0150",
+        "support-0038"
+      ],
+      "source_annotation_ids": [
+        "ann-2144db2df5",
+        "ann-bb2681d21f",
+        "ann-54dcc8222e",
+        "ann-d1dc9300b0"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:41:24+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "damaged_record_not_flagged",
+            "definition": "The reply repeats or reasons from an order or product record that is missing a required value or is internally inconsistent (for example a null delivery date on a delivered order, a negative price, or a ship date long after the order date) without telling the user the record is incomplete or inconsistent.",
+            "boundary": "Draft. A value that differs from a valid record is misreported_order_data. Here the record itself is broken and the reply does not flag it.",
+            "nearest_mode": "misreported_order_data",
+            "requirement_source": "RESP-3",
+            "evaluator_type": "code_check",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-2144db2df5",
+              "ann-bb2681d21f",
+              "ann-54dcc8222e",
+              "ann-d1dc9300b0"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-31T14:44:10+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-11-03T20:25:21+00:00",
+          "by": "human",
+          "field": "definition",
+          "previous": "The reply repeats or reasons from an order or product record that is missing a required value or is internally inconsistent (for example a null delivery date on a delivered order, a negative price, or a ship date long after the order date) without telling the user the record is incomplete or inconsistent.",
+          "value": "The reply repeats, reasons from, or substitutes another field for an order or product record that is missing a required value or is internally inconsistent (for example a null delivery date on a delivered order, a negative price, or a ship date long after the order date), without telling the user the record is incomplete or inconsistent."
+        },
+        {
+          "at": "2026-11-03T20:25:21+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Draft. A value that differs from a valid record is misreported_order_data. Here the record itself is broken and the reply does not flag it.",
+          "value": "The record itself is broken and the reply does not flag it. If the reply contradicts a valid field, that is misreported_order_data; a conversation can carry both when both happen. A reply that flags the missing or inconsistent value passes."
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0176",
+            "support-0177",
+            "support-0178",
+            "support-0179",
+            "support-0180",
+            "support-0183",
+            "support-0186",
+            "support-0191",
+            "support-0193",
+            "support-0196",
+            "support-0199",
+            "support-0200",
+            "support-0201"
+          ]
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "close_negative_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0192",
+            "support-0150",
+            "support-0038"
+          ]
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "The record itself is broken and the reply does not flag it. If the reply contradicts a valid field, that is misreported_order_data; a conversation can carry both when both happen. A reply that flags the missing or inconsistent value passes.",
+          "value": "The record itself is broken and the reply does not flag it. If the reply contradicts a valid field, that is unsupported_claim; a conversation can carry both when both happen. A reply that flags the missing or inconsistent value passes."
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "nearest_mode",
+          "previous": "misreported_order_data",
+          "value": "unsupported_claim"
+        }
+      ],
+      "created_from": [
+        "3df680d5fb6fc7213088dd3d70522b11",
+        "d2743344a36129163912101930256ac0",
+        "960ecdabe24be5f0c21e13f9b0d3d680",
+        "72fcaf042191e1e568ad4a15838d39d2"
+      ]
+    },
+    {
+      "id": "mode-3eac8c469c",
+      "name": "support_caller_treated_as_customer",
+      "status": "rejected",
+      "proposed_by": "agent",
+      "created_at": "2026-10-31T14:41:24+00:00",
+      "updated_at": "2026-10-31T16:40:25+00:00",
+      "definition": "When the caller is support staff, the reply frames the exchange as if the caller were the end customer, for example offering to connect them to a human or telling them a human will follow up with them.",
+      "boundary": "Draft. Escalating an account change is required by ESC-2 and is not this mode; the failure is the framing toward a support caller.",
+      "nearest_mode": "unneeded_or_duplicate_escalation",
+      "requirement_source": "Spec gap: role-specific replies for support staff (revision needed)",
+      "evaluator_type": "llm_judge",
+      "positive_conversation_ids": [],
+      "close_negative_conversation_ids": [],
+      "source_annotation_ids": [
+        "ann-bd4f66cd09",
+        "ann-540850725f",
+        "ann-65df26e868",
+        "ann-ec42f055d6"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:41:24+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "support_caller_treated_as_customer",
+            "definition": "When the caller is support staff, the reply frames the exchange as if the caller were the end customer, for example offering to connect them to a human or telling them a human will follow up with them.",
+            "boundary": "Draft. Escalating an account change is required by ESC-2 and is not this mode; the failure is the framing toward a support caller.",
+            "nearest_mode": "unneeded_or_duplicate_escalation",
+            "requirement_source": "Spec gap: role-specific replies for support staff (revision needed)",
+            "evaluator_type": "llm_judge",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-bd4f66cd09",
+              "ann-540850725f",
+              "ann-65df26e868",
+              "ann-ec42f055d6"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-31T14:44:10+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-10-31T16:40:25+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "accepted",
+          "value": "rejected"
+        }
+      ],
+      "created_from": [
+        "c47a381591f4f003ad37a0a64f391427",
+        "9d21c4af21964e67e8bff0342e969b0f",
+        "be2b8b6d22eb65b599222bfd38b57e38",
+        "41bfdce5d6a52fa029f173d7216d075c"
+      ]
+    },
+    {
+      "id": "mode-ae8f7b6aad",
+      "name": "reasks_provided_information",
+      "status": "accepted",
+      "proposed_by": "agent",
+      "created_at": "2026-10-31T14:41:24+00:00",
+      "updated_at": "2026-11-27T11:24:47+00:00",
+      "definition": "The reply asks the user for information the user already gave earlier in the conversation, or that a tool result in the trace already contains.",
+      "boundary": "Present when the reply asks for information the user already gave or a tool result already holds. Asking for information that is genuinely missing passes, and so does confirming an ambiguous match (for example, several orders fit the description).",
+      "nearest_mode": "question_not_answered",
+      "requirement_source": "RESP-5",
+      "evaluator_type": "llm_judge",
+      "positive_conversation_ids": [
+        "support-0016",
+        "support-0018",
+        "support-0224",
+        "support-0228"
+      ],
+      "close_negative_conversation_ids": [
+        "support-0246",
+        "support-0100",
+        "support-0248"
+      ],
+      "source_annotation_ids": [
+        "ann-a47852c1d6",
+        "ann-a5f3f39304",
+        "ann-04446fc6ab"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:41:24+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "reasks_provided_information",
+            "definition": "The reply asks the user for information the user already gave earlier in the conversation, or that a tool result in the trace already contains.",
+            "boundary": "Draft. Asking for information that is genuinely missing is a pass.",
+            "nearest_mode": "question_not_answered",
+            "requirement_source": "RESP-5 (or a spec revision)",
+            "evaluator_type": "llm_judge",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-a47852c1d6",
+              "ann-a5f3f39304",
+              "ann-04446fc6ab"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-31T14:44:11+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Draft. Asking for information that is genuinely missing is a pass.",
+          "value": "Present when the reply asks for information the user already gave or a tool result already holds. Asking for information that is genuinely missing passes, and so does confirming an ambiguous match (for example, several orders fit the description)."
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "requirement_source",
+          "previous": "RESP-5 (or a spec revision)",
+          "value": "RESP-5"
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0016",
+            "support-0018",
+            "support-0022",
+            "support-0224",
+            "support-0228"
+          ]
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "close_negative_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0246",
+            "support-0100",
+            "support-0248"
+          ]
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [
+            "support-0016",
+            "support-0018",
+            "support-0022",
+            "support-0224",
+            "support-0228"
+          ],
+          "value": [
+            "support-0016",
+            "support-0018",
+            "support-0224",
+            "support-0228"
+          ]
+        }
+      ],
+      "created_from": [
+        "ea951aa3033cd672af7ea4a9ac16bf2c",
+        "9bcbf0db01f25cb6ffedd50bb9206cac"
+      ]
+    },
+    {
+      "id": "mode-4349388330",
+      "name": "question_not_answered",
+      "status": "accepted",
+      "proposed_by": "agent",
+      "created_at": "2026-10-31T14:41:24+00:00",
+      "updated_at": "2026-11-27T11:24:47+00:00",
+      "definition": "The reply does not answer the question the user asked: it answers a different question, or gives related information without the answer.",
+      "boundary": "Present when the reply leaves the user's question unanswered: it answers a different question, or gives related information without the answer. A partial answer that addresses the core question passes. An answer that is given but wrong is unsupported_claim.",
+      "nearest_mode": "reasks_provided_information",
+      "requirement_source": "RESP-5",
+      "evaluator_type": "llm_judge",
+      "positive_conversation_ids": [
+        "support-0066",
+        "support-0079",
+        "support-0111",
+        "support-0126",
+        "support-0176",
+        "support-0213",
+        "support-0217",
+        "support-0236"
+      ],
+      "close_negative_conversation_ids": [
+        "support-0083",
+        "support-0090",
+        "support-0149"
+      ],
+      "source_annotation_ids": [
+        "ann-0d7e1d2399",
+        "ann-54dcc8222e",
+        "ann-a49908212f"
+      ],
+      "merged_into": null,
+      "history": [
+        {
+          "at": "2026-10-31T14:41:24+00:00",
+          "by": "agent",
+          "field": "created",
+          "previous": null,
+          "value": {
+            "name": "question_not_answered",
+            "definition": "The reply does not answer the question the user asked: it answers a different question, or gives related information without the answer.",
+            "boundary": "Draft. An answer that is given but wrong belongs to unsupported_claim or misreported_order_data.",
+            "nearest_mode": "reasks_provided_information",
+            "requirement_source": "RESP-5",
+            "evaluator_type": "llm_judge",
+            "positive_conversation_ids": [],
+            "close_negative_conversation_ids": [],
+            "source_annotation_ids": [
+              "ann-0d7e1d2399",
+              "ann-54dcc8222e",
+              "ann-a49908212f"
+            ],
+            "status": "proposed"
+          }
+        },
+        {
+          "at": "2026-10-31T14:44:12+00:00",
+          "by": "human",
+          "field": "status",
+          "previous": "proposed",
+          "value": "accepted"
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Draft. An answer that is given but wrong belongs to unsupported_claim or misreported_order_data.",
+          "value": "Present when the reply leaves the user's question unanswered: it answers a different question, or gives related information without the answer. A partial answer that addresses the core question passes. An answer that is given but wrong is unsupported_claim or misreported_order_data."
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0039",
+            "support-0066",
+            "support-0079",
+            "support-0084",
+            "support-0111",
+            "support-0113",
+            "support-0126",
+            "support-0176",
+            "support-0213",
+            "support-0217",
+            "support-0236",
+            "support-0242"
+          ]
+        },
+        {
+          "at": "2026-11-04T07:30:38+00:00",
+          "by": "human",
+          "field": "close_negative_conversation_ids",
+          "previous": [],
+          "value": [
+            "support-0083",
+            "support-0090",
+            "support-0149"
+          ]
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "boundary",
+          "previous": "Present when the reply leaves the user's question unanswered: it answers a different question, or gives related information without the answer. A partial answer that addresses the core question passes. An answer that is given but wrong is unsupported_claim or misreported_order_data.",
+          "value": "Present when the reply leaves the user's question unanswered: it answers a different question, or gives related information without the answer. A partial answer that addresses the core question passes. An answer that is given but wrong is unsupported_claim."
+        },
+        {
+          "at": "2026-11-27T11:24:47+00:00",
+          "by": "human",
+          "field": "positive_conversation_ids",
+          "previous": [
+            "support-0039",
+            "support-0066",
+            "support-0079",
+            "support-0084",
+            "support-0111",
+            "support-0113",
+            "support-0126",
+            "support-0176",
+            "support-0213",
+            "support-0217",
+            "support-0236",
+            "support-0242"
+          ],
+          "value": [
+            "support-0066",
+            "support-0079",
+            "support-0111",
+            "support-0126",
+            "support-0176",
+            "support-0213",
+            "support-0217",
+            "support-0236"
+          ]
+        }
+      ],
+      "created_from": [
+        "dea70a094cd8a2b07cfba621b12713b6",
+        "960ecdabe24be5f0c21e13f9b0d3d680",
+        "316db596e5b32e1c65d77938b1802fdc"
+      ]
+    }
+  ]
+}

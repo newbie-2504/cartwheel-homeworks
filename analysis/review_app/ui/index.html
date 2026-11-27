@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<!--
+  Cartwheel HW4 review app (single file, no CDN). Served by analysis/review_app/server.py.
+
+  Tabs: Review · Taxonomy · Suggestions · Labels · Progress.
+
+  Visual channels, one per dimension:
+    role of a block      -> hue of its left border and role label (user blue, tool amber,
+                            model text slate, reply green). No block is dimmed by role.
+    who wrote a mark     -> highlight style: human = solid yellow fill;
+                            agent suggestion = lavender tint + dashed underline + "agent suggestion" tag.
+    first failure        -> the flag glyph (CSS ::before, so text offsets are unaffected).
+    grouping             -> container: a tool call and its result share one box.
+  Notes are free text only. Every write sends by: "human".
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cartwheel HW4 review</title>
+<style>
+  :root {
+    --user: #2563eb; --tool: #b45309; --mtext: #475569; --reply: #047857;
+    --bg: #f6f6f4; --panel: #fff; --ink: #1c1f23; --muted: #646b73; --line: #e2e3df;
+    --hl: #fde68a; --hl-edge: #d97706; --sugg: #ede9fe; --sugg-edge: #7c3aed; --pending: #bfdbfe;
+    --ff: #b91c1c; --ok: #15803d; --bad: #b91c1c; --warn: #92400e; --warnbg: #fef3c7;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); display: flex; flex-direction: column; }
+  code, pre, .mono { font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace; }
+  button { font: inherit; cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 6px; padding: 4px 10px; color: var(--ink); }
+  button:hover { border-color: #9ca3af; }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+  button.good { border-color: var(--ok); color: var(--ok); }
+  button.bad { border-color: var(--bad); color: var(--bad); }
+  input, select, textarea { font: inherit; border: 1px solid var(--line); border-radius: 6px; padding: 4px 7px; background: #fff; color: var(--ink); }
+  textarea { width: 100%; resize: vertical; }
+  a { color: var(--user); }
+
+  header { display: flex; align-items: center; gap: 14px; padding: 8px 14px; background: var(--panel); border-bottom: 1px solid var(--line); flex: none; }
+  header h1 { font-size: 15px; margin: 0; white-space: nowrap; }
+  header h1 span { color: var(--muted); font-weight: 400; }
+  .tabs { display: flex; gap: 4px; }
+  .tabs button { padding: 5px 12px; background: var(--bg); }
+  .tabs button.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .tabs .n { font-size: 11px; background: #e5e7eb; color: var(--ink); border-radius: 8px; padding: 0 6px; margin-left: 4px; }
+  .tabs button.active .n { background: #4b5563; color: #fff; }
+  .spacer { flex: 1; }
+  #source-badge { font-size: 12px; color: var(--muted); max-width: 420px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #saved { font-size: 12px; color: var(--muted); min-width: 120px; text-align: right; }
+
+  #banners .banner { padding: 7px 14px; font-size: 13px; border-bottom: 1px solid var(--line); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .banner.offline { background: #fff7ed; color: #9a3412; border-bottom-color: #fdba74 !important; }
+  .banner.demo { background: #eef2ff; color: #3730a3; }
+  .banner.warn { background: var(--warnbg); color: var(--warn); }
+  .banner b { font-weight: 700; }
+
+  main { flex: 1; min-height: 0; position: relative; }
+  .view { display: none; height: 100%; }
+  .view.active { display: block; }
+  #view-review.active { display: grid; grid-template-columns: 250px minmax(0, 1fr) 370px; }
+  .scroll { overflow: auto; height: 100%; }
+
+  /* ---- conversation list ---- */
+  #list-pane { border-right: 1px solid var(--line); background: var(--panel); display: flex; flex-direction: column; min-height: 0; }
+  .filters { padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; border-bottom: 1px solid var(--line); }
+  .filters input { grid-column: 1 / -1; }
+  .filters select { font-size: 12px; padding: 3px; min-width: 0; }
+  .list-count { font-size: 12px; color: var(--muted); padding: 4px 10px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; }
+  #conv-list { overflow: auto; flex: 1; }
+  #conv-list a { display: grid; grid-template-columns: 18px 1fr auto; gap: 4px; padding: 5px 10px; color: var(--ink); text-decoration: none; border-bottom: 1px solid #f0f0ec; font-size: 13px; }
+  #conv-list a.cur { background: #dbeafe; }
+  #conv-list a .meta { grid-column: 2 / -1; font-size: 11px; color: var(--muted); }
+  .st { font-weight: 700; text-align: center; }
+  .st.not_reviewed { color: #9ca3af; }
+  .st.has_notes { color: var(--hl-edge); }
+  .st.no_failure { color: #0f766e; }
+  .legend { font-size: 11px; color: var(--muted); padding: 6px 10px; border-top: 1px solid var(--line); }
+  .flag { font-size: 10.5px; background: var(--warnbg); color: var(--warn); border-radius: 8px; padding: 0 6px; white-space: nowrap; }
+
+  /* ---- conversation ---- */
+  #conv-pane { overflow: auto; min-height: 0; }
+  #conv-head { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 10px 18px 8px; border-bottom: 1px solid var(--line); }
+  #conv-head h2 { margin: 0; font-size: 17px; display: inline; }
+  .hmeta { color: var(--muted); font-size: 12px; margin-left: 8px; }
+  .hrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+  .retried { background: var(--warnbg); color: var(--warn); padding: 3px 8px; border-radius: 6px; font-size: 12.5px; }
+  .warnline { color: var(--warn); font-size: 12.5px; }
+  #btn-nofail.on { background: #ccfbf1; border-color: #0f766e; color: #0f766e; }
+  #conv-wrap { position: relative; display: flex; gap: 18px; padding: 14px 18px 120px; }
+  #conv-body { flex: 1; min-width: 0; max-width: 760px; }
+  #margin { width: 250px; flex: none; position: relative; }
+
+  details.sys { margin-bottom: 14px; font-size: 13px; }
+  details.sys summary { cursor: pointer; color: var(--muted); }
+  details.sys pre { white-space: pre-wrap; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 8px; font-size: 12px; max-height: 420px; overflow: auto; }
+  .turn { margin-bottom: 26px; }
+  .turn-head { font-size: 12px; color: var(--muted); margin: 0 0 6px; display: flex; gap: 8px; align-items: baseline; border-bottom: 1px dashed var(--line); padding-bottom: 3px; }
+  .turn-head b { color: var(--ink); font-size: 13px; }
+  .blk { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--line); border-radius: 6px; padding: 7px 11px; margin-bottom: 8px; }
+  .blk .role { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
+  .blk.user { border-left-color: var(--user); } .blk.user .role { color: var(--user); }
+  .blk.reply { border-left-color: var(--reply); } .blk.reply .role { color: var(--reply); }
+  .blk.mtext { border-left-color: var(--mtext); } .blk.mtext .role { color: var(--mtext); }
+  .blk.tool { border-left-color: var(--tool); margin-left: 22px; }
+  .blk.tool .role { color: var(--tool); }
+  details.blk.tool > summary { cursor: pointer; list-style: none; }
+  details.blk.mtext > summary { cursor: pointer; list-style: none; }
+  details.blk.mtext > summary .role { display: inline; }
+  details.blk.mtext:not([open]) > summary::before { content: '▸ '; color: #9ca3af; }
+  details.blk.mtext[open] > summary::before { content: '▾ '; color: #9ca3af; }
+  details.blk.mtext > summary .tsum, details.blk.tool > summary .tsum { color: #6b7280; font-size: 12px; }
+  details.blk.tool > summary .role { display: inline; margin-right: 6px; }
+  details.blk.tool > summary .argsum { color: #6b7280; font-family: ui-monospace, monospace; font-size: 12px; margin-left: 4px; }
+  details.blk.tool > summary .tsum { color: #6b7280; font-size: 12px; }
+  details.blk.tool:not([open]) > summary::before { content: '▸ '; color: #9ca3af; }
+  details.blk.tool[open] > summary::before { content: '▾ '; color: #9ca3af; }
+  .txt { white-space: pre-wrap; word-wrap: break-word; }
+  .fn { font-family: "SF Mono", ui-monospace, Menlo, monospace; font-weight: 700; font-size: 14px; color: var(--ink); }
+  .okf { font-size: 11px; border-radius: 8px; padding: 0 7px; margin-left: 6px; }
+  .okf.ok { background: #dcfce7; color: var(--ok); } .okf.err { background: #fee2e2; color: var(--bad); }
+  .tool details > summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
+  .tool .argsum { font-family: "SF Mono", ui-monospace, Menlo, monospace; }
+  .tool .reslabel { font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--tool); margin-top: 6px; }
+  pre.json { background: #f6f7f8; border-radius: 5px; padding: 7px 9px; margin: 4px 0 0; font-size: 12.3px; white-space: pre-wrap; word-break: break-word; }
+  .notool { font-size: 12px; color: var(--muted); font-style: italic; margin: 0 0 8px 22px; }
+
+  .hl { border-radius: 2px; cursor: pointer; }
+  .hl.h { background: var(--hl); }
+  .hl.s { border-bottom: 2px dashed var(--sugg-edge); }
+  .hl.s:not(.h) { background: var(--sugg); }
+  .hl.p { background: var(--pending); }
+  .hl.ff::before { content: "⚑"; color: var(--ff); font-weight: 700; margin-right: 1px; }
+  .hl.outline, .mnote.outline { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .flash { animation: flash 1.2s ease 2; }
+  @keyframes flash { 50% { outline: 3px solid var(--user); } }
+
+  .mnote { position: absolute; left: 0; width: 100%; background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--hl-edge); border-radius: 5px; padding: 6px 8px; font-size: 12.5px; box-shadow: 0 1px 3px rgba(0,0,0,.07); }
+  .mnote.sugg { border: 1px dashed var(--sugg-edge); border-left: 4px dashed var(--sugg-edge); background: #faf7ff; }
+  .mnote .tag { font-size: 10px; font-weight: 700; color: var(--sugg-edge); text-transform: uppercase; letter-spacing: .03em; }
+  .mnote .ffb { font-size: 10.5px; font-weight: 700; color: var(--ff); }
+  .mnote .where { font-size: 10.5px; color: var(--muted); }
+  .mnote .acc { font-size: 10px; color: var(--sugg-edge); }
+  .mnote .quote { color: var(--muted); font-style: italic; margin: 2px 0; word-break: break-word; }
+  .mnote .body { white-space: pre-wrap; word-break: break-word; }
+  .mnote .acts { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .mnote .acts button { font-size: 11px; padding: 1px 6px; }
+  .mnote.human .acts { visibility: hidden; }
+  .mnote.human:hover .acts, .mnote.human.editing .acts { visibility: visible; }
+  .mnote input.cmt { width: 100%; font-size: 11.5px; margin-top: 4px; }
+  .mnote .hist { font-size: 11px; color: var(--muted); border-top: 1px dashed var(--line); margin-top: 4px; padding-top: 3px; }
+  .mnote .orphan { font-size: 10.5px; color: var(--warn); }
+
+  #popover { position: fixed; z-index: 200; display: none; width: 340px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.18); padding: 8px; }
+  #popover textarea { height: 64px; }
+  #popover .hint { color: var(--muted); font-size: 11px; margin-top: 3px; }
+  #popover .warnline { margin-top: 3px; }
+
+  /* ---- context pane ---- */
+  #ctx-pane { border-left: 1px solid var(--line); background: var(--panel); overflow: auto; padding: 10px 12px 60px; min-height: 0; }
+  .sec { margin-bottom: 16px; }
+  .sec-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip { font-size: 12px; background: #eef0f2; border-radius: 4px; padding: 1px 7px; }
+  .chip b { font-weight: 600; color: var(--muted); }
+  .facts { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .keybox { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; background: #fafafa; font-size: 13px; }
+  .keybox code { word-break: break-all; font-size: 12px; }
+  .ev-item { border-top: 1px solid #f0f0ec; padding: 4px 0; font-size: 12.5px; }
+  .ev-item summary { cursor: pointer; }
+  .ev-item pre { white-space: pre-wrap; font-size: 12px; background: #f6f7f8; padding: 6px; border-radius: 5px; margin: 4px 0; }
+  .tchip { font-size: 10.5px; background: #e0e7ff; color: #3730a3; border-radius: 4px; padding: 0 5px; margin-right: 4px; }
+  .rowcard { border: 1px solid var(--line); border-radius: 6px; padding: 5px 7px; margin: 5px 0; font-size: 12px; }
+  .rowcard .kv { display: grid; grid-template-columns: 110px 1fr; gap: 0 6px; }
+  .rowcard .kv span:nth-child(odd) { color: var(--muted); }
+  .rowcard .seen { color: var(--muted); font-size: 11px; margin-top: 3px; }
+  .muted { color: var(--muted); }
+  .small { font-size: 12px; }
+
+  /* ---- other views ---- */
+  .page { padding: 16px 20px 80px; max-width: 1280px; margin: 0 auto; }
+  .toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+  .mode-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; }
+  .mode-card.st-rejected, .mode-card.st-merged { background: #fafafa; }
+  .mc-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .mc-head .name { font-size: 15px; font-weight: 700; }
+  .badge { font-size: 10.5px; font-weight: 700; text-transform: uppercase; border-radius: 8px; padding: 1px 7px; }
+  .badge.proposed { background: var(--warnbg); color: var(--warn); }
+  .badge.accepted { background: #dcfce7; color: var(--ok); }
+  .badge.rejected { background: #fee2e2; color: var(--bad); }
+  .badge.merged { background: #e0e7ff; color: #3730a3; }
+  .badge.pending { background: var(--warnbg); color: var(--warn); }
+  .def { margin: 6px 0; white-space: pre-wrap; }
+  .checklist { display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; margin: 6px 0; }
+  .checklist span { border-radius: 4px; padding: 0 6px; }
+  .checklist .y { background: #dcfce7; color: var(--ok); } .checklist .n { background: #fee2e2; color: var(--bad); }
+  .notes-list { list-style: none; margin: 4px 0; padding: 0; }
+  .notes-list li { border-top: 1px dashed var(--line); padding: 3px 0; font-size: 13px; cursor: pointer; }
+  .notes-list li:hover { color: var(--user); }
+  .grid2 { display: grid; grid-template-columns: 200px 1fr; gap: 6px 10px; align-items: start; margin: 8px 0; }
+  .grid2 label { font-weight: 600; font-size: 13px; padding-top: 4px; }
+  .grid2 .help { font-size: 11.5px; color: var(--muted); }
+  table.t { border-collapse: collapse; width: 100%; background: var(--panel); font-size: 13px; }
+  table.t th, table.t td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  table.t th { background: #f3f4f6; font-size: 12px; position: sticky; top: 0; z-index: 1; }
+  .hist-table td, .hist-table th { font-size: 12px; }
+  .cell { width: 100%; min-width: 46px; padding: 2px 0; font-weight: 700; border-radius: 4px; }
+  .cell.present { background: #fee2e2; color: var(--bad); border-color: #fca5a5; }
+  .cell.absent { background: #e0f2fe; color: #075985; border-color: #7dd3fc; }
+  .cell.sug { border-style: dashed; color: var(--muted); }
+  .lstrip { flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .lchip { display: inline-flex; align-items: center; gap: 2px; border: 1px solid var(--line); border-radius: 6px; padding: 1px 4px; font-size: 12px; }
+  .lchip code { font-size: 11px; margin-right: 3px; }
+  .lc { padding: 0 6px; min-width: 22px; }
+  .lc.present { background: #fee2e2; color: var(--bad); border-color: #fca5a5; }
+  .lc.absent { background: #e0f2fe; color: #075985; border-color: #7dd3fc; }
+  .lc.sugp, .lc.suga { border-style: dashed; border-width: 2px; }
+  .lc.hintx { border-style: dotted; border-width: 2px; border-color: #a16207; }
+  .cell.sel { outline: 2px solid var(--ink); }
+  .cell .lf { font-size: 9px; vertical-align: super; color: var(--ok); }
+  #label-layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 14px; align-items: start; }
+  #label-editor { position: sticky; top: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+  .tiles { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .tile { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; min-width: 160px; }
+  .tile .big { font-size: 22px; font-weight: 700; }
+  .tile .lbl { font-size: 12px; color: var(--muted); }
+  .bar-row { display: grid; grid-template-columns: 240px 1fr 140px; gap: 8px; align-items: center; font-size: 13px; margin: 3px 0; }
+  .bar { height: 14px; background: #fcd34d; border-radius: 3px; }
+  .bar.s { background: repeating-linear-gradient(45deg, #c4b5fd, #c4b5fd 4px, #ede9fe 4px, #ede9fe 8px); }
+  .idlink { cursor: pointer; color: var(--user); text-decoration: underline; font-family: "SF Mono", ui-monospace, monospace; font-size: 12px; }
+  .empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
+  h3.sec-h { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 20px 0 8px; }
+  #toast { position: fixed; right: 16px; bottom: 16px; z-index: 300; background: var(--ink); color: #fff; padding: 9px 14px; border-radius: 8px; font-size: 13px; max-width: 420px; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  #toast.show { opacity: 1; }
+  #toast.err { background: var(--bad); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Cartwheel <span>HW4 review</span></h1>
+  <div class="tabs" id="tabs">
+    <button data-view="review" class="active">Review</button>
+    <button data-view="taxonomy">Taxonomy <span class="n" id="n-modes">0</span></button>
+    <button data-view="suggestions">Suggestions <span class="n" id="n-sugg">0</span></button>
+    <button data-view="labels">Labels</button>
+    <button data-view="progress">Progress</button>
+  </div>
+  <div class="spacer"></div>
+  <span id="source-badge"></span>
+  <button id="btn-reload" title="Fetch the support- traces from Langfuse again and refresh the cache">Reload from Langfuse</button>
+  <span id="saved"></span>
+</header>
+<div id="banners"></div>
+<main>
+  <section id="view-review" class="view active">
+    <aside id="list-pane">
+      <div class="filters">
+        <input id="f-q" placeholder="filter by id, e.g. 0238" />
+        <select data-f="batch"></select>
+        <select data-f="status"></select>
+        <select data-f="role"></select>
+        <select data-f="intent"></select>
+        <select data-f="record_state"></select>
+        <select data-f="group"></select>
+      </div>
+      <div class="list-count"><span id="list-count"></span><span>j / k</span></div>
+      <div id="conv-list"></div>
+      <div class="legend"><span class="st not_reviewed">○</span> not reviewed · <span class="st has_notes">✎</span> has notes · <span class="st no_failure">✓</span> no failure observed</div>
+    </aside>
+    <section id="conv-pane">
+      <div id="conv-head"></div>
+      <div id="conv-wrap"><div id="conv-body"></div><div id="margin"></div></div>
+    </section>
+    <aside id="ctx-pane"></aside>
+  </section>
+  <section id="view-taxonomy" class="view scroll"><div class="page" id="taxonomy"></div></section>
+  <section id="view-suggestions" class="view scroll"><div class="page" id="suggestions"></div></section>
+  <section id="view-labels" class="view scroll"><div class="page" id="labels"></div></section>
+  <section id="view-progress" class="view scroll"><div class="page" id="progress"></div></section>
+</main>
+<div id="popover">
+  <textarea id="note-input" placeholder="What went wrong? Your own words. Enter saves, Shift+Enter adds a line, Esc cancels."></textarea>
+  <div class="hint" id="pop-hint"></div>
+  <div class="warnline" id="pop-warn"></div>
+</div>
+<div id="toast"></div>
+
+<script>
+'use strict';
+/* ================================================================== *
+ * state, api, utilities                                               *
+ * ================================================================== */
+const S = {
+  status: null, list: [], convCache: {}, curId: null, conv: null, blockText: {},
+  annotations: [], patterns: { modes: [] }, suggestions: [], manifest: { batches: [] }, labels: {}, progress: null,
+  filters: { q: '', batch: '', status: '', role: '', intent: '', record_state: '', group: '' },
+  view: 'review', pending: null, version: '', editingMode: null, newMode: false, labelSel: null,
+  suggFilter: { status: 'pending', mode: '', q: '' }, labelBatch: '', taxStatus: '', staleViews: new Set(), open: {},
+};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const clip = (s, n) => { s = String(s ?? ''); return s.length > n ? s.slice(0, n) + '…' : s; };
+const short = s => s ? String(s).slice(0, 8) + '…' : '';
+const fmtTime = t => t ? String(t).replace('T', ' ').replace(/\.\d+/, '').replace('+00:00', 'Z') : '';
+
+async function api(path, body) {
+  const opt = body === undefined ? {} : {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(Object.assign({ by: 'human' }, body)),
+  };
+  if (body !== undefined) $('saved').textContent = 'Saving…';
+  const res = await fetch(path, opt);
+  let data = null;
+  try { data = await res.json(); } catch (e) { data = { error: 'bad response' }; }
+  if (!res.ok) {
+    if (body !== undefined) $('saved').textContent = 'Not saved';
+    const err = new Error(data && data.error ? data.error : res.statusText);
+    err.data = data; err.status = res.status; throw err;
+  }
+  if (body !== undefined) $('saved').textContent = 'Saved ✓ ' + new Date().toLocaleTimeString();
+  return data;
+}
+async function post(path, body, okMsg) {
+  try { const r = await api(path, body); if (okMsg) toast(okMsg); await refreshAll(); return r; }
+  catch (e) { toast(e.message, true); return null; }
+}
+function toast(msg, err) {
+  const t = $('toast'); t.textContent = msg; t.className = 'show' + (err ? ' err' : '');
+  clearTimeout(t._h); t._h = setTimeout(() => t.className = '', err ? 6000 : 2600);
+}
+
+/* ---- derived ---- */
+const activeAnns = () => S.annotations.filter(a => !a.deleted_at);
+function convStatus(id) {
+  const mine = activeAnns().filter(a => a.conversation_id === id);
+  if (mine.some(a => !a.no_failure)) return 'has_notes';
+  if (mine.some(a => a.no_failure)) return 'no_failure';
+  return 'not_reviewed';
+}
+const ICON = { not_reviewed: '○', has_notes: '✎', no_failure: '✓' };
+const STATUS_TEXT = { not_reviewed: 'not reviewed', has_notes: 'has notes', no_failure: 'no failure observed' };
+const modes = () => (S.patterns.modes || []);
+const acceptedModes = () => modes().filter(m => m.status === 'accepted');
+function batchOf(id) { for (const b of S.manifest.batches || []) if ((b.conversation_ids || []).includes(id)) return b.name; return null; }
+const listItem = id => S.list.find(c => c.id === id);
+function blockLabel(target) {
+  if (!target) return '';
+  const m = /^t(\d+)\.(?:s(\d+)\.)?(\w+)$/.exec(target); if (!m) return target;
+  const turn = 'T' + (+m[1] + 1);
+  return turn + ' · ' + ({ user: 'user', reply: 'reply', args: 'tool arguments', result: 'tool result', text: 'model text' }[m[3]] || m[3]);
+}
+
+/* ================================================================== *
+ * loading, polling, routing                                           *
+ * ================================================================== */
+async function refreshAll() {
+  const [st, list, ann, pat, sug, man, prog, lab] = await Promise.all([
+    api('/api/status'), api('/api/conversations'), api('/api/annotations'), api('/api/patterns'),
+    api('/api/suggestions'), api('/api/samples'), api('/api/progress'), api('/api/labels'),
+  ]);
+  try { S.labelSug = (await api('/api/label-suggestions')).modes || {}; } catch (e) { S.labelSug = {}; }
+  const dataChanged = S.version && S.version.split('#')[0] !== st.version.split('#')[0];
+  S.status = st; S.list = list.conversations; S.annotations = ann.annotations; S.patterns = pat;
+  S.suggestions = sug; S.manifest = man; S.progress = prog; S.labels = lab.modes || {}; S.version = st.version;
+  if (dataChanged) { S.convCache = {}; if (S.curId) await openConversation(S.curId, true); }
+  renderAll();
+}
+async function poll() {
+  try {
+    const v = await api('/api/version');
+    if (v.version !== S.version) await refreshAll();
+  } catch (e) { /* server restarting */ }
+}
+function busyIn(el) {
+  const a = document.activeElement;
+  return (S.pending && el.id === 'view-review') || (a && el.contains(a) && /INPUT|TEXTAREA|SELECT/.test(a.tagName));
+}
+function renderAll() {
+  renderHeaderBits(); renderBanners();
+  const views = { review: renderReview, taxonomy: renderTaxonomy, suggestions: renderSuggestions, labels: renderLabels, progress: renderProgress };
+  for (const [name, fn] of Object.entries(views)) {
+    const el = $('view-' + name);
+    if (name !== S.view) { S.staleViews.add(name); continue; }
+    if (busyIn(el) || (name === 'taxonomy' && (S.editingMode || S.newMode))) { S.staleViews.add(name); continue; }
+    S.staleViews.delete(name); fn();
+  }
+}
+document.addEventListener('focusout', () => setTimeout(() => {
+  if (S.staleViews.has(S.view) && !busyIn($('view-' + S.view)) && !(S.view === 'taxonomy' && (S.editingMode || S.newMode))) renderAll();
+}, 50));
+
+function switchView(name, push = true) {
+  S.view = name;
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('active', b.dataset.view === name));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === 'view-' + name));
+  if (push) location.hash = name === 'review' && S.curId ? 'review/' + S.curId : name;
+  S.staleViews.add(name); renderAll();
+}
+document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => switchView(b.dataset.view));
+
+function renderHeaderBits() {
+  const src = (S.status && S.status.source) || {};
+  $('source-badge').textContent = 'source: ' + (src.kind === 'export' ? 'OFFLINE export' : src.kind === 'langfuse' ? 'Langfuse (live, cached)' : 'Langfuse cache') +
+    ' · ' + (src.conversation_count || 0) + ' conversations · ' + (src.trace_count || 0) + ' traces' + (src.fetched_at ? ' · ' + fmtTime(src.fetched_at) : '');
+  $('source-badge').title = src.detail || '';
+  $('n-modes').textContent = modes().filter(m => m.status === 'accepted' || m.status === 'proposed').length;
+  $('n-sugg').textContent = S.suggestions.filter(s => s.status === 'pending').length;
+}
+function renderBanners() {
+  const st = S.status || {}, src = st.source || {}, out = [];
+  if (src.offline) out.push(`<div class="banner offline"><b>offline source</b><span>${esc(src.detail)}${src.fetched_at ? ' · exported ' + esc(fmtTime(src.fetched_at)) : ''}. ${esc(src.offline_reason || '')}. Trace ids match Langfuse, so saved judgements still sync later.</span></div>`);
+  if (st.last_reload_error) out.push(`<div class="banner warn"><b>Last reload failed</b><span>${esc(st.last_reload_error)}. The app kept the previous source.</span></div>`);
+  if (st.manifest_foreign_shape) out.push(`<div class="banner warn"><b>sample_manifest.json</b><span>has a shape this app does not use (perhaps written by select_traces). Saving a batch through /api/samples replaces it.</span></div>`);
+  const hideKey = 'demoBannerHidden:' + st.state_dir;
+  if ((st.demo_files || []).length && !localStorage.getItem(hideKey)) {
+    out.push(`<div class="banner demo"><b>Course demo files in ${esc(st.state_dir)}</b>
+      <span>${st.demo_files.map(f => `<code>${esc(f.path)}</code>`).join(', ')}. This app ignores them and never merges them into your review.
+      Note: <code>tests/test_hw_holes.py</code> reads the demo files, so moving them makes those course tests fail until you move them back.</span>
+      <button id="btn-fresh">Start fresh: move them to ${esc(st.state_dir)}/_course_demo/</button><button id="btn-hide-demo">Hide this banner</button></div>`);
+  }
+  $('banners').innerHTML = out.join('');
+  const f = $('btn-fresh');
+  if (f) f.onclick = async () => {
+    if (!confirm(`Move ${st.demo_files.length} course demo file(s) to ${st.state_dir}/_course_demo/?\n\n${st.demo_files.map(x => x.path).join('\n')}`)) return;
+    const r = await post('/api/demo/start-fresh', { confirm: true });
+    if (r) toast(`Moved ${r.moved.length} file(s) to _course_demo/`);
+  };
+  const h = $('btn-hide-demo');
+  if (h) h.onclick = () => { localStorage.setItem(hideKey, '1'); renderBanners(); };
+}
+$('btn-reload').onclick = async () => {
+  if (!confirm('Fetch all support- traces from Langfuse again? This replaces the cache in analysis/review_app/cache/.')) return;
+  const b = $('btn-reload'); b.disabled = true; b.textContent = 'Reloading…';
+  try { const r = await api('/api/reload', { source: 'langfuse' }); toast(`Loaded ${r.source.conversation_count} conversations from ${r.source.trace_count} traces`); }
+  catch (e) { toast(e.message, true); }
+  b.disabled = false; b.textContent = 'Reload from Langfuse';
+  S.convCache = {}; await refreshAll(); if (S.curId) await openConversation(S.curId, true);
+};
+
+/* ================================================================== *
+ * Review view                                                         *
+ * ================================================================== */
+function filteredList() {
+  const f = S.filters, q = f.q.trim().toLowerCase();
+  return S.list.filter(c => {
+    if (q && !c.id.toLowerCase().includes(q)) return false;
+    if (f.batch === '__none' && batchOf(c.id)) return false;
+    if (f.batch && f.batch !== '__none' && batchOf(c.id) !== f.batch) return false;
+    if (f.status && convStatus(c.id) !== f.status) return false;
+    for (const k of ['role', 'intent', 'record_state', 'group']) if (f[k] && String(c[k]) !== f[k]) return false;
+    return true;
+  });
+}
+function fillFilters() {
+  const opts = (key, label) => {
+    const vals = [...new Set(S.list.map(c => c[key]).filter(v => v !== null && v !== undefined))].sort();
+    return `<option value="">${label}: all</option>` + vals.map(v => `<option value="${esc(v)}">${esc(v)}</option>`).join('');
+  };
+  const sel = (k, html) => { const el = document.querySelector(`.filters select[data-f="${k}"]`); el.innerHTML = html; el.value = S.filters[k]; };
+  sel('batch', '<option value="">batch: all</option><option value="__none">not in a batch</option>' + (S.manifest.batches || []).map(b => `<option value="${esc(b.name)}">${esc(b.name)}</option>`).join(''));
+  sel('status', '<option value="">status: all</option>' + Object.keys(ICON).map(k => `<option value="${k}">${ICON[k]} ${STATUS_TEXT[k]}</option>`).join(''));
+  sel('role', opts('role', 'role')); sel('intent', opts('intent', 'intent'));
+  sel('record_state', opts('record_state', 'record state')); sel('group', opts('group', 'group'));
+}
+document.querySelectorAll('.filters select').forEach(el => el.onchange = () => { S.filters[el.dataset.f] = el.value; renderList(); });
+$('f-q').oninput = e => { S.filters.q = e.target.value; renderList(); };
+
+function renderList() {
+  const items = filteredList();
+  $('list-count').textContent = `${items.length} of ${S.list.length} shown`;
+  $('conv-list').innerHTML = items.map(c => {
+    const st = convStatus(c.id);
+    return `<a href="#review/${esc(c.id)}" data-id="${esc(c.id)}" class="${c.id === S.curId ? 'cur' : ''}">
+      <span class="st ${st}" title="${STATUS_TEXT[st]}">${ICON[st]}</span><span>${esc(c.id)}</span>
+      <span>${c.retried_sessions.length ? '<span class="flag">retried</span>' : ''}</span>
+      <span class="meta">${esc(c.role || '')} · ${esc(c.intent || '')} · ${c.turn_count}t${batchOf(c.id) ? ' · ' + esc(batchOf(c.id)) : ''}</span></a>`;
+  }).join('');
+  $('conv-list').querySelectorAll('a').forEach(a => a.onclick = e => { e.preventDefault(); openConversation(a.dataset.id); });
+}
+function renderReview() {
+  fillFilters(); renderList();
+  if (S.conv) { renderConvHead(); renderConvBody(); renderContext(); }
+  else $('conv-head').innerHTML = '<span class="muted">Pick a conversation on the left.</span>';
+}
+
+async function openConversation(id, force) {
+  if (!force && S.pending) cancelPending();
+  if (!S.convCache[id] || force) {
+    try { S.convCache[id] = await api('/api/conversation?id=' + encodeURIComponent(id)); }
+    catch (e) { toast(e.message, true); return; }
+  }
+  const changed = S.curId !== id;
+  S.curId = id; S.conv = S.convCache[id];
+  if (S.view !== 'review') { S.view = 'review'; switchView('review', false); }
+  history.replaceState(null, '', '#review/' + id);
+  renderList(); renderConvHead(); renderConvBody(); renderContext();
+  if (changed) $('conv-pane').scrollTop = 0;
+  const cur = document.querySelector('#conv-list a.cur'); if (cur) cur.scrollIntoView({ block: 'nearest' });
+}
+function step(delta) {
+  const items = filteredList(); if (!items.length) return;
+  let i = items.findIndex(c => c.id === S.curId);
+  i = i < 0 ? 0 : Math.min(items.length - 1, Math.max(0, i + delta));
+  openConversation(items[i].id);
+}
+
+function renderConvHead() {
+  const c = S.conv; if (!c) return;
+  const st = convStatus(c.id), notes = activeAnns().filter(a => a.conversation_id === c.id && !a.no_failure).length;
+  const retried = (c.retried || []).map(r => `<span class="retried">retried: earlier partial session <code>${esc(r.session_id)}</code> (${r.turn_count} turn${r.turn_count === 1 ? '' : 's'}, started ${esc(fmtTime(r.started_at))}) is not shown</span>`).join('');
+  $('conv-head').innerHTML = `
+    <div><h2>${esc(c.id)}</h2>
+      <span class="hmeta">${c.turns.length} turn${c.turns.length === 1 ? '' : 's'} · session <code title="${esc(c.session_id)}">${esc(short(c.session_id))}</code>
+      · primary trace <code title="${esc(c.primary_trace_id)}">${esc(short(c.primary_trace_id))}</code>${c.batch ? ' · batch ' + esc(c.batch) : ''}</span></div>
+    ${retried || (c.warnings || []).length ? `<div class="hrow">${retried}${(c.warnings || []).map(w => `<span class="warnline">⚠ ${esc(w)}</span>`).join('')}</div>` : ''}
+    <div class="hrow">
+      <span class="st ${st}">${ICON[st]}</span><span class="small">${STATUS_TEXT[st]}${notes ? ` · ${notes} note${notes === 1 ? '' : 's'}` : ''}</span>
+      <button id="btn-tools" title="Expand or collapse every tool call (t)">${S.expandTools ? 'Collapse details (t)' : 'Expand all details (t)'}</button> <button id="btn-nofail" class="${st === 'no_failure' ? 'on' : ''}" ${notes ? 'disabled title="This conversation has notes"' : ''}>${st === 'no_failure' ? '✓ No failure observed (click to clear)' : 'No failure observed'}</button>
+      <span class="small muted">Select text in any block to write a note.</span>
+      <span class="spacer"></span>
+      <button id="btn-prev">← prev</button><button id="btn-next">next →</button>
+    </div>${convLabelStrip(c.id)}`;
+  $('btn-tools').onclick = () => { S.expandTools = !S.expandTools; renderConvBody(); $('btn-tools').textContent = S.expandTools ? 'Collapse details (t)' : 'Expand all details (t)'; };
+  $('btn-nofail').onclick = () => post('/api/annotations', { action: 'no_failure', conversation_id: c.id, value: st !== 'no_failure' },
+    st === 'no_failure' ? 'Cleared "no failure observed"' : 'Saved "no failure observed"');
+  $('btn-prev').onclick = () => step(-1); $('btn-next').onclick = () => step(1);
+  bindConvLabelStrip(c.id);
+}
+
+/* ---- labels for this conversation (Part E): one chip per accepted mode ---- */
+function labelOf(mode, cid) { return (S.labels[mode] || []).find(r => r.conversation_id === cid); }
+function sugOf(mode, cid) { return ((S.labelSug || {})[mode] || {})[cid]; }
+function sugHigh(mode, cid) { const s = sugOf(mode, cid); return s && s.confidence !== 'hint' ? s : null; }
+function convLabelStrip(cid) {
+  const acc = acceptedModes(); if (!acc.length) return '';
+  const chips = acc.map(m => { const r = labelOf(m.name, cid), s = sugOf(m.name, cid);
+    const cur = r ? r.decision : null, sug = !r && s ? s.decision : null;
+    const tip = r ? `${r.decision}: ${r.evidence || ''}` : s ? `Suggested (code check, not a label): ${s.decision} — ${s.evidence}` : m.definition;
+    return `<span class="lchip" title="${esc(tip)}"><code>${esc(m.name)}</code>
+      <button class="lc ${cur === 'present' ? 'present' : ''} ${sug === 'present' ? (s.confidence === 'hint' ? 'hintx' : 'sugp') : ''}" data-lm="${esc(m.name)}" data-ld="present">P</button><button class="lc ${cur === 'absent' ? 'absent' : ''} ${sug === 'absent' ? (s.confidence === 'hint' ? 'hintx' : 'suga') : ''}" data-lm="${esc(m.name)}" data-ld="absent">A</button></span>`; }).join('');
+  const pending = acc.filter(m => !labelOf(m.name, cid) && sugHigh(m.name, cid)).length;
+  return `<div class="hrow lstrip"><span class="small"><b>Labels</b> (P present · A absent · dashed = high-confidence suggestion · dotted = answer-key hint, your call)</span>${chips}
+    ${pending ? `<button id="btn-lsug" class="primary">Confirm ${pending} suggestion${pending === 1 ? '' : 's'}</button>` : ''}
+    ${acc.filter(m => !labelOf(m.name, cid) && !sugHigh(m.name, cid)).length ? `<button id="btn-lrest" title="Use after you have clicked P for every mode that is present (dotted = answer-key hint)">Rest absent (${acc.filter(m => !labelOf(m.name, cid) && !sugHigh(m.name, cid)).length})</button>` : ''}</div>`;
+}
+function bindConvLabelStrip(cid) {
+  document.querySelectorAll('#conv-head .lc').forEach(b => b.onclick = async () => {
+    const mode = b.dataset.lm, d = b.dataset.ld, r = labelOf(mode, cid), s = sugOf(mode, cid);
+    let ev = r && r.decision === d ? r.evidence : (s && s.decision === d ? s.evidence : '');
+    if (!ev && d === 'present') {
+      const notes = activeAnns().filter(a => a.conversation_id === cid && !a.no_failure && (a.note || '').trim());
+      if (notes.length) ev = 'Open code: ' + notes.map(a => a.note.trim() + (a.quote ? ` (quote: "${a.quote.trim().slice(0, 160)}")` : '')).join(' | ');
+    }
+    if (d === 'present') { ev = prompt(`Evidence for ${mode} (required): quote, tool result or record fact`, ev || ''); if (ev === null) return; if (!ev.trim()) return toast('Evidence is required when present', true); }
+    await post('/api/labels?mode=' + encodeURIComponent(mode), { conversation_id: cid, label: d, evidence: ev || '' }, `${mode}: ${d}`);
+  });
+  const rest = $('btn-lrest');
+  if (rest) rest.onclick = async () => {
+    const todo = acceptedModes().filter(m => !labelOf(m.name, cid) && !sugHigh(m.name, cid));
+    if (!confirm(`Mark ${todo.length} undecided mode(s) absent for ${cid}?\n\n${todo.map(m => m.name).join('\n')}\n\nClick P first for any mode that is present.`)) return;
+    for (const m of todo) await post('/api/labels?mode=' + encodeURIComponent(m.name), { conversation_id: cid, label: 'absent', evidence: '' }, null);
+    toast(`Marked ${todo.length} absent for ${cid}`); await refreshAll();
+  };
+  const all = $('btn-lsug');
+  if (all) all.onclick = async () => {
+    const todo = acceptedModes().filter(m => !labelOf(m.name, cid) && sugHigh(m.name, cid));
+    for (const m of todo) { const s = sugHigh(m.name, cid); await post('/api/labels?mode=' + encodeURIComponent(m.name), { conversation_id: cid, label: s.decision, evidence: s.evidence }, null); }
+    toast(`Confirmed ${todo.length} suggestion(s) for ${cid}`); await refreshAll();
+  };
+}
+
+/* ---- conversation body ---- */
+function annot(target, text, tag = 'div', cls = 'txt') {
+  S.blockText[target] = text;
+  return `<${tag} class="${cls} annot" data-target="${target}">${esc(text)}</${tag}>`;
+}
+function convItems() {
+  const id = S.curId;
+  const anns = activeAnns().filter(a => a.conversation_id === id && !a.no_failure).map(a => ({ ...a, kind: 'human' }));
+  const sugg = S.suggestions.filter(s => s.conversation_id === id && s.status === 'pending').map(s => ({ ...s, kind: 'sugg' }));
+  return [...anns, ...sugg];
+}
+function rangeFor(item, text) {
+  const q = item.quote || ''; if (!q || text == null) return null;
+  if (Number.isInteger(item.start) && Number.isInteger(item.end) && text.slice(item.start, item.end) === q) return [item.start, item.end];
+  const pos = text.indexOf(q); return pos >= 0 ? [pos, pos + q.length] : null;
+}
+function targetOf(item) {
+  if (item.target && S.blockText[item.target] !== undefined && rangeFor(item, S.blockText[item.target])) return item.target;
+  for (const [t, text] of Object.entries(S.blockText)) if (rangeFor({ quote: item.quote }, text)) return t;
+  return null;
+}
+function computeBlockTexts(c) {
+  const out = {};
+  c.turns.forEach(t => {
+    out[`t${t.index}.user`] = t.user;
+    t.steps.forEach(s => {
+      const base = `t${t.index}.s${s.index}`;
+      if (s.kind === 'tool') { out[base + '.args'] = s.args_text; out[base + '.result'] = s.result_text; }
+      else out[base + '.text'] = s.text;
+    });
+    out[`t${t.index}.reply`] = t.reply;
+  });
+  return out;
+}
+/* <details data-k> keep their open state across re-renders (per conversation) */
+const isOpen = k => !!S.open[S.curId + '|' + k];
+const openAttr = (k, force) => `data-k="${esc(k)}"${force || isOpen(k) ? ' open' : ''}`;
+document.addEventListener('toggle', e => { const d = e.target; if (d.dataset && d.dataset.k && S.curId) S.open[S.curId + '|' + d.dataset.k] = d.open; }, true);
+function renderConvBody() {
+  const c = S.conv; S.blockText = computeBlockTexts(c);
+  const items = convItems(), hot = new Set(items.map(targetOf).filter(Boolean));
+  if (S.pending) hot.add(S.pending.target);
+  const parts = [];
+  if (c.system_prompt) parts.push(`<details class="sys" ${openAttr('sys')}><summary>System prompt the model received (turn 1)</summary><pre>${esc(c.system_prompt)}</pre></details>`);
+  c.turns.forEach(t => {
+    const url = (c.langfuse_trace_urls || {})[t.trace_id];
+    parts.push(`<div class="turn" data-turn="${t.index}"><div class="turn-head"><b>Turn ${t.number}</b><span>trace <code title="${esc(t.trace_id)}">${esc(short(t.trace_id))}</code></span><span>${esc(fmtTime(t.timestamp))}</span>${url ? `<a href="${esc(url)}" target="_blank" rel="noopener">open in Langfuse</a>` : ''}</div>`);
+    parts.push(`<div class="blk user"><div class="role">User</div>${annot(`t${t.index}.user`, t.user)}</div>`);
+    if (!t.steps.some(s => s.kind === 'tool')) parts.push('<div class="notool">no tool calls in this turn</div>');
+    t.steps.forEach(s => {
+      const base = `t${t.index}.s${s.index}`;
+      if (s.kind === 'model_text') {
+        // Progressive disclosure: intermediate model text is one click away, never hidden or muted
+        // (the skill: it can contain the bug). Opens by itself when it carries a note or suggestion.
+        const mOpen = ' ' + openAttr(base + '.text', S.expandTools || hot.has(base + '.text'));
+        parts.push(`<details class="blk mtext"${mOpen}><summary><span class="role">Model text${s.with_tool_call ? ' before a tool call' : ''}</span> <span class="tsum">· not sent to the user · “${esc(clip(s.text || '', 90))}”</span></summary>${annot(base + '.text', s.text)}</details>`);
+        return;
+      }
+      const okc = s.ok === true ? '<span class="okf ok">ok</span>' : s.ok === false ? `<span class="okf err">${esc(s.error || 'error')}</span>` : '';
+      // Progressive disclosure: one summary line per tool call; arguments and result open on click,
+      // or automatically when they carry a note or suggestion, or when "expand tool calls" (t) is on.
+      const toolOpen = ' ' + openAttr(base + '.tool', S.expandTools || hot.has(base + '.args') || hot.has(base + '.result'));
+      const argLine = clip(JSON.stringify(s.arguments), 90);
+      parts.push(`<details class="blk tool"${toolOpen}><summary><span class="role">Tool call</span> <span class="fn">${esc(s.name)}</span><span class="argsum">${esc(argLine)}</span> ${okc} <span class="tsum">→ ${esc(clip(s.summary || '', 140))}</span></summary>
+        <div class="reslabel">arguments</div>${annot(base + '.args', s.args_text, 'pre', 'json')}
+        <div class="reslabel">result</div>${annot(base + '.result', s.result_text, 'pre', 'json')}</details>`);
+    });
+    parts.push(`<div class="blk reply"><div class="role">Agent reply (sent to the user)</div>${annot(`t${t.index}.reply`, t.reply)}</div></div>`);
+  });
+  $('conv-body').innerHTML = parts.join('');
+  applyHighlights();
+  layoutMargin();
+}
+function applyHighlights() {
+  const items = convItems();
+  const byTarget = {};
+  items.forEach(it => { const t = targetOf(it); if (!t) return; const r = rangeFor(it, S.blockText[t]); (byTarget[t] = byTarget[t] || []).push({ s: r[0], e: r[1], id: it.id, kind: it.kind, ff: !!it.first_failure }); });
+  if (S.pending) (byTarget[S.pending.target] = byTarget[S.pending.target] || []).push({ s: S.pending.start, e: S.pending.end, id: '__pending', kind: 'pending' });
+  document.querySelectorAll('#conv-body .annot').forEach(el => {
+    const text = S.blockText[el.dataset.target], ranges = byTarget[el.dataset.target];
+    if (!ranges) { el.textContent = text; return; }
+    const cuts = [...new Set([0, text.length, ...ranges.flatMap(r => [r.s, r.e])])].sort((a, b) => a - b);
+    let out = '';
+    for (let i = 0; i < cuts.length - 1; i++) {
+      const a = cuts[i], b = cuts[i + 1]; if (a === b) continue;
+      const cover = ranges.filter(r => r.s <= a && r.e >= b);
+      const seg = esc(text.slice(a, b));
+      if (!cover.length) { out += seg; continue; }
+      const k = new Set(cover.map(r => r.kind));
+      const ff = cover.some(r => r.ff && r.s === a);
+      const cls = 'hl' + (k.has('human') ? ' h' : '') + (k.has('sugg') ? ' s' : '') + (k.has('pending') ? ' p' : '') + (ff ? ' ff' : '');
+      out += `<span class="${cls}" data-items="${esc(cover.map(r => r.id).join(' '))}">${seg}</span>`;
+    }
+    el.innerHTML = out;
+  });
+  document.querySelectorAll('#conv-body .hl').forEach(span => {
+    const ids = span.dataset.items.split(' ');
+    span.onmouseenter = () => ids.forEach(id => document.querySelectorAll(`.mnote[data-item="${CSS.escape(id)}"]`).forEach(n => n.classList.add('outline')));
+    span.onmouseleave = () => document.querySelectorAll('.mnote.outline').forEach(n => n.classList.remove('outline'));
+    span.onclick = () => { const n = document.querySelector(`.mnote[data-item="${CSS.escape(ids[0])}"]`); if (n) { n.classList.remove('flash'); void n.offsetWidth; n.classList.add('flash'); } };
+  });
+}
+function spansFor(id) { return [...document.querySelectorAll('#conv-body .hl')].filter(s => s.dataset.items.split(' ').includes(id)); }
+function layoutMargin() {
+  const wrap = $('conv-wrap'), col = $('margin'); col.innerHTML = '';
+  const wrapTop = wrap.getBoundingClientRect().top;
+  const placed = convItems().map(it => {
+    const span = spansFor(it.id)[0];
+    let anchor = span, orphan = !span;
+    if (span && !span.getClientRects().length) anchor = span.closest('details');
+    if (!anchor) anchor = document.querySelector(`#conv-body .turn[data-turn="${it.turn_index ?? 0}"]`) || $('conv-body');
+    return { it, top: anchor.getBoundingClientRect().top - wrapTop, orphan };
+  }).sort((a, b) => a.top - b.top);
+  let last = 0;
+  placed.forEach(({ it, top, orphan }) => {
+    const el = noteEl(it, orphan);
+    const y = Math.max(top, last); el.style.top = y + 'px'; col.appendChild(el);
+    last = y + el.offsetHeight + 8;
+  });
+  col.style.minHeight = last + 'px';
+}
+$('conv-body').addEventListener('toggle', () => layoutMargin(), true);
+window.addEventListener('resize', () => { if (S.view === 'review' && S.conv) layoutMargin(); });
+
+function noteEl(it, orphan) {
+  const el = document.createElement('div');
+  el.dataset.item = it.id;
+  const where = `<span class="where">${esc(blockLabel(targetOf(it) || it.target) || (it.turn_index != null ? 'T' + (it.turn_index + 1) : ''))}</span>`;
+  const orph = orphan ? '<div class="orphan">quoted text not found in this conversation</div>' : '';
+  if (it.kind === 'sugg') {
+    el.className = 'mnote sugg';
+    el.innerHTML = `<div class="tag">agent suggestion · ${esc(it.mode)}</div>${where}${orph}<div class="quote">"${esc(clip(it.quote, 140))}"</div>
+      <div class="body">${esc(it.reason || '')}</div><input class="cmt" placeholder="your comment (optional)" value="${esc(it.reviewer_comment || '')}" />
+      <div class="acts" style="visibility:visible"><button class="good" data-a="accept">accept</button><button class="bad" data-a="reject">reject</button></div>`;
+    el.querySelectorAll('[data-a]').forEach(b => b.onclick = () => decideSuggestions([it.id], b.dataset.a, el.querySelector('.cmt').value));
+  } else {
+    el.className = 'mnote human' + (it.first_failure ? ' ff' : '');
+    const hist = it.history || [];
+    el.innerHTML = `<div>${it.first_failure ? '<span class="ffb">⚑ first failure</span> ' : ''}${where}${it.source === 'accepted_suggestion' ? ' <span class="acc">· accepted suggestion</span>' : ''}</div>${orph}
+      ${it.quote ? `<div class="quote">"${esc(clip(it.quote, 140))}"</div>` : ''}<div class="body">${esc(it.note)}</div>
+      <div class="acts"><button data-a="edit">edit</button>${it.first_failure ? '' : '<button data-a="ff">make first failure</button>'}<button data-a="del">delete</button>${hist.length > 1 ? `<button data-a="hist">history (${hist.length})</button>` : ''}<span class="where" title="annotation id">${esc(it.id)}</span></div>
+      <div class="hist" hidden>${hist.map((h, i) => `<div>${i === 0 ? 'original' : 'edit ' + i} · ${esc(fmtTime(h.at))}: ${esc(h.note)}</div>`).join('')}</div>`;
+    el.querySelector('[data-a="edit"]').onclick = () => editNote(el, it);
+    const ff = el.querySelector('[data-a="ff"]'); if (ff) ff.onclick = () => post('/api/annotations', { action: 'set_first_failure', id: it.id }, 'First failure moved');
+    el.querySelector('[data-a="del"]').onclick = () => { if (confirm('Delete this note? It stays in annotations.json with deleted_at set.')) post('/api/annotations', { action: 'delete', id: it.id }, 'Note deleted'); };
+    const h = el.querySelector('[data-a="hist"]'); if (h) h.onclick = () => { const box = el.querySelector('.hist'); box.hidden = !box.hidden; layoutMargin(); };
+  }
+  el.onmouseenter = () => spansFor(it.id).forEach(s => s.classList.add('outline'));
+  el.onmouseleave = () => document.querySelectorAll('.hl.outline').forEach(s => s.classList.remove('outline'));
+  el.ondblclick = () => { const s = spansFor(it.id)[0]; if (s) s.scrollIntoView({ block: 'center', behavior: 'smooth' }); };
+  return el;
+}
+function editNote(el, it) {
+  el.classList.add('editing');
+  const body = el.querySelector('.body');
+  body.innerHTML = `<textarea rows="3">${esc(it.note)}</textarea><div class="where">Enter saves · Esc cancels · the original stays in history</div>`;
+  const ta = body.querySelector('textarea'); ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length);
+  ta.onkeydown = async e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); const v = ta.value.trim(); if (v && v !== it.note) await post('/api/annotations', { annotation: { id: it.id, note: v } }, 'Note updated'); else renderConvBody(); }
+    else if (e.key === 'Escape') { renderConvBody(); }
+  };
+}
+
+/* ---- selection -> popover ---- */
+function annotOf(node) { const el = node && (node.nodeType === 1 ? node : node.parentElement); return el ? el.closest('#conv-body .annot') : null; }
+$('conv-body').addEventListener('mouseup', () => {
+  if (S.pending) return;
+  const sel = window.getSelection(); if (!sel.rangeCount || sel.isCollapsed) return;
+  const range = sel.getRangeAt(0);
+  const el = annotOf(range.startContainer), el2 = annotOf(range.endContainer);
+  if (!el || el !== el2) { if (el || el2) toast('Select text inside one block (one message, argument list or result).', true); return; }
+  const pre = document.createRange(); pre.selectNodeContents(el); pre.setEnd(range.startContainer, range.startOffset);
+  let start = pre.toString().length, quote = range.toString();
+  const lead = quote.length - quote.trimStart().length; start += lead; quote = quote.trim();
+  if (!quote) return;
+  const target = el.dataset.target, turn_index = +/^t(\d+)/.exec(target)[1];
+  const rect = range.getBoundingClientRect();
+  S.pending = { target, turn_index, start, end: start + quote.length, quote };
+  sel.removeAllRanges();
+  applyHighlights();
+  const pop = $('popover'), st = convStatus(S.curId);
+  const first = !activeAnns().some(a => a.conversation_id === S.curId && !a.no_failure);
+  $('pop-hint').textContent = 'Enter saves · Shift+Enter new line · Esc cancels' + (first ? ' · this note gets the first-failure marker (you can move it later)' : '');
+  $('pop-warn').textContent = st === 'no_failure' ? 'This conversation is marked "no failure observed". Saving replaces that mark.' : '';
+  pop.style.display = 'block';
+  const left = Math.min(window.innerWidth - 360, Math.max(8, rect.left));
+  const top = rect.bottom + 8 + 150 > window.innerHeight ? Math.max(8, rect.top - 150) : rect.bottom + 8;
+  pop.style.left = left + 'px'; pop.style.top = top + 'px';
+  $('note-input').value = ''; $('note-input').focus();
+});
+$('note-input').addEventListener('keydown', async e => {
+  if (e.key === 'Escape') { cancelPending(); return; }
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    const note = $('note-input').value.trim(); if (!note || !S.pending) return;
+    const p = S.pending, c = S.conv;
+    const body = { annotation: { conversation_id: c.id, turn_index: p.turn_index, trace_id: c.turns[p.turn_index].trace_id, target: p.target, quote: p.quote, start: p.start, end: p.end, note }, replace_no_failure: true };
+    closePopover();
+    await post('/api/annotations', body, 'Note saved');
+  }
+});
+document.addEventListener('mousedown', e => { if (S.pending && !$('popover').contains(e.target)) cancelPending(); });
+function closePopover() { S.pending = null; $('popover').style.display = 'none'; }
+function cancelPending() { closePopover(); if (S.conv) applyHighlights(); }
+
+document.addEventListener('keydown', e => {
+  if (/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (S.view === 'review' && (e.key === 'j' || e.key === 'ArrowDown')) { e.preventDefault(); step(1); }
+  if (S.view === 'review' && (e.key === 'k' || e.key === 'ArrowUp')) { e.preventDefault(); step(-1); }
+  if (S.view === 'review' && e.key === 't') { e.preventDefault(); S.expandTools = !S.expandTools; renderConvBody(); }
+});
+
+/* ---- context + evidence ---- */
+function renderContext() {
+  const c = S.conv, sc = c.scenario || {}, tup = sc.tuple || {}, exp = sc.expected || {}, res = c.result || {};
+  const chip = (k, v) => v === null || v === undefined || v === '' ? '' : `<span class="chip"><b>${esc(k)}</b> ${esc(v)}</span>`;
+  const ids = Object.entries(tup).filter(([k]) => k.endsWith('_id') && k !== 'user_id').map(([k, v]) => chip(k, v)).join('');
+  const revealed = localStorage.getItem('reveal:' + c.id) === '1';
+  const ev = c.evidence || {};
+  let h = `<div class="sec"><div class="sec-title">Context</div><div class="chips">
+      ${chip('role', tup.role || c.user_role)}${chip('user id', tup.user_id ?? c.user_id)}${chip('intent', tup.intent)}${chip('record state', tup.record_state)}
+      ${chip('difficulty', tup.difficulty)}${chip('style', tup.user_style)}${chip('group', sc.scenario_group)}${chip('DQ case', sc.data_quality_case_id || 'none')}${ids}</div>
+      <div class="facts">final run: ${esc(res.status || '?')} · ${esc(res.model || '')} · ${esc(res.duration_s ?? '')} s · ${esc(res.turn_count ?? '')} turns recorded</div></div>`;
+  h += `<div class="sec"><div class="sec-title">Answer key</div>`;
+  if (!revealed) h += `<button id="btn-reveal">Reveal answer key</button> <span class="small muted">hidden until you ask, per conversation</span>`;
+  else {
+    const src = exp.source ? `<div class="small muted">source: ${esc(exp.source.type)} · <code>${esc(exp.source.reference)}</code></div>` : '';
+    h += `<div class="keybox">${exp.evaluation === 'human_judgment' ? `<div><b>human judgement:</b> ${esc(exp.criterion)}</div>` : `<div><b>expected outcome:</b> <code>${esc(exp.outcome)}</code></div><div>${esc(exp.reason)}</div>`}${src}
+      <div class="small muted" style="margin-top:4px">scenario design: applicable_policy <code>${esc(tup.applicable_policy)}</code> · tools_needed <code>${esc(tup.tools_needed)}</code> · turn_count ${esc(tup.turn_count)}</div>
+      <button id="btn-hide-key" style="margin-top:6px">Hide again</button></div>`;
+  }
+  h += '</div>';
+  h += `<div class="sec"><div class="sec-title">Evidence · facts, not verdicts</div>`;
+  const pol = ev.policies_fetched || [];
+  h += `<div class="small"><b>(a) Policies fetched</b> (${pol.length})</div>`;
+  h += pol.length ? pol.map((p, i) => `<details class="ev-item" ${openAttr('pol' + i)}><summary><span class="tchip">T${p.turn}</span>${esc(p.tool)}${p.query ? ` "${esc(clip(p.query, 50))}"` : ''} → <code>${esc(p.policy_id || '—')}</code>${p.score != null ? ` <span class="muted">score ${esc(p.score)}</span>` : ''}${p.ok === false ? ` <span class="okf err">${esc(p.error)}</span>` : ''}</summary>
+      ${p.title ? `<div class="small muted">${esc(p.title)}</div>` : ''}<pre>${esc(p.text || p.reason || p.note || '(no text returned)')}</pre>
+      ${p.file_text && p.file_text.trim() !== (p.text || '').trim() ? `<details><summary class="small">data/policies/${esc(p.policy_id)}.md (full file)</summary><pre>${esc(p.file_text)}</pre></details>` : ''}</details>`).join('')
+    : '<div class="empty">No get_policy or search_help_center calls.</div>';
+  const rid = ev.policy_ids_in_replies || [];
+  h += `<div class="small" style="margin-top:8px"><b>(b) Policy ids in the agent's replies</b> (${rid.length})</div>`;
+  h += rid.length ? `<div class="chips" style="margin-top:4px">${rid.map(r => `<span class="chip"><span class="tchip">T${r.turn}</span><code>${esc(r.policy_id)}</code>${r.occurrences > 1 ? ' ×' + r.occurrences : ''}</span>`).join('')}</div>` : '<div class="empty">No policy ids appear in the replies.</div>';
+  const L = ev.ledger || {};
+  h += `<div class="small" style="margin-top:8px"><b>(c) Ledger</b> · ${esc(L.label || '')} · read only</div>`;
+  if (L.error) h += `<div class="warnline">${esc(L.error)}</div>`;
+  const idsLine = L.ids ? Object.entries(L.ids).filter(([, v]) => v.length).map(([k, v]) => `${k}: ${v.join(', ')}`).join(' · ') : '';
+  h += idsLine ? `<div class="small muted">ids in tool arguments or results: ${esc(idsLine)}</div>` : '<div class="empty">No order, refund or ticket ids in tool arguments or results.</div>';
+  const seenTxt = r => (r.seen_in || []).map(s => `T${s.turn} ${s.tool} ${s.where}${s.via ? ' (via ' + s.via + ')' : ''}`);
+  const card = (title, r, keys) => `<div class="rowcard"><b>${title}</b><div class="kv">${keys.filter(k => k in r).map(k => `<span>${esc(k)}</span><span>${esc(r[k] ?? 'null')}</span>`).join('')}</div><div class="seen">seen in: ${esc([...new Set(seenTxt(r))].join('; '))}</div></div>`;
+  const orders = L.orders || [];
+  const inArgs = orders.filter(o => (o.seen_in || []).some(s => s.where === 'arguments'));
+  const onlyRes = orders.filter(o => !inArgs.includes(o));
+  const okeys = ['status', 'total_cents', 'ordered_at', 'shipped_at', 'delivered_at', 'refund_eligible', 'store_name', 'store_id', 'user_id', 'product_id', 'quantity'];
+  if (orders.length) {
+    h += `<div class="small" style="margin-top:4px">orders (${orders.length})</div>` + inArgs.map(o => card('order ' + o.id, o, okeys)).join('');
+    if (onlyRes.length) h += `<details ${openAttr('onlyres', onlyRes.length <= 4)}><summary class="small">${onlyRes.length} order(s) seen only in tool results</summary>${onlyRes.map(o => card('order ' + o.id, o, okeys)).join('')}</details>`;
+  }
+  if ((L.orders_not_in_db || []).length) h += `<div class="small muted">order ids not in the database: ${esc(L.orders_not_in_db.join(', '))}</div>`;
+  if ((L.refunds || []).length) h += `<div class="small" style="margin-top:4px">refunds (${L.refunds.length})</div>` + L.refunds.map(r => card('refund ' + r.id, r, ['order_id', 'amount_cents', 'status', 'reason', 'created_at'])).join('');
+  if ((L.escalations || []).length) h += `<div class="small" style="margin-top:4px">escalations (${L.escalations.length})</div>` + L.escalations.map(r => card('ticket ' + r.id, r, ['order_id', 'user_id', 'store_id', 'summary', 'context', 'created_at'])).join('');
+  h += '</div>';
+  $('ctx-pane').innerHTML = h;
+  const rv = $('btn-reveal'); if (rv) rv.onclick = () => { localStorage.setItem('reveal:' + c.id, '1'); renderContext(); };
+  const hk = $('btn-hide-key'); if (hk) hk.onclick = () => { localStorage.removeItem('reveal:' + c.id); renderContext(); };
+}
+
+async function jumpToNote(convId, itemId) {
+  await openConversation(convId);
+  setTimeout(() => {
+    const s = spansFor(itemId)[0], n = document.querySelector(`.mnote[data-item="${CSS.escape(itemId)}"]`);
+    if (s) s.scrollIntoView({ block: 'center' }); else if (n) n.scrollIntoView({ block: 'center' });
+    [s, n].forEach(x => { if (x) { x.classList.remove('flash'); void x.offsetWidth; x.classList.add('flash'); } });
+  }, 60);
+}
+
+/* ================================================================== *
+ * Suggestions (shared queue component)                                 *
+ * ================================================================== */
+async function decideSuggestions(ids, action, comment) {
+  if (!ids.length) return toast('Select at least one suggestion', true);
+  if (action === 'accept') {
+    const nf = [...new Set(S.suggestions.filter(s => ids.includes(s.id)).map(s => s.conversation_id))].filter(c => convStatus(c) === 'no_failure');
+    if (nf.length && !confirm(`${nf.join(', ')} ${nf.length === 1 ? 'is' : 'are'} marked "no failure observed". Accepting replaces that mark with the accepted note. Continue?`)) return;
+  }
+  const body = { action, ids };
+  if (comment !== undefined && comment !== null && String(comment).trim()) body.reviewer_comment = String(comment).trim();
+  await post('/api/suggestions', body, `${ids.length} suggestion${ids.length === 1 ? '' : 's'} ${action === 'accept' ? 'accepted' : action === 'reject' ? 'rejected' : 'reopened'}`);
+}
+function suggestionQueue(container, opts) {
+  const f = opts.filter;
+  let rows = S.suggestions.slice().sort((a, b) => (a.created_at || '').localeCompare(b.created_at || ''));
+  if (f.status) rows = rows.filter(s => s.status === f.status);
+  if (f.mode) rows = rows.filter(s => s.mode === f.mode);
+  if (f.q) rows = rows.filter(s => s.conversation_id.includes(f.q));
+  const modesInQ = [...new Set(S.suggestions.map(s => s.mode))].sort();
+  let h = '';
+  if (!opts.compact) h += `<div class="toolbar"><select id="${opts.prefix}-st">${['pending', 'accepted', 'rejected', ''].map(v => `<option value="${v}" ${f.status === v ? 'selected' : ''}>${v || 'all statuses'}</option>`).join('')}</select>
+    <select id="${opts.prefix}-mode"><option value="">all modes</option>${modesInQ.map(m => `<option ${f.mode === m ? 'selected' : ''}>${esc(m)}</option>`).join('')}</select>
+    <input id="${opts.prefix}-q" placeholder="conversation id" value="${esc(f.q)}" /></div>`;
+  if (!rows.length) { container.innerHTML = h + '<div class="empty">No suggestions here. The coding agent pushes them with POST /api/suggestions.</div>'; bindQueueFilters(opts); return; }
+  h += `<div class="toolbar"><label><input type="checkbox" id="${opts.prefix}-all" /> select all shown (${rows.length})</label>
+    <input id="${opts.prefix}-cmt" placeholder="comment for the selected (optional)" style="width:280px" />
+    <button class="good" id="${opts.prefix}-acc">Accept selected</button><button class="bad" id="${opts.prefix}-rej">Reject selected</button>
+    <span class="small muted">Accepting creates a human-confirmed note linked to the suggestion. Rejections are kept.</span></div>`;
+  h += `<table class="t"><tr><th></th><th>status</th><th>mode</th><th>conversation</th><th>quoted text</th><th>agent's reason</th><th>your comment</th><th></th></tr>` +
+    rows.map(s => `<tr data-id="${esc(s.id)}"><td><input type="checkbox" class="pick" ${s.status !== 'pending' ? 'disabled' : ''} /></td>
+      <td><span class="badge ${esc(s.status)}">${esc(s.status)}</span>${s.decided_at ? `<div class="small muted">${esc(fmtTime(s.decided_at))}</div>` : ''}</td>
+      <td><code>${esc(s.mode)}</code></td><td><span class="idlink" data-goto="${esc(s.conversation_id)}" data-item="${esc(s.annotation_id && s.status === 'accepted' ? s.annotation_id : s.id)}">${esc(s.conversation_id)}</span>${s.turn_index != null ? `<div class="small muted">T${s.turn_index + 1}</div>` : ''}</td>
+      <td>"${esc(clip(s.quote, 220))}"</td><td class="small">${esc(s.reason)}</td>
+      <td><input class="rc" value="${esc(s.reviewer_comment || '')}" placeholder="comment" style="width:100%" /></td>
+      <td style="white-space:nowrap">${s.status === 'pending' ? '<button class="good" data-a="accept">accept</button> <button class="bad" data-a="reject">reject</button>' : '<button data-a="reopen">reopen</button>'}</td></tr>`).join('') + '</table>';
+  container.innerHTML = h;
+  bindQueueFilters(opts);
+  const all = $(opts.prefix + '-all');
+  all.onchange = () => container.querySelectorAll('.pick:not(:disabled)').forEach(c => c.checked = all.checked);
+  const picked = () => [...container.querySelectorAll('.pick:checked')].map(c => c.closest('tr').dataset.id);
+  $(opts.prefix + '-acc').onclick = () => decideSuggestions(picked(), 'accept', $(opts.prefix + '-cmt').value);
+  $(opts.prefix + '-rej').onclick = () => decideSuggestions(picked(), 'reject', $(opts.prefix + '-cmt').value);
+  container.querySelectorAll('tr[data-id]').forEach(tr => {
+    const id = tr.dataset.id, rc = tr.querySelector('.rc');
+    tr.querySelectorAll('[data-a]').forEach(b => b.onclick = () => decideSuggestions([id], b.dataset.a, rc.value));
+    rc.onchange = () => post('/api/suggestions', { action: 'comment', id, reviewer_comment: rc.value }, 'Comment saved');
+  });
+  container.querySelectorAll('[data-goto]').forEach(x => x.onclick = () => jumpToNote(x.dataset.goto, x.dataset.item));
+}
+function bindQueueFilters(opts) {
+  if (opts.compact) return;
+  const f = opts.filter, rer = () => opts.rerender();
+  const st = $(opts.prefix + '-st'), md = $(opts.prefix + '-mode'), q = $(opts.prefix + '-q');
+  if (st) st.onchange = () => { f.status = st.value; rer(); };
+  if (md) md.onchange = () => { f.mode = md.value; rer(); };
+  if (q) q.onchange = () => { f.q = q.value.trim(); rer(); };
+}
+function renderSuggestions() {
+  const el = $('suggestions');
+  const counts = ['pending', 'accepted', 'rejected'].map(s => `${S.suggestions.filter(x => x.status === s).length} ${s}`).join(' · ');
+  el.innerHTML = `<h3 class="sec-h" style="margin-top:0">Agent suggestions · ${counts}</h3><div id="sq"></div>`;
+  suggestionQueue($('sq'), { prefix: 'sg', filter: S.suggFilter, rerender: renderSuggestions });
+}
+
+/* ================================================================== *
+ * Taxonomy                                                            *
+ * ================================================================== */
+const SNAKE = /^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$/;
+function modeSupport(m) {
+  const byId = Object.fromEntries(S.annotations.map(a => [a.id, a]));
+  const human = (m.source_annotation_ids || []).map(id => byId[id] || { id, missing: true });
+  const acceptedSugg = S.suggestions.filter(s => s.status === 'accepted' && s.mode === m.name);
+  const accAnn = acceptedSugg.map(s => byId[s.annotation_id]).filter(Boolean);
+  const present = (S.labels[m.name] || []).filter(r => r.decision === 'present').length;
+  return { human, humanActive: human.filter(a => !a.missing && !a.deleted_at), acceptedSugg, accAnn, present };
+}
+function renderTaxonomy() {
+  const el = $('taxonomy'), all = modes();
+  const order = { proposed: 0, accepted: 1, merged: 2, rejected: 3 };
+  const shown = all.filter(m => !S.taxStatus || m.status === S.taxStatus).sort((a, b) => order[a.status] - order[b.status] || (a.created_at || '').localeCompare(b.created_at || ''));
+  const used = new Set(all.flatMap(m => m.source_annotation_ids || []));
+  const unassigned = activeAnns().filter(a => !a.no_failure && a.source === 'human' && !used.has(a.id));
+  let h = `<div class="toolbar"><button class="primary" id="btn-newmode">New mode</button>
+    <select id="tax-st">${['', 'proposed', 'accepted', 'rejected', 'merged'].map(s => `<option value="${s}" ${S.taxStatus === s ? 'selected' : ''}>${s || 'all statuses'} (${s ? all.filter(m => m.status === s).length : all.length})</option>`).join('')}</select>
+    <span class="small muted">Agent-proposed modes arrive as <b>proposed</b>. You accept, edit, merge or reject them. HW4 asks for 5 to 8 final modes.</span></div>`;
+  if (S.newMode) h += `<div class="mode-card"><div class="mc-head"><span class="name">New mode</span></div>${modeEditor({ id: '__new', name: '', status: 'proposed', positive_conversation_ids: [], close_negative_conversation_ids: [], source_annotation_ids: [] })}</div>`;
+  h += `<details class="mode-card" ${unassigned.length && !all.length ? 'open' : ''}><summary><b>Your notes not yet in any mode</b> (${unassigned.length})</summary><ul class="notes-list">${unassigned.map(a => `<li data-goto="${esc(a.conversation_id)}" data-item="${esc(a.id)}"><code>${esc(a.id)}</code> · ${esc(a.conversation_id)} · ${esc(clip(a.note, 160))}</li>`).join('') || '<li class="muted">none</li>'}</ul></details>`;
+  if (!shown.length) h += '<div class="empty">No modes yet. Group your notes into modes here, or let the coding agent propose them through POST /api/patterns.</div>';
+  shown.forEach(m => {
+    const sup = modeSupport(m);
+    const chk = [
+      ['snake_case name', SNAKE.test(m.name)], ['binary definition', !!(m.definition || '').trim()],
+      [`positives ${m.positive_conversation_ids.length}/3`, m.positive_conversation_ids.length >= 3],
+      [`close negatives ${m.close_negative_conversation_ids.length}/3`, m.close_negative_conversation_ids.length >= 3],
+      [`source notes ${sup.humanActive.length}`, sup.humanActive.length > 0], ['boundary vs nearest mode', !!(m.boundary || '').trim() && !!(m.nearest_mode || '').trim()],
+      ['evaluator type', !!m.evaluator_type], ['requirement source', !!(m.requirement_source || '').trim()],
+    ];
+    h += `<div class="mode-card st-${esc(m.status)}" data-mode="${esc(m.id)}">
+      <div class="mc-head"><code class="name">${esc(m.name)}</code><span class="badge ${esc(m.status)}">${esc(m.status)}</span>
+        ${m.merged_into ? `<span class="small">→ merged into <code>${esc(m.merged_into)}</code></span>` : ''}
+        <span class="small muted">proposed by ${esc(m.proposed_by)} · ${esc(fmtTime(m.created_at))}</span><span class="spacer"></span>
+        <span class="small"><b>${sup.humanActive.length}</b> human note${sup.humanActive.length === 1 ? '' : 's'} · <b>${sup.acceptedSugg.length}</b> accepted suggestion${sup.acceptedSugg.length === 1 ? '' : 's'} · <b>${sup.present}</b> present label${sup.present === 1 ? '' : 's'}</span></div>
+      <div class="def">${m.definition ? esc(m.definition) : '<span class="muted">no definition yet</span>'}</div>
+      <div class="checklist">${chk.map(([t, ok]) => `<span class="${ok ? 'y' : 'n'}">${ok ? '✓' : '✗'} ${esc(t)}</span>`).join('')}</div>
+      <div class="small">${m.nearest_mode ? `nearest mode <code>${esc(m.nearest_mode)}</code>: ` : ''}${esc(m.boundary || '')}</div>
+      <div class="small muted">evaluator: ${esc(m.evaluator_type === 'code_check' ? 'code check' : m.evaluator_type === 'llm_judge' ? 'LLM judge' : 'not set')} · requirement: ${esc(m.requirement_source || 'not set')}</div>
+      <div class="small muted">positives: ${m.positive_conversation_ids.map(c => `<span class="idlink" data-goto="${esc(c)}">${esc(c)}</span>`).join(' ') || '—'} · close negatives: ${m.close_negative_conversation_ids.map(c => `<span class="idlink" data-goto="${esc(c)}">${esc(c)}</span>`).join(' ') || '—'}</div>
+      <details ${sup.human.length + sup.accAnn.length <= 6 ? 'open' : ''}><summary class="small"><b>Notes behind this mode</b> (${sup.human.length + sup.accAnn.length})</summary><ul class="notes-list">
+        ${sup.human.map(a => a.missing ? `<li class="muted">unknown annotation id <code>${esc(a.id)}</code></li>` : `<li data-goto="${esc(a.conversation_id)}" data-item="${esc(a.id)}">${a.deleted_at ? '<s>' : ''}<code>${esc(a.conversation_id)}</code> · ${esc(clip(a.note, 180))}${a.quote ? ` <span class="muted">"${esc(clip(a.quote, 70))}"</span>` : ''}${a.deleted_at ? '</s> (deleted)' : ''}</li>`).join('')}
+        ${sup.accAnn.map(a => `<li data-goto="${esc(a.conversation_id)}" data-item="${esc(a.id)}"><span class="badge merged">accepted suggestion</span> <code>${esc(a.conversation_id)}</code> · "${esc(clip(a.quote, 120))}"</li>`).join('')}
+      </ul></details>
+      <div class="toolbar" style="margin:6px 0 0">
+        <button data-a="edit">Edit</button>
+        ${m.status !== 'accepted' && m.status !== 'merged' ? '<button class="good" data-a="accept">Accept</button>' : ''}
+        ${m.status !== 'rejected' && m.status !== 'merged' ? '<button class="bad" data-a="reject">Reject</button>' : ''}
+        ${m.status !== 'merged' ? `<select data-a="mergeinto"><option value="">merge into…</option>${all.filter(o => o.id !== m.id && o.status !== 'rejected' && o.status !== 'merged').map(o => `<option value="${esc(o.id)}">${esc(o.name)}</option>`).join('')}</select>` : ''}
+        ${m.status !== 'proposed' ? '<button data-a="proposed">Back to proposed</button>' : ''}
+      </div>
+      ${S.editingMode === m.id ? modeEditor(m) : ''}
+      <details><summary class="small">Revision history (${(m.history || []).length})</summary><table class="t hist-table"><tr><th>when</th><th>by</th><th>field</th><th>previous</th><th>new</th></tr>
+        ${(m.history || []).slice().reverse().map(x => `<tr><td>${esc(fmtTime(x.at))}</td><td>${esc(x.by)}</td><td>${esc(x.field)}</td><td>${esc(clip(typeof x.previous === 'string' ? x.previous : JSON.stringify(x.previous), 200))}</td><td>${esc(clip(typeof x.value === 'string' ? x.value : JSON.stringify(x.value), 200))}</td></tr>`).join('')}</table></details>
+    </div>`;
+  });
+  el.innerHTML = h;
+  $('btn-newmode').onclick = () => { S.newMode = true; S.editingMode = null; renderTaxonomy(); };
+  $('tax-st').onchange = e => { S.taxStatus = e.target.value; renderTaxonomy(); };
+  el.querySelectorAll('[data-goto]').forEach(x => x.onclick = () => x.dataset.item ? jumpToNote(x.dataset.goto, x.dataset.item) : openConversation(x.dataset.goto));
+  el.querySelectorAll('.mode-card[data-mode]').forEach(card => {
+    const id = card.dataset.mode, m = all.find(x => x.id === id);
+    card.querySelectorAll('button[data-a]').forEach(b => b.onclick = () => {
+      const a = b.dataset.a;
+      if (a === 'edit') { S.editingMode = id; S.newMode = false; renderTaxonomy(); }
+      else if (a === 'accept') post('/api/patterns', { action: 'set_status', id, status: 'accepted' }, `Accepted ${m.name}`);
+      else if (a === 'reject') { if (confirm(`Reject ${m.name}? It stays in patterns.json with status rejected.`)) post('/api/patterns', { action: 'set_status', id, status: 'rejected' }, `Rejected ${m.name}`); }
+      else if (a === 'proposed') post('/api/patterns', { action: 'set_status', id, status: 'proposed' }, `${m.name} is proposed again`);
+    });
+    const mi = card.querySelector('select[data-a="mergeinto"]');
+    if (mi) mi.onchange = () => {
+      const into = all.find(x => x.id === mi.value); if (!into) return;
+      if (confirm(`Merge ${m.name} into ${into.name}? Its notes, positives and close negatives are added to ${into.name}, and ${m.name} is marked merged.`)) post('/api/patterns', { action: 'merge', id, into: into.id }, `Merged into ${into.name}`);
+      else mi.value = '';
+    };
+  });
+  bindModeEditor();
+}
+function modeEditor(m) {
+  const others = modes().filter(o => o.id !== m.id && o.status !== 'rejected');
+  const notes = activeAnns().filter(a => !a.no_failure);
+  const specIds = (S.status && S.status.spec_ids) || [];
+  return `<div class="editor" data-editor="${esc(m.id)}" style="border-top:1px solid var(--line);margin-top:8px;padding-top:6px">
+    <datalist id="spec-ids">${specIds.map(s => `<option value="${esc(s)}">`).join('')}</datalist>
+    <div class="grid2">
+      <label>name</label><div><input data-f="name" value="${esc(m.name)}" style="width:100%" placeholder="snake_case_name" /><div class="help">snake_case describing the observed failure. Renaming moves labels/&lt;name&gt;.jsonl.</div></div>
+      <label>binary definition</label><div><textarea data-f="definition" rows="3" placeholder="The mode is present when … and absent when …">${esc(m.definition || '')}</textarea></div>
+      <label>positive conversations</label><div><input data-f="positive_conversation_ids" value="${esc((m.positive_conversation_ids || []).join(' '))}" style="width:100%" placeholder="support-0001 support-0002 …" /><div class="help">at least 3 confirmed positives</div></div>
+      <label>close negatives</label><div><input data-f="close_negative_conversation_ids" value="${esc((m.close_negative_conversation_ids || []).join(' '))}" style="width:100%" /><div class="help">at least 3 when the reviewed data permits</div></div>
+      <label>source annotations</label><div><input data-f="source_annotation_ids" value="${esc((m.source_annotation_ids || []).join(' '))}" style="width:100%" />
+        <select data-add="source_annotation_ids" style="width:100%;margin-top:4px"><option value="">add one of your notes…</option>${notes.map(a => `<option value="${esc(a.id)}">${esc(a.conversation_id)} · ${esc(clip(a.note, 90))}</option>`).join('')}</select></div>
+      <label>nearest mode</label><div><select data-f="nearest_mode"><option value="">—</option>${others.map(o => `<option ${m.nearest_mode === o.name ? 'selected' : ''}>${esc(o.name)}</option>`).join('')}</select></div>
+      <label>boundary</label><div><textarea data-f="boundary" rows="2" placeholder="How this mode differs from the nearest mode">${esc(m.boundary || '')}</textarea></div>
+      <label>likely evaluator</label><div>${[['code_check', 'code check'], ['llm_judge', 'LLM judge'], ['', 'not set']].map(([v, t]) => `<label style="font-weight:400;margin-right:12px"><input type="radio" name="ev-${esc(m.id)}" value="${v}" ${(m.evaluator_type || '') === v ? 'checked' : ''} /> ${t}</label>`).join('')}</div>
+      <label>requirement source</label><div><input data-f="requirement_source" list="spec-ids" value="${esc(m.requirement_source || '')}" style="width:100%" placeholder="RESP-2, or: spec revision: …" /><div class="help">a SPEC.md id, or a recorded specification revision</div></div>
+    </div>
+    <div class="toolbar"><button class="primary" data-save="${esc(m.id)}">${m.id === '__new' ? 'Create mode' : 'Save changes'}</button><button data-cancel>Cancel</button>
+      ${m.id === '__new' ? '<span class="small muted">New modes start as proposed. Accept them when the definition holds.</span>' : '<span class="small muted">Every change is appended to the revision history with the previous value.</span>'}</div>
+  </div>`;
+}
+function bindModeEditor() {
+  document.querySelectorAll('[data-editor]').forEach(ed => {
+    const id = ed.dataset.editor;
+    ed.querySelectorAll('select[data-add]').forEach(sel => sel.onchange = () => {
+      const inp = ed.querySelector(`[data-f="${sel.dataset.add}"]`);
+      const cur = inp.value.split(/[\s,]+/).filter(Boolean); if (sel.value && !cur.includes(sel.value)) cur.push(sel.value);
+      inp.value = cur.join(' '); sel.value = '';
+    });
+    ed.querySelector('[data-cancel]').onclick = () => { S.editingMode = null; S.newMode = false; renderTaxonomy(); };
+    ed.querySelector('[data-save]').onclick = async () => {
+      const mode = {};
+      ed.querySelectorAll('[data-f]').forEach(f => mode[f.dataset.f] = f.value);
+      const ev = ed.querySelector(`input[name="ev-${CSS.escape(id)}"]:checked`); mode.evaluator_type = ev ? ev.value : '';
+      ['positive_conversation_ids', 'close_negative_conversation_ids', 'source_annotation_ids'].forEach(k => mode[k] = mode[k].split(/[\s,]+/).filter(Boolean));
+      if (!SNAKE.test(mode.name)) return toast('The name must be snake_case', true);
+      if (id !== '__new') mode.id = id;
+      try { await api('/api/patterns', { mode }); toast(id === '__new' ? 'Mode created' : 'Mode saved'); S.editingMode = null; S.newMode = false; await refreshAll(); renderTaxonomy(); }
+      catch (e) { toast(e.message, true); }
+    };
+  });
+}
+
+/* ================================================================== *
+ * Labels                                                              *
+ * ================================================================== */
+function renderLabels() {
+  const el = $('labels'), acc = acceptedModes();
+  const reviewed = S.list.filter(c => convStatus(c.id) !== 'not_reviewed' && (!S.labelBatch || batchOf(c.id) === S.labelBatch));
+  const noWrites = S.status && S.status.no_langfuse_writes;
+  const rowsBy = Object.fromEntries(acc.map(m => [m.name, Object.fromEntries((S.labels[m.name] || []).map(r => [r.conversation_id, r]))]));
+  const cells = reviewed.length * acc.length;
+  const decided = acc.reduce((n, m) => n + reviewed.filter(c => rowsBy[m.name][c.id]).length, 0);
+  const unwritten = acc.reduce((n, m) => n + (S.labels[m.name] || []).filter(r => !r.langfuse_written).length, 0);
+  let h = `<div class="toolbar"><b>Label grid</b><span class="small">${reviewed.length} reviewed conversations × ${acc.length} accepted modes · ${decided}/${cells} cells decided</span>
+    <select id="lab-batch"><option value="">all batches</option>${(S.manifest.batches || []).map(b => `<option ${S.labelBatch === b.name ? 'selected' : ''}>${esc(b.name)}</option>`).join('')}</select>
+    <span class="spacer"></span>
+    <button class="primary" id="btn-lf" ${noWrites || !unwritten ? 'disabled' : ''} title="${noWrites ? 'disabled by --no-langfuse-writes' : ''}">Write accepted labels to Langfuse (${unwritten} not yet written)</button></div>
+    ${noWrites ? '<div class="banner warn" style="margin-bottom:10px;border-radius:6px">Langfuse writes are disabled for this server (--no-langfuse-writes). Labels still save to the local files.</div>' : ''}
+    <div class="small muted" style="margin-bottom:8px">P = present (failure observed, evidence required) · A = absent · <span style="color:var(--ok)">●</span> written to Langfuse. Saves to <code>${esc(S.status ? S.status.state_dir : '')}/labels/&lt;mode&gt;.jsonl</code>.</div>`;
+  if (!acc.length) { el.innerHTML = h + '<div class="empty">Accept at least one mode in the Taxonomy tab to start labelling.</div>'; bindLabels(); return; }
+  if (!reviewed.length) { el.innerHTML = h + '<div class="empty">No reviewed conversations yet.</div>'; bindLabels(); return; }
+  h += `<div id="label-layout"><div><table class="t"><tr><th>conversation</th><th>batch</th><th>review</th>${acc.map(m => `<th title="${esc(m.definition)}"><code>${esc(m.name)}</code></th>`).join('')}</tr>`;
+  h += `<tr><td colspan="3" class="small muted">code-check suggestions</td>${acc.map(m => { const n = reviewed.filter(c => !rowsBy[m.name][c.id] && sugHigh(m.name, c.id)).length, np = reviewed.filter(c => !rowsBy[m.name][c.id] && (sugHigh(m.name, c.id) || {}).decision === 'present').length;
+    return `<td>${n ? `<button class="colsug" data-m="${esc(m.name)}" title="Check the ${np} suggested P cells in this column first">Confirm ${n} (${np} P)</button>` : ''}</td>`; }).join('')}</tr>`;
+  h += reviewed.map(c => `<tr><td><span class="idlink" data-goto="${esc(c.id)}">${esc(c.id)}</span></td><td class="small">${esc(batchOf(c.id) || '—')}</td><td><span class="st ${convStatus(c.id)}">${ICON[convStatus(c.id)]}</span></td>
+    ${acc.map(m => { const r = rowsBy[m.name][c.id]; const sel = S.labelSel && S.labelSel.c === c.id && S.labelSel.m === m.name;
+      const s = !r ? sugOf(m.name, c.id) : null, hint = s && s.confidence === 'hint';
+      return `<td><button class="cell ${r ? r.decision : ''} ${s ? 'sug' : ''} ${sel ? 'sel' : ''}" data-c="${esc(c.id)}" data-m="${esc(m.name)}" title="${esc(r ? r.decision + (r.evidence ? ': ' + r.evidence : '') : s ? 'Suggested (code check): ' + s.decision + ' — ' + s.evidence : 'not decided')}">${r ? (r.decision === 'present' ? 'P' : 'A') : s ? (s.decision === 'present' ? 'p' : 'a') + (hint ? '?' : '') : '·'}${r && r.langfuse_written ? '<span class="lf">●</span>' : ''}</button></td>`; }).join('')}</tr>`).join('');
+  h += `</table></div><div id="label-editor">${labelEditor()}</div></div>`;
+  el.innerHTML = h;
+  bindLabels();
+}
+function labelEditor() {
+  const sel = S.labelSel; if (!sel) return '<div class="empty">Click a cell to record present or absent.</div>';
+  const m = acceptedModes().find(x => x.name === sel.m); if (!m) return '';
+  const r = (S.labels[sel.m] || []).find(x => x.conversation_id === sel.c);
+  const sg = !r ? sugOf(sel.m, sel.c) : null;
+  const d = sel.decision || (r && r.decision) || (sg && sg.decision) || '';
+  if (sg && sel.evidence === undefined) sel.evidence = sg.evidence;
+  return `<div><span class="idlink" data-goto="${esc(sel.c)}">${esc(sel.c)}</span> × <code>${esc(m.name)}</code></div>
+    <div class="small muted" style="margin:4px 0">${esc(m.definition)}</div>
+    <div class="toolbar" style="margin:8px 0">
+      <label><input type="radio" name="ld" value="present" ${d === 'present' ? 'checked' : ''} /> present</label>
+      <label><input type="radio" name="ld" value="absent" ${d === 'absent' ? 'checked' : ''} /> absent</label></div>
+    <textarea id="lab-ev" rows="4" placeholder="Evidence: the quote, tool result or database fact behind the decision (required when present)">${esc(sel.evidence ?? (r ? r.evidence : ''))}</textarea>
+    <div class="toolbar" style="margin-top:6px"><button class="primary" id="lab-save">Save</button>${r ? '<button id="lab-clear">Clear decision</button>' : ''}</div>
+    ${r ? `<div class="small muted">decided ${esc(fmtTime(r.decided_at))} · ${r.langfuse_written ? 'written to Langfuse ' + esc(fmtTime(r.langfuse_written_at)) : 'not written to Langfuse'}${(r.langfuse_writes || []).length && !r.langfuse_written ? ' · an older score for this pair is already in Langfuse' : ''}${(r.history || []).length ? ` · ${r.history.length} earlier decision(s)` : ''}</div>` : ''}`;
+}
+function bindLabels() {
+  const b = $('lab-batch'); if (b) b.onchange = () => { S.labelBatch = b.value; renderLabels(); };
+  document.querySelectorAll('#labels .colsug').forEach(btn => btn.onclick = async () => {
+    const mode = btn.dataset.m, done = new Set((S.labels[mode] || []).map(r => r.conversation_id));
+    const rows = S.list.filter(c => convStatus(c.id) !== 'not_reviewed' && (!S.labelBatch || batchOf(c.id) === S.labelBatch) && !done.has(c.id) && sugHigh(mode, c.id));
+    const np = rows.filter(c => sugHigh(mode, c.id).decision === 'present').length;
+    if (!confirm(`Confirm ${rows.length} code-check suggestion(s) for ${mode} (${np} present, ${rows.length - np} absent)?\n\nHover over the dashed cells first; flip any wrong ones by clicking the cell.`)) return;
+    const labels = rows.map(c => ({ conversation_id: c.id, label: sugHigh(mode, c.id).decision, evidence: sugHigh(mode, c.id).evidence }));
+    await post('/api/labels?mode=' + encodeURIComponent(mode), { labels }, `Confirmed ${labels.length} for ${mode}`);
+  });
+  document.querySelectorAll('#labels [data-goto]').forEach(x => x.onclick = () => openConversation(x.dataset.goto));
+  document.querySelectorAll('#labels .cell').forEach(c => c.onclick = () => { S.labelSel = { c: c.dataset.c, m: c.dataset.m }; renderLabels(); const ev = $('lab-ev'); if (ev) ev.focus(); });
+  const save = $('lab-save');
+  if (save) {
+    const ev = $('lab-ev');
+    document.querySelectorAll('input[name="ld"]').forEach(r => r.onchange = () => { S.labelSel.decision = r.value; S.labelSel.evidence = ev.value; });
+    const doSave = async () => {
+      const d = (document.querySelector('input[name="ld"]:checked') || {}).value;
+      if (!d) return toast('Choose present or absent', true);
+      if (d === 'present' && !ev.value.trim()) { ev.focus(); return toast('Evidence is required when the mode is present', true); }
+      const r = await post('/api/labels?mode=' + encodeURIComponent(S.labelSel.m), { conversation_id: S.labelSel.c, label: d, evidence: ev.value }, 'Label saved');
+      if (r) { S.labelSel = { c: S.labelSel.c, m: S.labelSel.m }; renderLabels(); }
+    };
+    save.onclick = doSave;
+    ev.onkeydown = e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) doSave(); };
+    const clr = $('lab-clear');
+    if (clr) clr.onclick = async () => { if (confirm('Clear this decision?')) { await post('/api/labels?mode=' + encodeURIComponent(S.labelSel.m), { conversation_id: S.labelSel.c, action: 'clear' }, 'Decision cleared'); renderLabels(); } };
+  }
+  const lf = $('btn-lf');
+  if (lf) lf.onclick = async () => {
+    let plan;
+    try { plan = await api('/api/langfuse/write-labels', { dry_run: true }); } catch (e) { return toast(e.message, true); }
+    const n = plan.would_write.length; if (!n) return toast('Nothing to write');
+    if (!confirm(`Write ${n} score(s) to Langfuse?\n\nOne numeric score per (conversation, mode) on the conversation's primary trace: score name = mode, value 1 = present, 0 = absent, comment = evidence.`)) return;
+    lf.disabled = true; lf.textContent = `Writing ${n} scores… keep this tab open (about a minute)`;
+    try { const r = await api('/api/langfuse/write-labels', {}); toast(`Wrote ${r.written} score(s) to Langfuse`); }
+    catch (e) { toast(e.message + (e.data && e.data.errors ? ` (${e.data.errors.length} errors)` : ''), true); }
+    await refreshAll();
+  };
+}
+
+/* ================================================================== *
+ * Progress                                                            *
+ * ================================================================== */
+function renderProgress() {
+  const p = S.progress; if (!p) return;
+  const el = $('progress'), idl = ids => ids.map(c => `<span class="idlink" data-goto="${esc(c)}">${esc(c)}</span>`).join(' ');
+  const acc = acceptedModes().length, prop = modes().filter(m => m.status === 'proposed').length;
+  let h = `<div class="tiles">
+    <div class="tile"><div class="big">${p.reviewed}</div><div class="lbl">conversations reviewed of ${p.conversations} (HW4 needs ≥ 100)</div></div>
+    <div class="tile"><div class="big">${p.with_notes}</div><div class="lbl">with notes</div></div>
+    <div class="tile"><div class="big">${p.no_failure}</div><div class="lbl">no failure observed</div></div>
+    <div class="tile"><div class="big">${p.label_grid.decided}/${p.label_grid.cells}</div><div class="lbl">label cells decided</div></div>
+    <div class="tile"><div class="big">${p.suggestions.pending}</div><div class="lbl">suggestions pending · ${p.suggestions.accepted} accepted · ${p.suggestions.rejected} rejected</div></div>
+    <div class="tile"><div class="big">${acc}</div><div class="lbl">accepted modes · ${prop} proposed</div></div></div>`;
+  h += `<h3 class="sec-h">Batches (sample_manifest.json${S.manifest.dimension ? ' · dimension ' + esc(S.manifest.dimension) : ''})</h3>`;
+  h += p.batches.length ? `<table class="t"><tr><th>batch</th><th>method</th><th>created</th><th>size</th><th>reviewed</th><th>with notes</th><th>no failure</th><th>not reviewed</th></tr>${p.batches.map(b => `<tr><td><b>${esc(b.name)}</b>${b.final ? ' <span class="badge merged">final</span>' : ''}</td><td class="small">${esc(b.method || '')}</td><td class="small">${esc(fmtTime(b.created_at))}</td><td>${b.size}</td><td>${b.reviewed}</td><td>${b.with_notes}</td><td>${b.no_failure}</td><td>${b.not_reviewed_ids.length ? `<details><summary>${b.not_reviewed_ids.length}</summary>${idl(b.not_reviewed_ids)}</details>` : '0'}</td></tr>`).join('')}</table>` : '<div class="empty">No batches yet. The coding agent posts them to /api/samples.</div>';
+  h += `<div class="small" style="margin-top:6px"><b>Conversations in a batch with neither a note nor "no failure observed":</b> ${p.batch_conversations_without_judgement.length ? idl(p.batch_conversations_without_judgement) : 'none'}</div>`;
+  if (p.reviewed_not_in_any_batch.length) h += `<div class="small warnline" style="margin-top:4px">Reviewed but not in any batch (${p.reviewed_not_in_any_batch.length}): ${idl(p.reviewed_not_in_any_batch)}</div>`;
+  const sat = p.saturation || {};
+  h += `<h3 class="sec-h">Saturation check</h3>`;
+  h += sat.final_batch ? `<div>Final batch <b>${esc(sat.final_batch)}</b> started ${esc(fmtTime(sat.final_batch_started_at))}. Modes first proposed after it started: <b>${sat.modes_first_proposed_after}</b>${sat.modes.length ? ' — ' + sat.modes.map(m => `<code>${esc(m.name)}</code> (${esc(m.status)}, ${esc(m.proposed_by)})`).join(', ') : ''}.</div><div class="small muted">${esc(sat.rule)}</div>` : '<div class="empty">No batches yet.</div>';
+  h += `<h3 class="sec-h">Label grid completeness</h3>`;
+  h += p.label_grid.modes.length ? `<table class="t"><tr><th>mode</th><th>decided / reviewed</th><th>present</th><th>absent</th><th>sample fraction present</th><th>not written to Langfuse</th><th>missing</th></tr>${p.label_grid.modes.map(g => `<tr><td><code>${esc(g.mode)}</code></td><td>${g.decided}/${g.reviewed}</td><td>${g.present}</td><td>${g.absent}</td><td>${g.sample_fraction_present ?? '—'}</td><td>${g.not_written_to_langfuse}</td><td>${g.missing.length ? `<details><summary>${g.missing.length}</summary>${idl(g.missing)}</details>` : '0'}</td></tr>`).join('')}</table><div class="small muted">Sample fractions describe the reviewed sample, not prevalence.</div>` : '<div class="empty">No accepted modes yet.</div>';
+  h += `<h3 class="sec-h">Failure modes</h3>`;
+  const live = modes().filter(m => m.status === 'accepted' || m.status === 'proposed').map(m => ({ m, s: modeSupport(m) }));
+  const max = Math.max(1, ...live.map(x => x.s.humanActive.length + x.s.acceptedSugg.length));
+  h += live.length ? live.sort((a, b) => (b.s.humanActive.length + b.s.acceptedSugg.length) - (a.s.humanActive.length + a.s.acceptedSugg.length)).map(({ m, s }) => `<div class="bar-row"><span><code>${esc(m.name)}</code> <span class="badge ${esc(m.status)}">${esc(m.status)}</span></span>
+    <span style="display:flex;gap:2px"><span class="bar" style="width:${100 * s.humanActive.length / max}%" title="human notes"></span><span class="bar s" style="width:${100 * s.acceptedSugg.length / max}%" title="accepted suggestions"></span></span>
+    <span class="small">${s.humanActive.length} notes · ${s.acceptedSugg.length} accepted sugg. · ${s.present} present</span></div>`).join('') + '<div class="small muted">solid = your notes · striped = accepted suggestions</div>' : '<div class="empty">No modes yet.</div>';
+  h += `<h3 class="sec-h">Suggestions queue (pending)</h3><div id="pq"></div>`;
+  el.innerHTML = h;
+  el.querySelectorAll('[data-goto]').forEach(x => x.onclick = () => openConversation(x.dataset.goto));
+  suggestionQueue($('pq'), { prefix: 'pq', compact: true, filter: { status: 'pending', mode: '', q: '' }, rerender: renderProgress });
+}
+
+/* ================================================================== *
+ * boot                                                                *
+ * ================================================================== */
+(async function boot() {
+  try { await refreshAll(); } catch (e) { toast('Could not load: ' + e.message, true); return; }
+  const [view, id] = location.hash.slice(1).split('/');
+  if (view && view !== 'review' && $('view-' + view)) switchView(view, false);
+  const start = (id && S.list.find(c => c.id === id)) ? id : (S.list[0] && S.list[0].id);
+  if (start) {
+    if (view && view !== 'review') { S.convCache[start] = await api('/api/conversation?id=' + encodeURIComponent(start)); S.curId = start; S.conv = S.convCache[start]; }
+    else await openConversation(start);
+  }
+  setInterval(poll, 3000);
+})();
+</script>
+</body>
+</html>

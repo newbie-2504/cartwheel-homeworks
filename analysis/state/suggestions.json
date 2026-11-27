@@ -1,1 +1,389 @@
-[]
+[
+  {
+    "id": "sug-a61cf9f798",
+    "mode": "escalation_reply_missing_ticket_or_sla",
+    "conversation_id": "support-0093",
+    "trace_id": "21545fc6b3e2ffdc129bf5e4a1e87e69",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "I've escalated your request to a human support agent.",
+    "start": 0,
+    "end": 53,
+    "reason": "Depth search signal: escalate_to_human returned ticket_id 156; reply omits it. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T14:53:50+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T14:53:50+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-67c0a2294e"
+  },
+  {
+    "id": "sug-f085530194",
+    "mode": "escalation_reply_missing_ticket_or_sla",
+    "conversation_id": "support-0014",
+    "trace_id": "b117a32a351cf1c9d5638eba19ad75b4",
+    "turn_index": 3,
+    "target": "t3.reply",
+    "quote": "I've escalated your request to a human support agent, and they will review your case.",
+    "start": 0,
+    "end": 85,
+    "reason": "Depth search signal: escalate_to_human returned ticket_id 155; reply omits it. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T14:53:57+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T14:53:57+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-2988edb1eb"
+  },
+  {
+    "id": "sug-3735817897",
+    "mode": "policy_claim_without_citation",
+    "conversation_id": "support-0073",
+    "trace_id": "fb9ab5b08dc249d1dbfb481726452242",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "Juniper Home Goods has a return window of 14 days.",
+    "start": 0,
+    "end": 50,
+    "reason": "Depth search signal: get_store_info returned policy_id store-juniper-home-goods-policy; reply does not cite it. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T14:54:30+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T14:54:30+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-c36e5e311a"
+  },
+  {
+    "id": "sug-61866e0782",
+    "mode": "policy_claim_without_citation",
+    "conversation_id": "support-0088",
+    "trace_id": "7ae2ad4e8595cf6dc116c3c5134562de",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "Meridian Cycles has a return window of 21 days.",
+    "start": 0,
+    "end": 47,
+    "reason": "Depth search signal: get_store_info returned policy_id store-meridian-cycles-policy; reply does not cite it. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T14:54:36+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T14:54:36+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-53b83ce6b5"
+  },
+  {
+    "id": "sug-7572b5a77f",
+    "mode": "damaged_record_not_flagged",
+    "conversation_id": "support-0180",
+    "trace_id": "dd26fb773973af23085d4ba3bd5bae21",
+    "turn_index": 1,
+    "target": "t1.reply",
+    "quote": "The order ID 8002 appears to have been marked as \"delivered\" but shows a delivery status of `None`, indicating it may not have been received by the customer yet.",
+    "start": 0,
+    "end": 161,
+    "reason": "Depth search signal: order 8002: status delivered, delivered_at null; reply does not mention the gap. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T14:55:15+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T14:55:15+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-80460665f2"
+  },
+  {
+    "id": "sug-3cb022588c",
+    "mode": "support_caller_treated_as_customer",
+    "conversation_id": "support-0147",
+    "trace_id": "0a30ce33614a4943c9711aa2baaaaaed",
+    "turn_index": 1,
+    "target": "t1.reply",
+    "quote": "If you'd like, I can escalate this case to a human support agent who can provide more detailed assistance and expedite the process.",
+    "start": 156,
+    "end": 287,
+    "reason": "Depth search signal: support caller; reply uses customer framing: 'human support agent'. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T14:56:07+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T14:56:07+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-7c7d959960"
+  },
+  {
+    "id": "sug-a67a8d2911",
+    "mode": "support_caller_treated_as_customer",
+    "conversation_id": "support-0156",
+    "trace_id": "e89c4b9b6948cd2546defb5e2cc7e121",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "Disputes are handled by a human support agent and are not resolved automatically.",
+    "start": 130,
+    "end": 211,
+    "reason": "Depth search signal: support caller; reply uses customer framing: 'human support agent'. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T14:56:54+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T14:56:54+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-a11db00237"
+  },
+  {
+    "id": "sug-6949753444",
+    "mode": "unsupported_claim",
+    "conversation_id": "support-0023",
+    "trace_id": "d0844f954abf37bb52027f926b012228",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "I understand your frustration about having to pay a fee for returning opened items.",
+    "start": 0,
+    "end": 83,
+    "reason": "Depth search signal: reply states a policy-style fact; 0 tool calls in that turn. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T14:59:03+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T14:59:03+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-b7eb4362aa"
+  },
+  {
+    "id": "sug-3bdaa05e09",
+    "mode": "unsupported_claim",
+    "conversation_id": "support-0024",
+    "trace_id": "8e866929adcfe19a8d1839f91b226ac5",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "Each store sets its own policies regarding returns, including the time frame for returns and any restocking fees that may apply.",
+    "start": 58,
+    "end": 186,
+    "reason": "Depth search signal: reply states a policy-style fact; 0 tool calls in that turn. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T14:59:37+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T14:59:37+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-5165df00c5"
+  },
+  {
+    "id": "sug-f0ecc37e20",
+    "mode": "ineligibility_without_reason",
+    "conversation_id": "support-0239",
+    "trace_id": "c9c214ceaa95358eb1ac159988ec21d0",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "However, please note that this order is not eligible for a refund.",
+    "start": 182,
+    "end": 248,
+    "reason": "Depth search signal: reply says not eligible; the sentence gives no reason. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "rejected",
+    "reviewer_comment": "reason is given in the earlier aprt of the reply - just the policy is not cited",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T15:00:37+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T15:00:37+00:00",
+        "status": "rejected",
+        "previous": "pending",
+        "reviewer_comment": "reason is given in the earlier aprt of the reply - just the policy is not cited"
+      }
+    ]
+  },
+  {
+    "id": "sug-52de6c2d19",
+    "mode": "ineligibility_without_reason",
+    "conversation_id": "support-0183",
+    "trace_id": "a3398b80fcaff4b333b32ec30057b00a",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "Unfortunately, it is not eligible for a refund or return.",
+    "start": 43,
+    "end": 100,
+    "reason": "Depth search signal: reply says not eligible; the sentence gives no reason. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T15:00:58+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T15:00:58+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-897ee3f162"
+  },
+  {
+    "id": "sug-de14989392",
+    "mode": "misreported_order_data",
+    "conversation_id": "support-0160",
+    "trace_id": "7b921ffcb6aed3ea762f220032dded4b",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "The order number 1532 is still in the \"placed\" status, which means it hasn't shipped yet and is eligible for cancellation.",
+    "start": 0,
+    "end": 122,
+    "reason": "Depth search signal: get_order status 'placed'; reply conflicts with it (keyword check). A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "rejected",
+    "reviewer_comment": "yes the reply should have been since order is not shipped it is eligible for cancellation.and policy should be cited, But this is not misreported data",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T15:03:17+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T15:03:17+00:00",
+        "status": "rejected",
+        "previous": "pending",
+        "reviewer_comment": "yes the reply should have been since order is not shipped it is eligible for cancellation.and policy should be cited, But this is not misreported data"
+      }
+    ]
+  },
+  {
+    "id": "sug-a8b995b2cc",
+    "mode": "misreported_order_data",
+    "conversation_id": "support-0246",
+    "trace_id": "36addedec81fcb9dd107217e7a9a6022",
+    "turn_index": 1,
+    "target": "t1.reply",
+    "quote": "Order number 2554 is currently in the \"placed\" status, meaning it hasn't shipped yet and can be canceled.",
+    "start": 0,
+    "end": 105,
+    "reason": "Depth search signal: get_order status 'placed'; reply conflicts with it (keyword check). A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "rejected",
+    "reviewer_comment": "again incorrect - since order not shipped, it can be cancelled. no need to say it is in the placed status",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T15:04:48+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T15:04:48+00:00",
+        "status": "rejected",
+        "previous": "pending",
+        "reviewer_comment": "again incorrect - since order not shipped, it can be cancelled. no need to say it is in the placed status"
+      }
+    ]
+  },
+  {
+    "id": "sug-6918969789",
+    "mode": "escalation_reply_missing_ticket_or_sla",
+    "conversation_id": "support-0220",
+    "trace_id": "4a543c2867ba60bdc94c9e11087cadff",
+    "turn_index": 3,
+    "target": "t3.reply",
+    "quote": "I've escalated your issue to a human support agent, and they will follow up with you typically within 24 hours.",
+    "start": 0,
+    "end": 111,
+    "reason": "Depth search signal: escalate_to_human returned ticket_id 169; reply omits it. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T15:04:59+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T15:04:59+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-49d3fd2977"
+  },
+  {
+    "id": "sug-69a1f7b4fa",
+    "mode": "policy_claim_without_citation",
+    "conversation_id": "support-0083",
+    "trace_id": "c684b63f33b29a931c3a01e398d1059e",
+    "turn_index": 0,
+    "target": "t0.reply",
+    "quote": "Since their return policy allows for a return window of 30 days, you have until July 2, 2026, to initiate the return.",
+    "start": 95,
+    "end": 212,
+    "reason": "Depth search signal: get_store_info returned policy_id store-second-stitch-apparel-policy; reply does not cite it. A retrieval hint, not a label.",
+    "source": "agent",
+    "status": "accepted",
+    "reviewer_comment": "",
+    "created_at": "2026-10-31T14:43:21+00:00",
+    "decided_at": "2026-10-31T15:05:07+00:00",
+    "history": [
+      {
+        "at": "2026-10-31T15:05:07+00:00",
+        "status": "accepted",
+        "previous": "pending",
+        "reviewer_comment": ""
+      }
+    ],
+    "annotation_id": "ann-cfc70ec1d3"
+  }
+]

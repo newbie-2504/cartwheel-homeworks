@@ -87,10 +87,54 @@ def load_env(path: Path | None = None) -> None:
             os.environ.setdefault(key, value)
 
 
+_workshop_enabled = False
+_LOOPBACK_HOSTS = {"localhost", "127.0.0.1", "::1"}
+
+
+def setup_workshop_tracing() -> bool:
+    """Optional (HW4 Part C): also send OTel spans to a local Raindrop Workshop.
+
+    Off unless RAINDROP_LOCAL_DEBUGGER is set, e.g. http://localhost:5899/v1/.
+    Additive: when Langfuse already owns the tracer provider, this attaches one
+    more span processor to it, so Langfuse export is unchanged. With Langfuse
+    off, it installs a provider that exports only to Workshop. Only loopback
+    URLs are accepted, so spans never leave the machine.
+    """
+    global _workshop_enabled
+    if _workshop_enabled:
+        return True
+    url = os.environ.get("RAINDROP_LOCAL_DEBUGGER", "").strip()
+    if not url:
+        return False
+    from urllib.parse import urlparse
+
+    if urlparse(url).hostname not in _LOOPBACK_HOSTS:
+        log.warning("RAINDROP_LOCAL_DEBUGGER is not a loopback URL; Workshop export is off")
+        return False
+    from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+    from opentelemetry.sdk.resources import Resource
+    from opentelemetry.sdk.trace import TracerProvider
+    from opentelemetry.sdk.trace.export import BatchSpanProcessor
+
+    provider = trace.get_tracer_provider()
+    if not isinstance(provider, TracerProvider):  # nothing owns OTel yet (Langfuse off)
+        provider = TracerProvider(resource=Resource.create({"service.name": "cartwheel"}))
+        trace.set_tracer_provider(provider)
+    exporter = OTLPSpanExporter(endpoint=url.rstrip("/") + "/traces")
+    provider.add_span_processor(BatchSpanProcessor(exporter))
+    _workshop_enabled = True
+    log.info("Workshop export enabled; spans also go to %s", url)
+    return True
+
+
 def setup_tracing() -> bool:
     """Install Langfuse tracing; return False when credentials are missing."""
     load_env()
     if not os.environ.get("LANGFUSE_PUBLIC_KEY"):
+        # Optional local-only path (HW4 Part C); a no-op unless opted in.
+        if setup_workshop_tracing():
+            instrument_genai(trace.get_tracer_provider())
+            return True
         log.warning(
             "LANGFUSE_PUBLIC_KEY is not set; tracing is off. Start the stack "
             "(docker compose -f observability/docker-compose.yml up -d) and "
@@ -100,6 +144,7 @@ def setup_tracing() -> bool:
     from langfuse import get_client
 
     get_client()  # registers the OTel tracer provider from LANGFUSE_* env vars
+    setup_workshop_tracing()  # optional mirror to local Workshop; no-op unless opted in
     instrument_genai(trace.get_tracer_provider())
     # Preserve processor replacement for callers such as the server, which
     # ignore our return value. A missing secret makes Langfuse a no-op client;
